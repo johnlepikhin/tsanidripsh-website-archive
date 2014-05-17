@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "include Gallery_info_make" > gallery_info.ml
+echo >> gallery_info.ml
+echo "let () =" >> gallery_info.ml
+jpeginfo gallery/*.jpg | awk '{print "\tadd \"/"$1"\" "$2" "$4";"}' >> gallery_info.ml

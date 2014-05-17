@@ -1,0 +1,4 @@
+<*.ml>: package(tyxml.syntax), package(tyxml), syntax(camlp4o)
+<js_*.ml>: package(js_of_ocaml), package(js_of_ocaml.syntax), package(lwt.syntax), syntax(camlp4o)
+<js_*.byte>: package(js_of_ocaml), package(tyxml)
+<*.native>: package(tyxml.syntax), package(tyxml), package(unix)

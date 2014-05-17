@@ -1,0 +1,41 @@
+include Gallery_info_make
+
+let () =
+	add "/gallery/p1.jpg" 1500 1125;
+	add "/gallery/p10.jpg" 1500 1125;
+	add "/gallery/p11.jpg" 1500 1125;
+	add "/gallery/p12.jpg" 1125 1500;
+	add "/gallery/p13.jpg" 1500 1125;
+	add "/gallery/p14.jpg" 1500 1125;
+	add "/gallery/p15.jpg" 1125 1500;
+	add "/gallery/p16.jpg" 1125 1500;
+	add "/gallery/p17.jpg" 1500 1125;
+	add "/gallery/p18.jpg" 1125 1500;
+	add "/gallery/p19.jpg" 1500 1125;
+	add "/gallery/p2.jpg" 1500 1125;
+	add "/gallery/p20.jpg" 1125 1500;
+	add "/gallery/p21.jpg" 1500 1125;
+	add "/gallery/p22.jpg" 1125 1500;
+	add "/gallery/p23.jpg" 1125 1500;
+	add "/gallery/p24.jpg" 1500 1125;
+	add "/gallery/p25.jpg" 1125 1500;
+	add "/gallery/p26.jpg" 1125 1500;
+	add "/gallery/p27.jpg" 1125 1500;
+	add "/gallery/p28.jpg" 1125 1500;
+	add "/gallery/p29.jpg" 1500 1125;
+	add "/gallery/p3.jpg" 1125 1500;
+	add "/gallery/p30.jpg" 1500 1125;
+	add "/gallery/p31.jpg" 1500 1125;
+	add "/gallery/p32.jpg" 1500 1125;
+	add "/gallery/p33.jpg" 1500 1125;
+	add "/gallery/p34.jpg" 1500 1125;
+	add "/gallery/p35.jpg" 1500 1125;
+	add "/gallery/p36.jpg" 1500 1125;
+	add "/gallery/p37.jpg" 1500 1125;
+	add "/gallery/p38.jpg" 1500 1125;
+	add "/gallery/p4.jpg" 1500 1125;
+	add "/gallery/p5.jpg" 1500 1125;
+	add "/gallery/p6.jpg" 1500 1125;
+	add "/gallery/p7.jpg" 1500 1125;
+	add "/gallery/p8.jpg" 1500 1125;
+	add "/gallery/p9.jpg" 1500 1125;
