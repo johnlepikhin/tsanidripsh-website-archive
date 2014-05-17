@@ -294,6 +294,7 @@ div.gallery_view_prev {
 	color: yellow;
 	vertical-align: middle;
 	font-size: 2em;
+	text-align: center;
 }
 
 div.gallery_view_next {
@@ -309,6 +310,7 @@ div.gallery_view_next {
 	color: yellow;
 	vertical-align: middle;
 	font-size: 2em;
+	text-align: center;
 }
 
 div.gallery_view_description {

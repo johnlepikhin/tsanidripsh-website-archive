@@ -13,7 +13,7 @@ let is_active = ref false
 
 module View =
 	struct
-		let close div _ =
+		let do_close div =
 			is_active := false;
 			div##style##opacity <- Js.def (Js.string "0");
 			div##style##width <- Js.string "0px";
@@ -24,6 +24,9 @@ module View =
 			ignore (lwt () = Lwt_js.sleep 0.3 in Dom.removeElement div; Lwt.return ());
 			Lwt.return ()
 
+		let close div _ =
+			do_close div
+
 		let preload_image id =
 			let p = List.nth !list id in
 			let img = Dom_html.createImg Dom_html.document in
@@ -31,7 +34,14 @@ module View =
 			img##src <- Js.string string_url;
 			p, img
 
-		let rec add_image div height id =
+		let rec event_keypress ~has_next ~has_prev ~id ~height div e =
+			match e##keyCode with
+				| 27 -> do_close div
+				| 37 -> if has_prev then add_image div height (id-1) else Lwt.return ()
+				| 39 -> if has_next then add_image div height (id+1) else Lwt.return ()
+				| _ -> Lwt.return ()
+
+		and add_image div height id =
 			Dom.removeChilds div;
 
 			let (p, img) = preload_image id in
@@ -47,39 +57,51 @@ module View =
 			let div_width = div##clientWidth in
 
 			(* neighbours *)
-			if id + 1 < List.length !list then
-			begin
-				let id_next = id + 1 in
-				ignore (preload_image id_next);
-				let div_next = Dom_html.createDiv Dom_html.document in
-				div_next##className <- Js.string "gallery_view_next";
-				div_next##style##height <- Js.string ((string_of_int height) ^ "px");
-				div_next##style##marginLeft <- Js.string ((string_of_int (img_width-100+5)) ^ "px");
-				div_next##style##lineHeight <- Js.string ((string_of_int (height)) ^ "px");
-				div_next##innerHTML <- Js.string "→";
+			let has_next =
+				if id + 1 < List.length !list then
+				begin
+					let id_next = id + 1 in
+					ignore (preload_image id_next);
+					let div_next = Dom_html.createDiv Dom_html.document in
+					div_next##className <- Js.string "gallery_view_next";
+					div_next##style##height <- Js.string ((string_of_int height) ^ "px");
+					div_next##style##marginLeft <- Js.string ((string_of_int (img_width-100+5)) ^ "px");
+					div_next##style##lineHeight <- Js.string ((string_of_int (height)) ^ "px");
+					div_next##innerHTML <- Js.string "→";
 
-				div_next##onclick <- handler (fun _ -> add_image div height id_next) Js._false;
+					div_next##onclick <- handler (fun _ -> add_image div height id_next) Js._false;
 
-				img##style##opacity <- Js.def (Js.string "1");
-				Js.Unsafe.set (div_next##style) (Js.string "transition") (Js.string "opacity 0.3s");
-				Dom.appendChild div div_next;
-			end;
+					img##style##opacity <- Js.def (Js.string "1");
+					Js.Unsafe.set (div_next##style) (Js.string "transition") (Js.string "opacity 0.3s");
+					Dom.appendChild div div_next;
+					true
+				end
+				else
+					false
+			in
 
-			if id > 0 then
-			begin
-				let id_prev = id - 1 in
-				ignore (preload_image id_prev);
-				let div_prev = Dom_html.createDiv Dom_html.document in
-				div_prev##className <- Js.string "gallery_view_prev";
-				div_prev##style##height <- Js.string ((string_of_int height) ^ "px");
-				div_prev##style##lineHeight <- Js.string ((string_of_int (height)) ^ "px");
-				div_prev##onclick <- handler (fun _ -> add_image div height id_prev) Js._false;
-				div_prev##innerHTML <- Js.string "←";
+			let has_prev =
+				if id > 0 then
+				begin
+					let id_prev = id - 1 in
+					ignore (preload_image id_prev);
+					let div_prev = Dom_html.createDiv Dom_html.document in
+					div_prev##className <- Js.string "gallery_view_prev";
+					div_prev##style##height <- Js.string ((string_of_int height) ^ "px");
+					div_prev##style##lineHeight <- Js.string ((string_of_int (height)) ^ "px");
+					div_prev##onclick <- handler (fun _ -> add_image div height id_prev) Js._false;
+					div_prev##innerHTML <- Js.string "←";
 
-				img##style##opacity <- Js.def (Js.string "1");
-				Js.Unsafe.set (div_prev##style) (Js.string "transition") (Js.string "opacity 0.3s");
-				Dom.appendChild div div_prev;
-			end;
+					img##style##opacity <- Js.def (Js.string "1");
+					Js.Unsafe.set (div_prev##style) (Js.string "transition") (Js.string "opacity 0.3s");
+					Dom.appendChild div div_prev;
+					true
+				end
+				else
+					false
+			in
+
+			Dom_html.document##onkeydown <- handler (event_keypress ~has_next ~has_prev ~height ~id div) Js._true;
 
 			let right_width = Js.string ((string_of_int (div_width - img_width - 15)) ^ "px") in
 
