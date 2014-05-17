@@ -1,0 +1,5 @@
+_build
+static/gallery
+.*.swp
+*.native
+static/js_main.js
