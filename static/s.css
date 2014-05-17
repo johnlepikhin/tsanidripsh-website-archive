@@ -328,3 +328,11 @@ img.gallery_view_close {
 	position: absolute;
 }
 
+div.gallery_old_main {
+}
+
+div.gallery_old_el {
+	margin: 1em;
+	margin-bottom: 2em;
+}
+

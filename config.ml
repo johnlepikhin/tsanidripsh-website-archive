@@ -3,8 +3,6 @@ let static_path = "./static"
 
 let gallery_src_path = "./gallery"
 
-let photo_sizes = [32; 64; 128; 512; 768; 1024; 1536]
-
 let save_path = "/tmp/tsandripsh"
 
 let keywords = "цандрипш, частный сектор, отдых в абхазии"

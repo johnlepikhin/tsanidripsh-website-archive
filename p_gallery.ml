@@ -17,6 +17,9 @@ let center = <<
 	<div class="tpl_main_center">
 		<div id=$str:Common_config.div_center_gallery$ class="gallery_main">
 		</div>
+		<small>
+			<a href=$Page_common.url Page_common.p_gallery_all$>Для старых браузеров: все фотографии одним списком</a>
+		</small>
 	</div>
 >>
 
