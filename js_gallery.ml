@@ -7,12 +7,6 @@ let root = ref (Dom_html.createDiv Dom_html.document)
 
 let max_width = ref 512.
 
-let init_root () =
-	lwt newroot = (Js_eid.init Common_config.div_center_gallery Dom_html.CoerceTo.div) () in
-	root := newroot;
-	max_width := float_of_int ((!root)##offsetWidth - 100);
-	Lwt.return newroot
-
 let list = ref []
 
 let is_active = ref false
@@ -87,29 +81,26 @@ module View =
 				Dom.appendChild div div_prev;
 			end;
 
-			let close_height = 50 in
-
 			let right_width = Js.string ((string_of_int (div_width - img_width - 15)) ^ "px") in
 
 			(* description *)
 			let div_descr = Dom_html.createDiv Dom_html.document in
 			div_descr##className <- Js.string "gallery_view_description";
 			div_descr##style##marginLeft <- Js.string ((string_of_int (img_width+10)) ^ "px");
-			div_descr##style##height <- Js.string ((string_of_int (height-5-close_height-5)) ^ "px");
+			div_descr##style##height <- Js.string ((string_of_int height) ^ "px");
 			div_descr##style##width <- right_width;
 			div_descr##innerHTML <- Js.string (Html_print.elt_to_string p.G.description);
 			Dom.appendChild div div_descr;
 
 			(* close *)
-			let div_close = Dom_html.createDiv Dom_html.document in
-			div_close##className <- Js.string "gallery_view_close";
-			div_close##style##marginLeft <- Js.string ((string_of_int (img_width+10)) ^ "px");
-			div_close##style##marginTop <- Js.string ((string_of_int (height-close_height)) ^ "px");
-			div_close##style##height <- Js.string ((string_of_int close_height) ^ "px");
-			div_close##style##width <- right_width;
-			div_close##innerHTML <- Js.string "Закрыть";
-			div_close##onclick <- handler (close div) Js._true;
-			Dom.appendChild div div_close;
+			let close_img = Dom_html.createImg Dom_html.document in
+			let string_url = Static.url Static.button_close in
+			close_img##src <- Js.string string_url;
+			close_img##className <- Js.string "gallery_view_close";
+			close_img##style##marginLeft <- Js.string ((string_of_int (div_width-25)) ^ "px");
+			close_img##style##marginTop <- Js.string ((string_of_int (-15)) ^ "px");
+			close_img##onclick <- handler (close div) Js._true;
+			Dom.appendChild div close_img;
 
 			Lwt.return ()
 
@@ -133,7 +124,7 @@ module View =
 			div##style##height <- Js.string "0px";
 			div##style##marginLeft <- Js.string "0px";
 			div##style##marginTop <- Js.string "0px";
-			Dom.appendChild !root div;
+			Dom.appendChild !body div;
 			Js.Unsafe.set (div##style)
 				(Js.string "transition")
 				(Js.string "height 0.3s, width 0.3s, margin-left 0.3s, margin-top 0.3s, opacity 0.3s, box-shadow");
@@ -215,7 +206,6 @@ module GRows =
 
 		let add_one_preview data p =
 			let string_url_orig = Purl.to_string p.Gallery.dest in
-			Firebug.console##log (Js.string string_url_orig);
 			let info = Hashtbl.find Gallery_info.info string_url_orig in
 			let height = 256. in
 
@@ -239,13 +229,39 @@ module GRows =
 
 		let draw () =
 			Dom.removeChilds !root;
+			max_width := float_of_int ((!root)##offsetWidth - 100);
 			let data = { last_id = -1; row = empty } in
 			lwt data = Lwt_list.fold_left_s add_one_preview data !list in
 			if data.row.width > 0. then
 				output_row data.row
 			else
 				Lwt.return ()
+
+		let resize () =
+			draw ()
 	end
+
+let rec check_width_periodically old =
+	let get_width () = (!root)##offsetWidth in
+	lwt () = Lwt_js.sleep 0.5 in
+	match old with
+		| None ->
+			check_width_periodically (Some (get_width ()))
+		| Some old ->
+			let w = get_width () in
+			lwt () =
+				if abs (w-old) > 20 then
+					GRows.resize ()
+				else
+					Lwt.return ()
+			in
+			check_width_periodically (Some w)
+
+let init_root () =
+	lwt newroot = (Js_eid.init Common_config.div_center_gallery Dom_html.CoerceTo.div) () in
+	root := newroot;
+	ignore (check_width_periodically None);
+	Lwt.return newroot
 
 let init () =
 	lwt root = init_root () in

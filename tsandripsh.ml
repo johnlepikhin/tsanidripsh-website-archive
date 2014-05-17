@@ -10,5 +10,5 @@ let () =
 	Install_path.create_all ();
 	if Array.length Sys.argv > 1 && Sys.argv.( 1 ) = "gallery" then
 		Install_gallery.create_all ();
-	Static.create_all ();
+	Install_static.create_all ();
 	Install_page.create_all ()

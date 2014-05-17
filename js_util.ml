@@ -37,4 +37,13 @@ let eignore f arg =
 
 let handler f r = Dom_html.handler (fun v -> eignore f v; r)
 
+(* body *)
+
+let body = ref (Dom_html.createBody Dom_html.document)
+
+let init_body () =
+	lwt newbody = (Js_eid.init Common_config.body Dom_html.CoerceTo.body) () in
+	body := newbody;
+	Lwt.return ()
+
 

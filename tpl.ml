@@ -77,7 +77,7 @@ module Main_menu =
 	end
 
 let tpl_base ?page ~title ~position ?keywords ?description ?left center =
-	let title = Printf.sprintf "%s — Отдых в Абхазии" title in
+	let title = Printf.sprintf "%s — Отдых в Абхазии у Минаса и Алины Рогонян" title in
 	let main_menu = Main_menu.tpl1 position in
 	let main_menu_bottom = Main_menu.tpl2 position in
 	let phones = List.map (fun (phone, _) -> << <div>$str:phone$</div> >>) Config.phones in
@@ -91,7 +91,7 @@ let tpl_base ?page ~title ~position ?keywords ?description ?left center =
 	in
 	let script_page = Html5.cdata_script (Printf.sprintf "%s = '%s';" Common_config.page_var page) in
 	html ~title ?keywords ?description <<
-		<body class="tpl_main">
+		<body class="tpl_main" id=$str:Common_config.body$>
 			<script>$script_page$</script>
 			<div class="tpl_main">
 				<script>
