@@ -4,7 +4,7 @@ let init () =
 	let open Js_page in
 	match page with
 		| Gallery ->
-			Js_gallery.init ()
+			Js_gallery.GRows.init ()
 		| Other ->
 			Lwt.return ()
 
