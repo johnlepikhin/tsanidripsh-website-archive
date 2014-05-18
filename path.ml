@@ -18,4 +18,6 @@ let make l =
 
 let root = make []
 
+let tours = make ["tours"]
+
 let gallery = make ["gallery"]

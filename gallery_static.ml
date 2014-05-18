@@ -11,7 +11,7 @@ let gen_jscall title pos lst =
 	let lst = List.map (fun p -> string_of_int p.id) lst in
 	let lst = String.concat "," lst in
 	let title = escape title in
-	Printf.sprintf "gallery_view(\"%s\", 0, [%s])" title lst
+	Printf.sprintf "gallery_view(\"%s\", %i, [%s])" title pos lst
 
 let gen_jscall_one title p =
 	gen_jscall title 0 [p]

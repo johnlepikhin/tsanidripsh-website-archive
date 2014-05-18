@@ -14,6 +14,19 @@ module type PAGE =
 		val doc : Html5.M.doc
 	end
 
+let register p =
+	try
+		let _ = List.find (fun np -> p.path = np.path) !pages in
+		raise (failwith ("Page with path '" ^ (url p.path) ^ "' already registered"))
+	with
+		| Not_found ->
+			pages := p :: !pages
+
+let anonymous path doc =
+	let p = { path; doc } in
+	register p;
+	p
+
 module Make (P : PAGE) =
 	struct
 		include P
@@ -23,11 +36,6 @@ module Make (P : PAGE) =
 		let url = url path
 
 		let () =
-			try
-				let _ = List.find (fun p -> p.path = path) !pages in
-				raise (failwith ("Page with path '" ^ url ^ "' already registered"))
-			with
-				| Not_found ->
-					pages := page :: !pages
+			register page
 	end
 

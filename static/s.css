@@ -324,7 +324,7 @@ div.gallery_view_description_main {
 
 div.gallery_view_description_content {
 	margin: 10px;
-	width: 100%;
+	width: 95%;
 }
 
 img.gallery_view_close {
@@ -350,13 +350,19 @@ table.prices td,th {
 	border: 1px solid grey;
 }
 
-div.main_img_we {
+div.text_img {
 	float: left;
 	width: 30%;
 	margin: 15px;
+	text-align: center;
+	font-size: 0.8em;
 }
 
-div.main_img_we img {
+div.text_img_right {
+	float: right;
+}
+
+div.text_img img {
 	width: 100%;
 }
 
