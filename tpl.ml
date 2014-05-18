@@ -76,6 +76,37 @@ module Main_menu =
 			<< <div class="main_menu_bottom">$list:divs$</div> >>
 	end
 
+let yandex_metrika =
+	let script = Html5.cdata_script "
+		(function (d, w, c) {
+			 (w[c] = w[c] || []).push(function() {
+				  try {
+						w.yaCounter17405770 = new Ya.Metrika({id:17405770, enableAll: true, webvisor:true});
+				  } catch(e) { }
+			 });
+			 
+			 var n = d.getElementsByTagName(\"script\")[0],
+				  s = d.createElement(\"script\"),
+				  f = function () { n.parentNode.insertBefore(s, n); };
+			 s.type = \"text/javascript\";
+			 s.async = true;
+			 s.src = (d.location.protocol == \"https:\" ? \"https:\" : \"http:\") + \"//mc.yandex.ru/metrika/watch.js\";
+
+			 if (w.opera == \"[object Opera]\") {
+				  d.addEventListener(\"DOMContentLoaded\", f);
+			 } else { f(); }
+		})(document, window, \"yandex_metrika_callbacks\");
+	" in
+	let noscript = Html5.Unsafe.data "<noscript><div><img src=\"//mc.yandex.ru/watch/17405770\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>" in
+	<<
+		<div>
+			<script>
+				$script$
+			</script>
+			$noscript$
+		</div>
+	>>
+
 let tpl_base ?page ~title ~position ?keywords ?description ?left center =
 	let title = Printf.sprintf "%s — Отдых в Абхазии у Минаса и Алины Рогонян" title in
 	let main_menu = Main_menu.tpl1 position in
@@ -159,5 +190,6 @@ let tpl_base ?page ~title ~position ?keywords ?description ?left center =
 				</div>
 			</div>
 			<script src=$Static.url Static.js_main$/>
+			$yandex_metrika$
 		</body>
 	>>
