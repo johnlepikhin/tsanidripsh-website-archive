@@ -6,14 +6,33 @@ module Tag =
 		type tag =
 			| Condition
 			| Sea
-			| Village
-			| TourCanyon
+			| Tsandripsh
+			| Tours
+			| Canyon
+			| Riza
+			| Alps
+			| Afon
+			| Cave
+			| Plant
+			| Animal
+			| We
 
 		let to_title = function
 			| Condition -> "Условия проживания"
 			| Sea -> "Наше море"
-			| Village -> "Цандрипш — курортный поселок"
-			| TourCanyon -> "Цандрипшский каньон"
+			| Tsandripsh -> "Цандрипш — курортный поселок"
+			| Tours -> "Туры по Абхазии"
+			| Canyon -> "Цандрипшский каньон и самшитовый лес"
+			| Riza -> "Озеро Рица"
+			| Alps -> "Альпийские луга"
+			| Afon -> "Новый Афон, монастырь"
+			| Cave -> "Новоафонская пещера"
+			| Plant -> "Растения"
+			| Animal -> "Животные"
+			| We -> "Наша семья"
+
+
+		let all = [ Condition; Sea; Tsandripsh; Tours; Canyon; Riza; Alps; Afon; Cave; Plant; Animal; We ]
 	end
 
 include Tag
