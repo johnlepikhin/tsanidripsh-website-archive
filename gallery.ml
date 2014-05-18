@@ -144,6 +144,40 @@ let canyon06 = make "02_canyon06" "jpg" [Tours; Canyon; Plant; ] <<
 	</div>
 >>
 
+
+
+let canyon07 = make "02_canyon07" "jpg" [Tours; Canyon; ] <<
+	<div>
+		
+	</div>
+>>
+
+let canyon08 = make "02_canyon08" "jpg" [Tours; Canyon; ] <<
+	<div>
+		Стены каньона обрываются на десятки метров вниз.
+	</div>
+>>
+
+let canyon09 = make "02_canyon09" "jpg" [Tours; Canyon; ] <<
+	<div>
+		Природа как будто специально для людей сделала дорожку в стене каньона так, что можно безопасно зайти вглубь.
+	</div>
+>>
+
+let canyon10 = make "02_canyon10" "jpg" [Tours; Canyon; ] <<
+	<div>
+		
+	</div>
+>>
+
+let canyon11 = make "02_canyon11" "jpg" [Tours; Canyon; Plant; ] <<
+	<div>
+		
+	</div>
+>>
+
+
+
 let riza01 = make "02_riza01" "jpg" [Tours; Riza; ] <<
 	<div>
 		В горах спряталось озеро Малая Рица. От большого озера до него два часа пешком.
@@ -298,7 +332,7 @@ let alps12 = make "03_alps12" "jpg" [Tours; Alps; We; ] <<
 	</div>
 >>
 
-let we01 = make "04_we01" "jpg" [Condition; We; ] <<
+let we01 = make "04_we01" "jpg" [ We; ] <<
 	<div>		
 		Наша семья. Минас, Алина и старшая дочь Валя.
 	</div>
@@ -308,6 +342,12 @@ let we02 = make "04_we02" "jpg" [Condition; We; ] <<
 	<div>
 		Не пугайтесь, на этой машине мы возим своих гостей только в самые экстремальные туры (на альпийские луга и в цандрипшский
 		каньон). Не каждый джип туда проедет.
+	</div>
+>>
+
+let we03 = make "04_we03" "jpg" [We; ] <<
+	<div>
+		Алина и наша младшая дочь Катя.
 	</div>
 >>
 
@@ -344,6 +384,18 @@ let afon05 = make "05_afon05" "jpg" [Tours; Afon; ] <<
 let afon06 = make "05_afon06" "jpg" [Tours; Afon; ] <<
 	<div>
 		Озеро близ железнодорожной станции в Новом Афоне. Здесь бывали императоры России.
+	</div>
+>>
+
+let afon07 = make "05_afon07" "jpg" [Tours; Afon; ] <<
+	<div>
+		Лестница к келье Симона Кананита.
+	</div>
+>>
+
+let afon08 = make "05_afon08" "jpg" [Tours; Afon; ] <<
+	<div>
+		Плотина и водопад в Новом Афоне.
 	</div>
 >>
 
@@ -434,6 +486,13 @@ let cave08 = make "05_cave08" "jpg" [Tours; Cave; ] <<
 		Молодые сталагмиты.
 	</div>
 >>
+
+let cave09 = make "05_cave09" "jpg" [Tours; Cave; ] <<
+	<div>
+		Гигантские залы пещеры.
+	</div>
+>>
+
 
 let gagra_park02 = make "05_gagra_park02" "jpg" [Plant; ] <<
 	<div>
@@ -561,7 +620,19 @@ let tsandripsh05 = make "05_tsandripsh05" "jpg" [Tsandripsh; Animal; ] <<
 
 let tsandripsh06 = make "05_tsandripsh06" "jpg" [Tsandripsh; ] <<
 	<div>
-		Вид на наш поселок с холма.
+		Остатки храма в Цандрипше. Ему полторы тысячи лет!
+	</div>
+>>
+
+let tsandripsh07 = make "05_tsandripsh07" "jpg" [Tsandripsh; ] <<
+	<div>
+		Остатки храма в Цандрипше. Ему полторы тысячи лет!
+	</div>
+>>
+
+let tsandripsh08 = make "05_tsandripsh08" "jpg" [Tsandripsh; ] <<
+	<div>
+		Остатки храма в Цандрипше. Ему полторы тысячи лет!
 	</div>
 >>
 

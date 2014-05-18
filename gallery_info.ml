@@ -25,6 +25,11 @@ let () =
 	add "/gallery/02_canyon04.jpg" 3488 2616;
 	add "/gallery/02_canyon05.jpg" 2616 3488;
 	add "/gallery/02_canyon06.jpg" 2616 3488;
+	add "/gallery/02_canyon07.jpg" 3648 2736;
+	add "/gallery/02_canyon08.jpg" 2736 3648;
+	add "/gallery/02_canyon09.jpg" 2736 3648;
+	add "/gallery/02_canyon10.jpg" 2736 3648;
+	add "/gallery/02_canyon11.jpg" 3648 2736;
 	add "/gallery/02_riza01.jpg" 9029 2661;
 	add "/gallery/02_riza02.jpg" 2616 3488;
 	add "/gallery/02_riza03.jpg" 3488 2616;
@@ -54,12 +59,15 @@ let () =
 	add "/gallery/03_alps12.jpg" 2616 3488;
 	add "/gallery/04_we01.jpg" 460 458;
 	add "/gallery/04_we02.jpg" 1200 900;
+	add "/gallery/04_we03.jpg" 3648 2736;
 	add "/gallery/05_afon01.jpg" 768 1024;
 	add "/gallery/05_afon02.jpg" 3648 2736;
 	add "/gallery/05_afon03.jpg" 3648 2736;
 	add "/gallery/05_afon04.jpg" 3648 2736;
 	add "/gallery/05_afon05.jpg" 3648 2736;
 	add "/gallery/05_afon06.jpg" 768 1024;
+	add "/gallery/05_afon07.jpg" 2736 3648;
+	add "/gallery/05_afon08.jpg" 2736 3648;
 	add "/gallery/05_afon_abbey01.jpg" 768 1024;
 	add "/gallery/05_afon_abbey02.jpg" 3648 2736;
 	add "/gallery/05_bambuk01.jpg" 768 1024;
@@ -75,6 +83,7 @@ let () =
 	add "/gallery/05_cave06.jpg" 768 1024;
 	add "/gallery/05_cave07.jpg" 1024 768;
 	add "/gallery/05_cave08.jpg" 768 1024;
+	add "/gallery/05_cave09.jpg" 1200 1600;
 	add "/gallery/05_gagra_park02.jpg" 1024 768;
 	add "/gallery/05_gagra_park03.jpg" 1024 768;
 	add "/gallery/05_gagra_park04.jpg" 1024 768;
@@ -96,6 +105,8 @@ let () =
 	add "/gallery/05_tsandripsh03.jpg" 768 1024;
 	add "/gallery/05_tsandripsh04.jpg" 768 654;
 	add "/gallery/05_tsandripsh05.jpg" 3648 2736;
-	add "/gallery/05_tsandripsh06.jpg" 2529 3432;
+	add "/gallery/05_tsandripsh06.jpg" 3648 2736;
+	add "/gallery/05_tsandripsh07.jpg" 2736 3648;
+	add "/gallery/05_tsandripsh08.jpg" 2736 3648;
 	add "/gallery/05_vinograd01.jpg" 768 1024;
 	()

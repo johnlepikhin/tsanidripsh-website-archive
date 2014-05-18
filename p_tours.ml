@@ -31,7 +31,7 @@ let lst =
 	) Tours.lst
 
 let left =
-	let lst = List.map (fun t -> << <a href=$str:Printf.sprintf "#%i" t.id$>$str:t.title$<br/></a> >> ) lst in
+	let lst = List.map (fun t -> << <a href=$str:Printf.sprintf "#tour%i" t.id$>$str:t.title$<br/></a> >> ) lst in
 	<<
 		<aside class="main">
 			<h1>Оглавление</h1>
@@ -43,11 +43,11 @@ let center =
 	let lst = List.map (fun t ->
 			<<
 				<div>
-					<h1 id=$str:Printf.sprintf "#tour%i" t.id$>$str:t.title$</h1>
+					<h1 id=$str:Printf.sprintf "tour%i" t.id$>$str:t.title$</h1>
 					<b>$str:t.descr$</b>
 					$t.preview$
 					<p>
-						<a href=$Page.url t.page.Page.path$>Читать далее &gt;&gt;&gt;</a>
+						<a href=$Page.url t.page.Page.path$>Читать дальше &gt;&gt;&gt;</a>
 					</p>
 					<div class="float_clean"/>
 				</div>
