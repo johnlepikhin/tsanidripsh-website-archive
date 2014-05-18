@@ -64,7 +64,7 @@ let left = <<
 >>
 
 let center =
-	let img_we = Html5.img ~src:(Purl.to_string Gallery.we1.Gallery.dest_512) ~alt:"" () in
+	let img_we = Html5.img ~src:(Purl.to_string Gallery.we01.Gallery.dest_512) ~alt:"" () in
 	<<
 		<div class="tpl_main_center">
 			<h1>Добро пожаловать наш в гостевой дом!</h1>
@@ -72,7 +72,7 @@ let center =
 				<b>$str:Config.year$!</b> Предлагаем жилье в <b>частном секторе Абхазии</b> без посредников!
 			</p>
 
-			<div class="main_img_we zoomable" onclick=$Gallery_static.gen_jscall_one "Наша семья" Gallery.we1$>
+			<div class="main_img_we zoomable" onclick=$Gallery_static.gen_jscall_one "Наша семья" Gallery.we01$>
 				$img_we$
 			</div>
 

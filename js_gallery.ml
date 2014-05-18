@@ -255,7 +255,6 @@ module GRows =
 			let ratio = data.row.width /. !max_width in
 			let is_first = ref true in
 			let output_one e =
-				Firebug.console##log (Js.string (Printf.sprintf "== %i" e.id));
 				let p = e.img in
 				let div = Dom_html.createDiv Dom_html.document in
 				if !is_first then
@@ -275,8 +274,8 @@ module GRows =
 				is_first := false;
 				lwt () = Lwt_js.sleep 0.05 in
 				let width256 = 256. *. e.info.Gallery_info.ratio in
-				let width = width256 /. ratio in
-				Firebug.console##log (Js.string (Printf.sprintf "width256 = %f, width = %f" width256 width));
+				let photo_ratio = max ratio 1. in
+				let width = width256 /. photo_ratio in
 				img##width <- int_of_float width;
 				img##style##opacity <- Js.def (Js.string "1");
 				Lwt.return ()

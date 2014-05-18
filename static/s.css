@@ -160,7 +160,7 @@ div.main_menu_el {
 	font-weight: bold;
 
 	color: yellow;
-	background-color: rgba(80,80,255,0.3);
+	background-color: rgba(60,60,255,0.7);
 	float: left;
 	padding: 0.7em;
 	margin-left: 0.5em;
@@ -169,7 +169,7 @@ div.main_menu_el {
 }
 
 div.main_menu_el_current {
-	background-color: rgba(80,80,255,0.8);
+	background-color: rgba(60,60,255,1);
 	cursor: default;
 	height: 2em;
 }
