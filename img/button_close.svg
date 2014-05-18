@@ -16,8 +16,8 @@
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="button_close.svg"
    inkscape:export-filename="/home/eugene/programming/tsandripsh/static/button_close.png"
-   inkscape:export-xdpi="2.9300001"
-   inkscape:export-ydpi="2.9300001">
+   inkscape:export-xdpi="2.1958473"
+   inkscape:export-ydpi="2.1958473">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -77,8 +77,8 @@
        ry="45.714287"
        transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
        inkscape:export-filename="/home/eugene/programming/tsandripsh/static/button_close.png"
-       inkscape:export-xdpi="2.1958473"
-       inkscape:export-ydpi="2.1958473" />
+       inkscape:export-xdpi="3.3099999"
+       inkscape:export-ydpi="3.3099999" />
     <rect
        style="fill:#704d00;fill-opacity:1;stroke:none"
        id="rect3008-0"

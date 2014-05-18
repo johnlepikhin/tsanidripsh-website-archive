@@ -5,7 +5,7 @@ let center =
 	let script = Html5.cdata_script "
 		var disqus_shortname = 'tsandripsh';
 		var disqus_identifier = 'testimonials';
-		var disqus_url = 'http://tsandripsh-hotel.ru/testimonials.html';
+		var disqus_url = 'http://tsandripsh-hotel.ru/feedbacks.html';
 		(function() {
 			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 			dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
