@@ -170,8 +170,8 @@ module View =
 			let string_url = Static.url Static.button_close in
 			close_img##src <- Js.string string_url;
 			close_img##className <- Js.string "gallery_view_close";
-			close_img##style##marginLeft <- Js.string ((string_of_int (div_width-25)) ^ "px");
-			close_img##style##marginTop <- Js.string ((string_of_int (-15)) ^ "px");
+			close_img##style##marginLeft <- Js.string ((string_of_int (div_width-20)) ^ "px");
+			close_img##style##marginTop <- Js.string ((string_of_int (-10)) ^ "px");
 			close_img##onclick <- handler (close div) Js._true;
 			Dom.appendChild div close_img;
 

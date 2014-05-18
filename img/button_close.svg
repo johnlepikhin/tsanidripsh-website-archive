@@ -28,13 +28,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="-177.85714"
+     inkscape:cx="997.59102"
      inkscape:cy="199.66531"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1600"
-     inkscape:window-height="876"
+     inkscape:window-width="1062"
+     inkscape:window-height="872"
      inkscape:window-x="0"
      inkscape:window-y="24"
      inkscape:window-maximized="0" />
@@ -46,7 +46,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -63,24 +63,33 @@
        sodipodi:rx="614.28571"
        sodipodi:ry="614.28571"
        d="m 1325.7143,832.36218 a 614.28571,614.28571 0 1 1 -1228.571417,0 614.28571,614.28571 0 1 1 1228.571417,0 z"
-       transform="translate(-64.89177,0)" />
+       transform="translate(-64.89177,0)"
+       inkscape:export-filename="/home/eugene/programming/tsandripsh/static/button_close.png"
+       inkscape:export-xdpi="2.1958473"
+       inkscape:export-ydpi="2.1958473" />
     <rect
-       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1, 3.99999998;stroke-dashoffset:0"
+       style="fill:#704d00;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1, 3.99999995999999980;stroke-dashoffset:0"
        id="rect3008"
        width="1049.8362"
        height="156.58574"
-       x="-656.31641"
-       y="967.44659"
+       x="-656.31647"
+       y="967.44666"
        ry="45.714287"
-       transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" />
+       transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+       inkscape:export-filename="/home/eugene/programming/tsandripsh/static/button_close.png"
+       inkscape:export-xdpi="2.1958473"
+       inkscape:export-ydpi="2.1958473" />
     <rect
-       style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1, 3.99999995999999980;stroke-dashoffset:0"
+       style="fill:#704d00;fill-opacity:1;stroke:none"
        id="rect3008-0"
        width="1049.8362"
        height="156.58574"
        x="-1570.6576"
-       y="53.105518"
+       y="53.105511"
        ry="45.714287"
-       transform="matrix(-0.70710678,-0.70710678,-0.70710678,0.70710678,0,0)" />
+       transform="matrix(-0.70710678,-0.70710678,-0.70710678,0.70710678,0,0)"
+       inkscape:export-filename="/home/eugene/programming/tsandripsh/static/button_close.png"
+       inkscape:export-xdpi="2.1958473"
+       inkscape:export-ydpi="2.1958473" />
   </g>
 </svg>
