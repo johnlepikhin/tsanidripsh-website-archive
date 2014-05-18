@@ -3,37 +3,44 @@ include Gallery_make
 
 
 let condition01 = make "01_condition01" "jpg" [Condition; ] <<
-	<div>		
+	<div>
+Вид из окна нашего дома.
 	</div>
 >>
 
 let condition02 = make "01_condition02" "jpg" [Condition; ] <<
-	<div>		
+	<div>
+Санузел на этаже.
 	</div>
 >>
 
 let condition03 = make "01_condition03" "jpg" [Condition; ] <<
-	<div>		
+	<div>
+
 	</div>
 >>
 
 let condition04 = make "01_condition04" "jpg" [Condition; ] <<
-	<div>		
+	<div>
+На кухне можно самостоятельно приготовить себе обед.
 	</div>
 >>
 
 let condition05 = make "01_condition05" "jpg" [Condition; ] <<
-	<div>		
+	<div>
+
 	</div>
 >>
 
 let condition06 = make "01_condition06" "jpg" [Condition; Sea; Tsandripsh; ] <<
-	<div>		
+	<div>
+Вид на поселок и море с террасы нашего дома.
 	</div>
 >>
 
 let condition07 = make "01_condition07" "jpg" [Condition; ] <<
-	<div>		
+	<div>
+Уютная терраса,увешанная ветками виноградника, где можно замечательно провести обеденное время в жаркий летний день или попить чай в интересной дружеской компании.
 	</div>
 >>
 
