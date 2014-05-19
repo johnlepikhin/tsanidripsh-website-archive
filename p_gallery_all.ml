@@ -17,6 +17,9 @@ let lst =
 let center = <<
 	<div class="gallery_old_main">
 		<h1>Галерея наших фотографий для пользователей устаревших браузеров</h1>
+		<p>
+			Если у вас Chrome, Firefox 10+, Internet Explorer 10+, то гораздо удобнее будет воспользоваться <a href=$Page.url Page.p_gallery$>новой галереей</a>.
+		</p>
 		$list:lst$
 	</div>
 >>

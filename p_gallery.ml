@@ -15,6 +15,9 @@ let left = <<
 
 let center = <<
 	<div class="tpl_main_center">
+		<p>
+			<b>Кликните на интересующую фотографию, чтобы рассмотреть в подробностях. Фотографии в просмотре можно листать стрелочками на клавиатуре ← →</b>
+		</p>
 		<div id=$str:Common_config.div_center_gallery$ class="gallery_main">
 		</div>
 		<small>
