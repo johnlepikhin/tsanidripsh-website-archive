@@ -25,13 +25,13 @@ let lst =
 	List.map (fun (title, descr, preview, text) ->
 		incr i;
 		let file = Printf.sprintf "tour_%i" !i in
-		let doc = gen_tour_doc title descr preview text in
-		let page = Page.anonymous (Path.tours, file) doc in
+		let doc () = gen_tour_doc title descr preview text in
+		let page = Page.anonymous ~contents_name:(Printf.sprintf "Экскурсия: %s" descr) (Path.tours, file) doc title in
 		{ id = !i; title; descr; preview; text; page }
 	) Tours.lst
 
 let left =
-	let lst = List.map (fun t -> << <a href=$str:Printf.sprintf "#tour%i" t.id$>$str:t.title$<br/></a> >> ) lst in
+	let lst = List.map (fun t -> << <p><a href=$str:Printf.sprintf "#tour%i" t.id$>$str:t.title$<br/></a></p> >> ) lst in
 	<<
 		<aside class="main">
 			<h1>Оглавление</h1>
@@ -61,7 +61,11 @@ let center =
 	>>
 
 include Page.Make (struct
+	let title = "Туры и экскурсии"
+
+	let contents_name = Some "Экскурсии по Абхазии и горам"
+
 	let path = Page.p_tours
 
-	let doc = Tpl.tpl_base ~position:Tpl.Position.Tours ~title:"Экскурсии и туры" ~left center
+	let doc () = Tpl.tpl_base ~position:Tpl.Position.Tours ~title ~left center
 end)

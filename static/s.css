@@ -75,14 +75,17 @@ div.tpl_main_content {
 
 	width: 100%;
 	min-width: 800px;
+/*
 	background-color: rgba(255,255,255,0.5);
+*/
+	background-color: #d0d0d0;;
 	box-shadow: 0 0 20px rgba(0,0,0,0.4);
 	border-bottom-left-radius: 1em 1em;
 	border-bottom-right-radius: 1em 1em;
 }
 
 aside.tpl_main_left {
-	background-color: rgba(255,255,255,0.1);
+	background-color: rgba(255,255,255,0.5);
 	width: 20em;
 	padding: 1em;
 	margin: 1em;
@@ -116,7 +119,9 @@ h2 {
 div.tpl_main_center {
 	padding: 1em;
 	margin: 1em;
+/*
 	overflow: hidden;
+*/
 
 	border-radius: 1em 1em;
 }
@@ -318,7 +323,11 @@ div.gallery_view_description_main {
 	margin-right: 5px;
 	border-top-right-radius: 5px 5px;
 	border-bottom-right-radius: 5px 5px;
+
+	background-color: #d0d0d0;;
+/*
 	background-color: rgba(255,255,255,0.3);
+*/
 	position: absolute;
 }
 
@@ -368,4 +377,18 @@ div.text_img img {
 
 div.zoomable img {
 	cursor: pointer;
+}
+
+div.main_info {
+	margin: 15px;
+	width: 43%;
+	float: left;
+}
+
+div.coltitle_img {
+	text-align: center;
+}
+
+div.coltitle_img img {
+	width: 192px;
 }

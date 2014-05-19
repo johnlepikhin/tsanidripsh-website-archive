@@ -18,8 +18,8 @@ let tbl_living = tbl_price ~head:["номера"; "январь-май"; "июн
 ]
 
 let tbl_transfer = tbl_price [
-	<< <th>Из аэропорта Адлера или обратно, с человека</th> >> :: tbl_row [1000];
-	<< <th>От ж/д вокзала Адлера или обратно, с человека</th> >> :: tbl_row [800];
+	<< <th>Из аэропорта Адлера или обратно, за машину</th> >> :: tbl_row [1000];
+	<< <th>От ж/д вокзала Адлера или обратно, за мащину</th> >> :: tbl_row [800];
 	<< <th>От границы или обратно</th> >> :: tbl_row [0];
 	<< <th>От ж/д вокзала Цандрипша или обратно</th> >> :: tbl_row [0];
 ]
@@ -135,7 +135,11 @@ let center =
 	>>
 
 include Page.Make (struct
+	let title = "Цены и услуги"
+
+	let contents_name = Some (Config.year ^ ". Полный прайслист.")
+
 	let path = Page.p_prices
 
-	let doc = Tpl.tpl_base ~position:Tpl.Position.Prices ~title:"Цены и услуги" ~left center
+	let doc () = Tpl.tpl_base ~position:Tpl.Position.Prices ~title ~left center
 end)

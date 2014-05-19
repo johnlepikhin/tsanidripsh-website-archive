@@ -108,7 +108,7 @@ let yandex_metrika =
 	>>
 
 let tpl_base ?page ~title ~position ?keywords ?description ?left center =
-	let title = Printf.sprintf "%s — Отдых в Абхазии у Минаса и Алины Рогонян" title in
+	let title = Printf.sprintf "%s — Отдых в Абхазии. %s" title Config.year in
 	let main_menu = Main_menu.tpl1 position in
 	let main_menu_bottom = Main_menu.tpl2 position in
 	let phones = List.map (fun (phone, _) -> << <div>$str:phone$</div> >>) Config.phones in
@@ -181,9 +181,11 @@ let tpl_base ?page ~title ~position ?keywords ?description ?left center =
 					<div class="float_clean"/>
 					$left$
 					$center$
+					<!--
 					<div class="main_menu_bottom_container">
 						$main_menu_bottom$
 					</div>
+					-->
 				</div>
 				<div class="tpl_main_copyright">
 					© 2003-$str:let open Unix in string_of_int ((localtime(time ())).tm_year + 1900)$ Минас Рогонян

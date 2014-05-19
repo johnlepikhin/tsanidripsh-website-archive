@@ -22,7 +22,11 @@ let center = <<
 >>
 
 include Page.Make (struct
+	let title = "Все фотографии одним списком"
+
+	let contents_name = None
+
 	let path = Page.p_gallery_all
 
-	let doc = Tpl.tpl_base ~page:"gallery_all" ~position:Tpl.Position.Gallery ~title:"Все фотографии" center
+	let doc () = Tpl.tpl_base ~page:"gallery_all" ~position:Tpl.Position.Gallery ~title center
 end)

@@ -13,3 +13,12 @@ let text_img ?right ?(text="") tag img =
 		</div>
 	>>
 
+let coltitle_img tag img =
+	let t = Html5.img ~src:(Purl.to_string img.Gallery.dest_256) ~alt:"" () in
+	let js = Gallery_static.gen_jscall_of_tag ~start:img tag in
+	let c = "coltitle_img zoomable" in
+	<<
+		<div class=$str:c$ onclick=$js$>
+			$t$
+		</div>
+	>>

@@ -2,16 +2,22 @@ include Page_common
 
 type t = {
 	path : Path.t * string;
-	doc : Html5.M.doc;
+	doc : unit -> Html5.M.doc;
+	title : string;
+	contents_name : string option;
 }
 
 let pages = ref []
 
 module type PAGE =
 	sig
+		val title : string
+
+		val contents_name : string option
+
 		val path : Path.t * string
 
-		val doc : Html5.M.doc
+		val doc : unit -> Html5.M.doc
 	end
 
 let register p =
@@ -22,8 +28,8 @@ let register p =
 		| Not_found ->
 			pages := p :: !pages
 
-let anonymous path doc =
-	let p = { path; doc } in
+let anonymous ?contents_name path doc title =
+	let p = { path; doc; title; contents_name } in
 	register p;
 	p
 
@@ -31,7 +37,7 @@ module Make (P : PAGE) =
 	struct
 		include P
 
-		let page = { path; doc }
+		let page = { path; doc; title = P.title; contents_name }
 
 		let url = url path
 

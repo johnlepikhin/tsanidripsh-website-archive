@@ -76,7 +76,11 @@ let center =
 	>>
 
 include Page.Make (struct
+	let title = "Полезная информация"
+
+	let contents_name = Some "Информация, которая вам пригодится"
+
 	let path = Page.p_information
 
-	let doc = Tpl.tpl_base ~position:Tpl.Position.Information ~title:"Полезная информация" ~left center
+	let doc () = Tpl.tpl_base ~position:Tpl.Position.Information ~title ~left center
 end)

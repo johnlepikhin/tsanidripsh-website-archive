@@ -1,6 +1,7 @@
 
 module Html5 = Html5.M
 
+(*
 let left = <<
 	<aside class="main">
 		<h1>Коротко об услугах</h1>
@@ -62,6 +63,23 @@ let left = <<
 		<a href=$Page_common.url Page.p_prices$>Все цены</a>
 	</aside>
 >>
+*)
+
+let left () =
+	let rec loop = function
+		| [] -> []
+		| p :: tl ->
+			match p.Page.contents_name with
+				| Some name -> << <p><a href=$Page.url p.Page.path$>$str:name$</a></p> >> :: loop tl
+				| None -> loop tl
+	in
+	<<
+		<aside class="main">
+			<h1>Содержание</h1>
+			$list:loop !Page.pages$
+		</aside>
+	>>
+	
 
 let center =
 	<<
@@ -71,7 +89,7 @@ let center =
 				<b>$str:Config.year$!</b> Предлагаем жилье в <b>частном секторе Абхазии</b> без посредников!
 			</p>
 
-			$Tpl_img.text_img Gallery.We Gallery.we01$
+			$Tpl_img.text_img ~right:true Gallery.We Gallery.we01$
 
 			<p>
 				Мы рады приветствовать вас на сайте гостевого дома семьи Минаса и Алины Рогонян! Наш дом расположен
@@ -94,11 +112,37 @@ let center =
 				<a href=$str:P_contacts.url$>Звоните</a>, мы постараемся вам помочь. Обратите внимание, что вопросы
 				по бронированию, трансферу и прочим организационным моментам лучше всего решать по телефону.
 			</p>
+
+			<div class="float_clean"/>
+
+			<div class="main_info">
+				<h1>Проживание</h1>
+				$Tpl_img.coltitle_img Gallery.Condition Gallery.condition08$
+				<p>
+					Мы предлагаем проживание в номерах <a href=$Page.url Page.p_prices$>"эконом" и "стандарт" класса</a>. В каждом номере
+					есть кровати, шкафы для одежды, тумбочка для мелких вещей, вентилятор. В каждую комнату
+					отдельный вход. Есть общая веранда и кухня, где приятно посидеть компанией вечером.
+				</p>
+			</div>
+			<div class="main_info">
+				<h1>Экскурсии</h1>
+				$Tpl_img.coltitle_img Gallery.Tours Gallery.canyon07$
+				<p>
+					Абхазия — страна огромных гор, чистых ручьев и древней истории. Прикоснитесь к прекрасному вместе с нами!
+				</p>
+				<p>
+					<a href=$Page.url Page.p_tours$>Подробнее</a>
+				</p>
+			</div>
 		</div>
 	>>
 
 include Page.Make (struct
+	let contents_name = None
+
+	let title = "Без посредников в частном секторе"
+
 	let path = Page.p_main
 
-	let doc = Tpl.tpl_base ~position:Tpl.Position.Main ~title:"Без посредников в частном секторе" ~left center
+	let doc () = Tpl.tpl_base ~position:Tpl.Position.Main ~title ~left:(left ()) center
 end)
