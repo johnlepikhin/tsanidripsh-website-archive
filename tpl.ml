@@ -195,3 +195,13 @@ let tpl_base ?page ~title ~position ?keywords ?description ?left center =
 			$yandex_metrika$
 		</body>
 	>>
+
+let tpl_redirect path =
+	let meta = Html5.Unsafe.data (Printf.sprintf "<meta http-equiv=\"refresh\" content=\"0; url=http://%s%s\" />" Config.site_domain (Page.url path)) in
+	<<
+		<html>
+			<head>
+				$meta$
+			</head>
+		</html>
+	>>

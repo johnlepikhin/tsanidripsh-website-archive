@@ -20,3 +20,5 @@ let p_feedbacks = Purl.make Path.root "feedbacks"
 let p_information = Purl.make Path.root "information"
 
 let p_gallery_all = Purl.make Path.root "gallery_all"
+
+let p_old_testimonials = Purl.make Path.root "testimonials"

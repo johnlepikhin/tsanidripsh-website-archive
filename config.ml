@@ -17,3 +17,5 @@ let phones = [
 ]
 
 let mailto = "minas777abkhazia@mail.ru"
+
+let site_domain = "tsandripsh-hotel.ru"
