@@ -392,3 +392,11 @@ div.coltitle_img {
 div.coltitle_img img {
 	width: 192px;
 }
+
+div.text_video {
+	text-align: center;
+}
+
+h2.center {
+	text-align: center;
+}

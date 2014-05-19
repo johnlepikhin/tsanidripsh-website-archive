@@ -38,3 +38,5 @@ let js_main = cmake Path.root "js_main.js"
 let button_close = cmake Path.root "button_close.png"
 
 let favicon = cmake Path.root "favicon.ico"
+
+let robots = cmake Path.root "robots.txt"

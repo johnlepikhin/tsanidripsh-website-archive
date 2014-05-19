@@ -1,14 +1,7 @@
 
 module Html5 = Html5.M
 
-let tbl_row = List.map (fun p ->
-	let s =
-		if p = 0 then
-			"бесплатно"
-		else
-			Printf.sprintf "%i руб." p
-	in
-	<< <td>$str:s$</td> >> )
+let tbl_row = List.map (fun p -> << <td>$str:Tpl_prices.to_string p$</td> >> )
 
 let tbl_price = Tbl.simple ~className:"prices"
 
@@ -18,19 +11,19 @@ let tbl_living = tbl_price ~head:["номера"; "январь-май"; "июн
 ]
 
 let tbl_transfer = tbl_price [
-	<< <th>Из аэропорта Адлера или обратно, за машину</th> >> :: tbl_row [1000];
-	<< <th>От ж/д вокзала Адлера или обратно, за машину</th> >> :: tbl_row [800];
-	<< <th>От границы или обратно</th> >> :: tbl_row [0];
-	<< <th>От ж/д вокзала Цандрипша или обратно</th> >> :: tbl_row [0];
+	<< <th>Из аэропорта Адлера или обратно, за машину</th> >> :: tbl_row [Prices.transfer_aeroport];
+	<< <th>От ж/д вокзала Адлера или обратно, за машину</th> >> :: tbl_row [Prices.transfer_railroad];
+	<< <th>От границы или обратно</th> >> :: tbl_row [Prices.transfer_inside];
+	<< <th>От ж/д вокзала Цандрипша или обратно</th> >> :: tbl_row [Prices.transfer_inside];
 ]
 
 let tbl_tours = tbl_price [
-	<< <th>Озеро рица <br/> (без учета стоимости входного билета)</th> >> :: tbl_row [600];
-	<< <th>Новоафонская пещера <br/> (без учета стоимости входного билета)</th> >> :: tbl_row [600];
-	<< <th>Сухумский ботанический сад + обезьяний питомник <br/> (без учета стоимости входного билета)</th> >> :: tbl_row [1000];
-	<< <th>Цандрипшский каньон</th> >> :: tbl_row [600];
-	<< <th>Альпийские луга Кавказа</th> >> :: tbl_row [600];
-	<< <th>Альпийские луга Кавказа с пикником</th> >> :: tbl_row [1000];
+	<< <th>Озеро рица <br/> (без учета стоимости входного билета)</th> >> :: tbl_row [Prices.tour_riza];
+	<< <th>Новоафонская пещера <br/> (без учета стоимости входного билета)</th> >> :: tbl_row [Prices.tour_cave];
+	<< <th>Сухумский ботанический сад + обезьяний питомник <br/> (без учета стоимости входного билета)</th> >> :: tbl_row [Prices.tour_sukhum];
+	<< <th>Цандрипшский каньон</th> >> :: tbl_row [Prices.tour_canyon];
+	<< <th>Альпийские луга Кавказа</th> >> :: tbl_row [Prices.tour_alps];
+	<< <th>Альпийские луга Кавказа с пикником</th> >> :: tbl_row [Prices.tour_alps_bbq];
 ]
 
 let tbl_food = tbl_price [

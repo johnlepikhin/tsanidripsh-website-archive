@@ -31,7 +31,7 @@ let center =
 			if (isValidCallTime ()) {
 				e.innerHTML = \"Прямо сейчас хорошее время для звонка!\";
 			} else {
-				e.innerHTML = \"К сожалению, прямо сейчас у нас ночь, позвоните позже.\";
+				e.innerHTML = \"К сожалению, прямо сейчас у нас ночь, позвоните позже. Нажмите Ctrl-D, чтобы не забыть.\";
 			}
 		}
 
@@ -39,7 +39,7 @@ let center =
 			window.setTimeout ('fillCallTime(document.getElementById(id=\"validCallTime\")); checkCallTimePeriodically();', 60000);
 		}
 	" in
-	let phones = List.map (fun (phone, name) -> << <div class="contacts_phone">$str:phone$ ($str:name$)</div> >>) Config.phones in
+	let phones = List.map (fun (phone, name, op) -> << <div class="contacts_phone">$str:name$: $str:phone$ <small>(оператор $str:op$, Россия)</small></div> >>) Config.phones in
 	<<
 		<div class="tpl_main_center">
 			<script>$script$</script>
