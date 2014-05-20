@@ -90,7 +90,7 @@ let center =
 				<b>$str:Config.year$!</b> Предлагаем <b>жилье в частном секторе Абхазии без посредников</b>!
 			</p>
 
-			$Tpl_img.text_img ~right:true Gallery.We Gallery.we01$
+			$Tpl_img.text_img ~right:true Gallery.We Gallery.we04$
 
 			<p>
 				Мы рады приветствовать вас на сайте гостевого дома семьи Минаса и Алины Рогонян! Наш дом расположен
@@ -155,6 +155,9 @@ let center =
 				</li>
 				<li>В Цандрипше есть вся необходимая для туристов инфраструктура. Магазины, сувенирные лавки, экскурсионные бюро, аптеки, много кафе на любой вкус, клубы.</li>
 			</ul>
+
+			<div class="float_clean"/>
+
 			<div class="text_video">
 				$video$
 			</div>
@@ -171,7 +174,7 @@ let center =
 include Page.Make (struct
 	let contents_name = None
 
-	let title = "Жилье без посредников в частном секторе"
+	let title = "Жилье без посредников, частный сектор"
 
 	let path = Page.p_main
 

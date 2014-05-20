@@ -176,6 +176,12 @@ let we03 = make "04_we03" "jpg" [We; ] <<
 	</div>
 >>
 
+let we04 = make "04_we04" "jpg" [We; ] <<
+	<div>
+		Хозяева дома. Сообща мы обеспечиваем комфорт нашим гостям.
+	</div>
+>>
+
 
 let sea01 = make "02_sea01" "jpg" [Sea; ] <<
 	<div>

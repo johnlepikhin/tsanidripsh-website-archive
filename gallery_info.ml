@@ -60,6 +60,7 @@ let () =
 	add "/gallery/04_we01.jpg" 460 458;
 	add "/gallery/04_we02.jpg" 1200 900;
 	add "/gallery/04_we03.jpg" 3648 2736;
+	add "/gallery/04_we04.jpg" 1280 853;
 	add "/gallery/05_afon01.jpg" 768 1024;
 	add "/gallery/05_afon02.jpg" 3648 2736;
 	add "/gallery/05_afon03.jpg" 3648 2736;
