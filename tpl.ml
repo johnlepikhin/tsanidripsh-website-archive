@@ -79,6 +79,7 @@ module Main_menu =
 			<< <div class="main_menu_bottom">$list:divs$</div> >>
 	end
 
+(*
 let yandex_metrika =
 	let script = Html5.cdata_script "
 		(function (d, w, c) {
@@ -106,6 +107,48 @@ let yandex_metrika =
 			<script>
 				$script$
 			</script>
+			$noscript$
+		</div>
+	>>
+*)
+
+let yandex_metrika =
+	let script = Html5.cdata_script "
+		function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter17405770 = new Ya.Metrika({id:17405770,
+					webvisor:true,
+					clickmap:true,
+					trackLinks:true,
+					accurateTrackBounce:true});
+				} catch(e) { }
+			});
+
+			var n = d.getElementsByTagName(\"script\")[0],
+				s = d.createElement(\"script\"),
+				f = function () { n.parentNode.insertBefore(s, n); };
+				s.type = \"text/javascript\";
+				s.async = true;
+				s.src = (d.location.protocol == \"https:\" ? \"https:\" : \"http:\") + \"//mc.yandex.ru/metrika/watch.js\";
+
+			if (w.opera == \"[object Opera]\") {
+				d.addEventListener(\"DOMContentLoaded\", f, false);
+			} else { f(); }
+		})(document, window, \"yandex_metrika_callbacks\");
+	" in
+	let noscript = Html5.Unsafe.data "
+		<noscript><div><img src=\"//mc.yandex.ru/watch/17405770\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>
+		<a href=\"https://metrika.yandex.ru/stat/?id=17405770&amp;from=informer\"
+			target=\"_blank\" rel=\"nofollow\">
+				<img src=\"//bs.yandex.ru/informer/17405770/1_1_BCBCBCFF_9C9C9CFF_0_pageviews\"
+					style=\"width:80px; height:15px; border:0;\" alt=\"Яндекс.Метрика\" title=\"Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)\"
+					onclick=\"try{Ya.Metrika.informer({i:this,id:17405770,lang:'ru'});return false}catch(e){}\"/>
+		</a>
+	" in
+	<<
+		<div>
+			<script>$script$</script>
 			$noscript$
 		</div>
 	>>
@@ -192,10 +235,10 @@ let tpl_base ?page ~title ~position ?keywords ?description ?left center =
 				</div>
 				<div class="tpl_main_copyright">
 					© 2003-$str:let open Unix in string_of_int ((localtime(time ())).tm_year + 1900)$ Минас Рогонян
+					$yandex_metrika$
 				</div>
 			</div>
 			<script src=$Static.url Static.js_main$/>
-			$yandex_metrika$
 		</body>
 	>>
 
