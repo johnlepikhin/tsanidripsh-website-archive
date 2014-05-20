@@ -8,7 +8,7 @@ let () =
 	add "/gallery/01_condition05.jpg" 1200 900;
 	add "/gallery/01_condition06.jpg" 1200 900;
 	add "/gallery/01_condition07.jpg" 1200 900;
-	add "/gallery/01_condition08.jpg" 1200 900;
+	add "/gallery/01_condition08.jpg" 1135 860;
 	add "/gallery/01_condition09.jpg" 1200 900;
 	add "/gallery/01_condition10.jpg" 900 1200;
 	add "/gallery/01_condition11.jpg" 900 1200;
