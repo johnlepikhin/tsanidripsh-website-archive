@@ -109,6 +109,139 @@ let condition18 = make "01_condition18" "jpg" [Condition; ] <<
 	</div>
 >>
 
+let tsandripsh01 = make "05_tsandripsh01" "jpg" [Tsandripsh; ] <<
+	<div>
+		Окраина Цандипша.
+	</div>
+>>
+
+let tsandripsh02 = make "05_tsandripsh02" "jpg" [Tsandripsh; Plant; ] <<
+	<div>
+		В Цандрипше даже пальмы подстригают!
+	</div>
+>>
+
+let tsandripsh03 = make "05_tsandripsh03" "jpg" [Tsandripsh; ] <<
+	<div>
+		Сувенирный ряд на цетральной улице поселка.
+	</div>
+>>
+
+let tsandripsh04 = make "05_tsandripsh04" "jpg" [Tsandripsh; ] <<
+	<div>
+		На улицах Цандрипша.
+	</div>
+>>
+
+let tsandripsh05 = make "05_tsandripsh05" "jpg" [Tsandripsh; Animal; ] <<
+	<div>
+		Иногда в саду можно встретить ежика! Дети очень любят с ними играть.
+	</div>
+>>
+
+let tsandripsh06 = make "05_tsandripsh06" "jpg" [Tsandripsh; ] <<
+	<div>
+		Остатки храма в Цандрипше. Ему полторы тысячи лет!
+	</div>
+>>
+
+let tsandripsh07 = make "05_tsandripsh07" "jpg" [Tsandripsh; ] <<
+	<div>
+		Остатки храма в Цандрипше. Ему полторы тысячи лет!
+	</div>
+>>
+
+let tsandripsh08 = make "05_tsandripsh08" "jpg" [Tsandripsh; ] <<
+	<div>
+		Остатки храма в Цандрипше. Ему полторы тысячи лет!
+	</div>
+>>
+
+let we01 = make "04_we01" "jpg" [ We; ] <<
+	<div>		
+		Наша семья. Минас, Алина и старшая дочь Валя.
+	</div>
+>>
+
+let we02 = make "04_we02" "jpg" [Condition; We; Canyon; Alps; ] <<
+	<div>
+		Не пугайтесь, на этой машине мы возим своих гостей только в самые экстремальные туры (на альпийские луга и в цандрипшский
+		каньон). Не каждый джип туда проедет.
+	</div>
+>>
+
+let we03 = make "04_we03" "jpg" [We; ] <<
+	<div>
+		Алина и наша младшая дочь Катя.
+	</div>
+>>
+
+
+let sea01 = make "02_sea01" "jpg" [Sea; ] <<
+	<div>
+	</div>
+>>
+
+let sea02 = make "02_sea02" "jpg" [Sea; ] <<
+	<div>		
+	</div>
+>>
+
+let sea03 = make "02_sea03" "jpg" [Sea; Animal; ] <<
+	<div>
+		Крабик. Они помогают сделать воду прозрачной.
+	</div>
+>>
+
+let sea04 = make "02_sea04" "jpg" [Sea; Animal;] <<
+	<div>
+		Спрятался.
+	</div>
+>>
+
+let sea05 = make "02_sea05" "jpg" [Sea; ] <<
+	<div>
+		Цандрипшский пляж.
+	</div>
+>>
+
+let sea06 = make "02_sea06" "jpg" [Sea; ] <<
+	<div>
+	</div>
+>>
+
+let sea07 = make "02_sea07" "jpg" [Sea; ] <<
+	<div>
+		
+	</div>
+>>
+
+let sea08 = make "02_sea08" "jpg" [Sea; ] <<
+	<div>
+		Пляж "Белые скалы" недалеко от нашего дома. Белые, пологие, отполированные морем белые камни уходят в море.
+	</div>
+>>
+
+let sea09 = make "02_sea09" "jpg" [Sea; ] <<
+	<div>
+		Пляж "Белые скалы" недалеко от нашего дома. Белые, пологие, отполированные морем белые камни уходят в море.
+	</div>
+>>
+
+let sea10 = make "02_sea10" "jpg" [Sea; ] <<
+	<div>
+	</div>
+>>
+
+let sea11 = make "02_sea11" "jpg" [Sea; ] <<
+	<div>
+		Пляж в Цандрипше.
+	</div>
+>>
+
+
+
+
 let canyon01 = make "02_canyon01" "jpg" [Tours; Canyon; ] <<
 	<div>
 		Панорама входа в каньон. В полный размер удобно посмотреть <a target="_blank" href="https://plus.google.com/photos/+EvgeniiLepikhin/albums/5631721874126426849/5631723259126397714?pid=5631723259126397714&oid=101137140208083832380">здесь.</a>
@@ -202,69 +335,6 @@ let riza04 = make "02_riza04" "jpg" [Tours; Riza; ] <<
 		в одном из самых чистых районов Кавказа.
 	</div>
 >>
-
-let sea01 = make "02_sea01" "jpg" [Sea; ] <<
-	<div>
-	</div>
->>
-
-let sea02 = make "02_sea02" "jpg" [Sea; ] <<
-	<div>		
-	</div>
->>
-
-let sea03 = make "02_sea03" "jpg" [Sea; Animal; ] <<
-	<div>
-		Крабик. Они помогают сделать воду прозрачной.
-	</div>
->>
-
-let sea04 = make "02_sea04" "jpg" [Sea; Animal;] <<
-	<div>
-		Спрятался.
-	</div>
->>
-
-let sea05 = make "02_sea05" "jpg" [Sea; ] <<
-	<div>
-		Цандрипшский пляж.
-	</div>
->>
-
-let sea06 = make "02_sea06" "jpg" [Sea; ] <<
-	<div>
-	</div>
->>
-
-let sea07 = make "02_sea07" "jpg" [Sea; ] <<
-	<div>
-		
-	</div>
->>
-
-let sea08 = make "02_sea08" "jpg" [Sea; ] <<
-	<div>
-		Пляж "Белые скалы" недалеко от нашего дома. Белые, пологие, отполированные морем белые камни уходят в море.
-	</div>
->>
-
-let sea09 = make "02_sea09" "jpg" [Sea; ] <<
-	<div>
-		Пляж "Белые скалы" недалеко от нашего дома. Белые, пологие, отполированные морем белые камни уходят в море.
-	</div>
->>
-
-let sea10 = make "02_sea10" "jpg" [Sea; ] <<
-	<div>
-	</div>
->>
-
-let sea11 = make "02_sea11" "jpg" [Sea; ] <<
-	<div>
-		Пляж в Цандрипше.
-	</div>
->>
-
 let alps01 = make "03_alps01" "jpg" [Tours; Alps; Animal;] <<
 	<div>
 	</div>
@@ -329,25 +399,6 @@ let alps11 = make "03_alps11" "jpg" [Tours; Alps; ] <<
 let alps12 = make "03_alps12" "jpg" [Tours; Alps; We; ] <<
 	<div>
 		Наша дочь Валя тоже иногда принимает участие в поездках на альпийские луга.
-	</div>
->>
-
-let we01 = make "04_we01" "jpg" [ We; ] <<
-	<div>		
-		Наша семья. Минас, Алина и старшая дочь Валя.
-	</div>
->>
-
-let we02 = make "04_we02" "jpg" [Condition; We; Canyon; Alps; ] <<
-	<div>
-		Не пугайтесь, на этой машине мы возим своих гостей только в самые экстремальные туры (на альпийские луга и в цандрипшский
-		каньон). Не каждый джип туда проедет.
-	</div>
->>
-
-let we03 = make "04_we03" "jpg" [We; ] <<
-	<div>
-		Алина и наша младшая дочь Катя.
 	</div>
 >>
 
@@ -585,54 +636,6 @@ let granat_flowers = make "05_granat_flowers" "jpg" [Plant; ] <<
 let mimoza = make "05_mimoza" "jpg" [Plant; ] <<
 	<div>
 		Листья мимозы. Дерево в нашем саду цветет с конца января по март.
-	</div>
->>
-
-let tsandripsh01 = make "05_tsandripsh01" "jpg" [Tsandripsh; ] <<
-	<div>
-		Окраина Цандипша.
-	</div>
->>
-
-let tsandripsh02 = make "05_tsandripsh02" "jpg" [Tsandripsh; Plant; ] <<
-	<div>
-		В Цандрипше даже пальмы подстригают!
-	</div>
->>
-
-let tsandripsh03 = make "05_tsandripsh03" "jpg" [Tsandripsh; ] <<
-	<div>
-		Сувенирный ряд на цетральной улице поселка.
-	</div>
->>
-
-let tsandripsh04 = make "05_tsandripsh04" "jpg" [Tsandripsh; ] <<
-	<div>
-		На улицах Цандрипша.
-	</div>
->>
-
-let tsandripsh05 = make "05_tsandripsh05" "jpg" [Tsandripsh; Animal; ] <<
-	<div>
-		Иногда в саду можно встретить ежика! Дети очень любят с ними играть.
-	</div>
->>
-
-let tsandripsh06 = make "05_tsandripsh06" "jpg" [Tsandripsh; ] <<
-	<div>
-		Остатки храма в Цандрипше. Ему полторы тысячи лет!
-	</div>
->>
-
-let tsandripsh07 = make "05_tsandripsh07" "jpg" [Tsandripsh; ] <<
-	<div>
-		Остатки храма в Цандрипше. Ему полторы тысячи лет!
-	</div>
->>
-
-let tsandripsh08 = make "05_tsandripsh08" "jpg" [Tsandripsh; ] <<
-	<div>
-		Остатки храма в Цандрипше. Ему полторы тысячи лет!
 	</div>
 >>
 

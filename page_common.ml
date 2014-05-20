@@ -22,3 +22,10 @@ let p_information = Purl.make Path.root "information"
 let p_gallery_all = Purl.make Path.root "gallery_all"
 
 let p_old_testimonials = Purl.make Path.root "testimonials"
+
+let p_tours_afon = Purl.make Path.tours "tour_noviy_afon"
+let p_tours_canyon = Purl.make Path.tours "tour_tsandripsh_canyon"
+let p_tours_riza = Purl.make Path.tours "tour_ozero_riza"
+let p_tours_alps = Purl.make Path.tours "tour_alps"
+
+let p_old_tours_afon = Purl.make Path.tours "afon"

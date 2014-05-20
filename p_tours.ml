@@ -2,7 +2,7 @@
 module Html5 = Html5.M
 
 type t = {
-	id : int;
+	str_id : string;
 	title : string;
 	descr : string;
 	preview : Html5_types.div_content Html5.elt;
@@ -20,18 +20,14 @@ let gen_tour_doc title descr preview text =
 		</div>
 	>>
 
-let lst =
-	let i = ref 0 in
-	List.map (fun (title, descr, preview, text) ->
-		incr i;
-		let file = Printf.sprintf "tour_%i" !i in
-		let doc () = gen_tour_doc title descr preview text in
-		let page = Page.anonymous ~contents_name:(Printf.sprintf "Экскурсия: %s" descr) (Path.tours, file) doc title in
-		{ id = !i; title; descr; preview; text; page }
-	) Tours.lst
+let lst = List.map (fun (url, str_id, title, descr, preview, text) ->
+	let doc () = gen_tour_doc title descr preview text in
+	let page = Page.anonymous ~contents_name:(Printf.sprintf "Экскурсия: %s" descr) url doc title in
+	{ str_id; title; descr; preview; text; page }
+) Tours.lst
 
 let left =
-	let lst = List.map (fun t -> << <p><a href=$str:Printf.sprintf "#tour%i" t.id$>$str:t.title$<br/></a></p> >> ) lst in
+	let lst = List.map (fun t -> << <p><a href=$str:Printf.sprintf "#tour_%s" t.str_id$>$str:t.title$<br/></a></p> >> ) lst in
 	<<
 		<aside class="main">
 			<h1>Оглавление</h1>
@@ -43,7 +39,7 @@ let center =
 	let lst = List.map (fun t ->
 			<<
 				<div>
-					<h1 id=$str:Printf.sprintf "tour%i" t.id$>$str:t.title$</h1>
+					<h1 id=$str:Printf.sprintf "tour_%s" t.str_id$>$str:t.title$</h1>
 					<b>$str:t.descr$</b>
 					$t.preview$
 					<p>

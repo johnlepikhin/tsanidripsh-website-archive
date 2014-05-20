@@ -9,7 +9,7 @@ let year = "Лето 2014"
 
 let keywords = Printf.sprintf "Абхазия, Цандрипш, частный сектор, отдых, жилье, %s" year
 
-let description = Printf.sprintf "Отдых в Абхазии, поселок Цандрипш, жилье у Минаса и Алины Рогонян. %s." year
+let description = Printf.sprintf "Поселок Цандрипш, частный сектор. Отдых и жилье в Абхазии. %s." year
 
 let phones = [
 	"+7(928)447-56-81", "Минас", "Мегафон";
