@@ -255,6 +255,8 @@ div.gallery_preview_element {
 	display: inline-block;
 	float: left;
 	cursor: pointer;
+	overflow: hidden;
+	margin-bottom: 2px;
 }
 
 div.gallery_preview_element_first {

@@ -254,6 +254,7 @@ module GRows =
 		let output_row data =
 			let ratio = data.row.width /. !max_width in
 			let is_first = ref true in
+			let height = ref 0. in
 			let output_one e =
 				let p = e.img in
 				let div = Dom_html.createDiv Dom_html.document in
@@ -261,6 +262,16 @@ module GRows =
 					div##className <- Js.string "gallery_preview_element gallery_preview_element_first"
 				else	
 					div##className <- Js.string "gallery_preview_element";
+
+				let width256 = 256. *. e.info.Gallery_info.ratio in
+				let photo_ratio = max ratio 1. in
+				let width = width256 /. photo_ratio in
+
+				if !height = 0. then
+					height := (256. /. photo_ratio) -. 4.;
+
+				div##style##width <- Js.string (Printf.sprintf "%.0fpx" width);
+				div##style##height <- Js.string (Printf.sprintf "%.0fpx" !height);
 
 				let img = Dom_html.createImg Dom_html.document in
 				img##onclick <- handler (click_processor e.id) Js._true;
@@ -273,10 +284,7 @@ module GRows =
 				Dom.appendChild !root div;
 				is_first := false;
 				lwt () = Lwt_js.sleep 0.05 in
-				let width256 = 256. *. e.info.Gallery_info.ratio in
-				let photo_ratio = max ratio 1. in
-				let width = width256 /. photo_ratio in
-				img##width <- int_of_float width;
+				img##width <- (int_of_float width) - 2;
 				img##style##opacity <- Js.def (Js.string "1");
 				Lwt.return ()
 
