@@ -19,3 +19,5 @@ let phones = [
 let mailto = "minas777abkhazia@mail.ru"
 
 let site_domain = "tsandripsh-hotel.ru"
+
+let copyright = "Evgenii Lepikhin // johnlepikhin@gmail.com"
