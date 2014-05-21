@@ -1,10 +1,10 @@
 #!/bin/sh
 
-f=gallery_info.ml
+f=/home/eugene/programming/tsandripsh/_build/gallery_info.ml
 
 echo "include Gallery_info_make" > $f
 echo >> $f
 echo "let () =" >> $f
-jpeginfo gallery/*.jpg | awk '{print "\tadd \"/"$1"\" "$2" "$4";"}' >> $f
-echo "\t()" >> $f
+jpeginfo /home/eugene/programming/tsandripsh/gallery/*.jpg | awk '{print "add \"/"$1"\" "$2" "$4";"}' >> $f
+echo "()" >> $f
 

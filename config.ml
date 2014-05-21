@@ -1,9 +1,9 @@
 
-let static_path = "./static"
+let static_path = "/home/eugene/programming/tsandripsh/static"
 
-let gallery_src_path = "./gallery"
+let gallery_src_path = "/home/eugene/programming/tsandripsh/gallery"
 
-let save_path = "/tmp/tsandripsh"
+let install_path = ref "/tmp/tsandripsh"
 
 let year = "2014"
 

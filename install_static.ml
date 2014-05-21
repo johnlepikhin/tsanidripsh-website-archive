@@ -2,7 +2,7 @@ open Static
 
 let src_full_path p = Printf.sprintf "%s%s" Config.static_path (Purl.to_string p)
 
-let dst_full_path p = Printf.sprintf "%s%s" Config.save_path (Purl.to_string p)
+let dst_full_path p = Printf.sprintf "%s%s" !Config.install_path (Purl.to_string p)
 
 let create_all () =
 	let f t =

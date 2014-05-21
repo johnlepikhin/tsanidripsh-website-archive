@@ -38,11 +38,13 @@ let condition06 = make "01_condition06" "jpg" [Condition; Sea; Tsandripsh; ] <<
 	</div>
 >>
 
+(*
 let condition07 = make "01_condition07" "jpg" [Condition; ] <<
 	<div>
 Уютная терраса,увешанная ветками виноградника, где можно замечательно провести обеденное время в жаркий летний день или попить чай в интересной дружеской компании.
 	</div>
 >>
+*)
 
 let condition08 = make "01_condition08" "jpg" [Condition; ] <<
 	<div>		
@@ -85,11 +87,13 @@ let condition14 = make "01_condition14" "jpg" [Condition; ] <<
 	</div>
 >>
 
+(*
 let condition15 = make "01_condition15" "jpg" [Condition; ] <<
 	<div>
 		Лестница во второй блок дома.
 	</div>
 >>
+*)
 
 let condition16 = make "01_condition16" "jpg" [Condition; ] <<
 	<div>

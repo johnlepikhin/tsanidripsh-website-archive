@@ -2,34 +2,21 @@
 ЕСЛИ НАДО ДОБАВИТЬ ФОТОГРАФИИ:
 
 
-
 1. Добавить новые фотографии в gallery
 
 
 2. Описать их в gallery.ml
 
 
-
-3. Обновить информацию по картинкам:
-
-./make_galleryinfo
+3. Запустить инсталляцию:
 
 
-
-3. Скопилировать и скопировать JS:
-
-ocamlbuild -use-ocamlfind -plugin-tag "package(js_of_ocaml.ocamlbuild)"  js_main.js && cp _build/js_main.js static/
+ocamlbuild -use-ocamlfind -plugin-tag "package(js_of_ocaml.ocamlbuild)" install.with_gallery
 
 
 
-4. Поправить в config.ml save_path (путь, куда инсталлировать)
+ЕСЛИ ФОТОГРАФИИ НЕ МЕНЯЛИСЬ:
 
 
+ocamlbuild -use-ocamlfind -plugin-tag "package(js_of_ocaml.ocamlbuild)" install
 
-5. Запустить инсталляцию:
-
-ocamlbuild -use-ocamlfind -plugin-tag "package(js_of_ocaml.ocamlbuild)"  tsandripsh.native --
-
-
-
-ЕСЛИ ФОТОГРАФИИ НЕ МЕНЯЛИСЬ, ТО ПРОСТО ПУНКТЫ 3, 4, 5
