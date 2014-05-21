@@ -1,10 +1,13 @@
 #!/bin/sh
 
-f=/home/eugene/programming/tsandripsh/_build/gallery_info.ml
+cd /home/eugene/programming/tsandripsh/
+
+f=./_build/gallery_info.ml
+
 
 echo "include Gallery_info_make" > $f
 echo >> $f
 echo "let () =" >> $f
-jpeginfo /home/eugene/programming/tsandripsh/gallery/*.jpg | awk '{print "add \"/"$1"\" "$2" "$4";"}' >> $f
+jpeginfo gallery/*.jpg | awk '{print "add \"/"$1"\" "$2" "$4";"}' >> $f
 echo "()" >> $f
 
