@@ -17,7 +17,7 @@ let tbl_living =
 		let months = List.map make_month prices in
 		let rec make_sizes = function
 			| [] -> ""
-			| last :: [] -> Printf.sprintf "и %i" last
+			| last :: [] -> Printf.sprintf "или %i" last
 			| hd :: tl -> Printf.sprintf "%i %s" hd (make_sizes tl)
 		in
 		let sizes = make_sizes sizes in
@@ -85,9 +85,6 @@ let lst = [
 				широкий пляж, потрясающие виды на горы. До моря 700 метров или 6 минут пешком. Есть возможность заказать экскурсии по Абхазии.
 			</p>
 
-			<p>
-				Стоимость проживания <b>от 200 до 350 руб.</b> с человека в сутки в летний период и <b>от 150 до 250 руб</b> в межсезонье.
-			</p>
 			$tbl_living$
 			<p>Возможны индивидуальные скидки. Предоставляем возможность забронировать номер с предварительной оплатой на наш счет в Сбербанке.
 				<a href=$Page_common.url Page.p_contacts$>Позвоните</a>, чтобы узнать подробности.
