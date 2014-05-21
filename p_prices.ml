@@ -5,10 +5,35 @@ let tbl_row = List.map (fun p -> << <td>$str:Tpl_prices.to_string p$</td> >> )
 
 let tbl_price = Tbl.simple ~className:"prices"
 
-let tbl_living = tbl_price ~head:["номера"; "январь-май"; "июнь"; "июль"; "август"; "сентябрь"; "октябрь-декабрь"] [
+let tbl_living =
+	let make_class_table (name, sizes, prices) =
+		let open Prices_make in
+		let make_month p =
+			if p.month_start = p.month_end then
+				Month.to_string p.month_start
+			else
+				Printf.sprintf "%s-%s" (Month.to_string p.month_start) (Month.to_string p.month_end)
+		in
+		let months = List.map make_month prices in
+		let rec make_sizes = function
+			| [] -> ""
+			| last :: [] -> Printf.sprintf "и %i" last
+			| hd :: tl -> Printf.sprintf "%i %s" hd (make_sizes tl)
+		in
+		let sizes = make_sizes sizes in
+		let tbl = tbl_price ~head:(name :: months) [ << <th> Мест в номере: $str:sizes$ </th> >> :: (List.map (fun p -> p.price) prices |> tbl_row) ] in
+		<< <div> <h3>Номера "$str:name$"</h3>$tbl$ </div> >>
+	in
+	let classes = List.map make_class_table Prices_make.agregated_live in
+	<< <div> $list:classes$ </div> >>
+
+
+(*
+	tbl_price ~head:["номера"; "январь-май"; "июнь"; "июль"; "август"; "сентябрь"; "октябрь-декабрь"] [
 	<< <th>Эконом (мест в номере: 2, 3 или 4)</th> >> :: tbl_row [150; 200; 250; 300; 250; 200];
 	<< <th>Стандарт (мест в номере: 2, 3 или 4)</th> >> :: tbl_row [200; 250; 300; 350; 250; 250];
 ]
+*)
 
 let tbl_transfer = tbl_price [
 	<< <th>Из аэропорта Адлера или обратно, за машину</th> >> :: tbl_row [Prices.transfer_aeroport];
