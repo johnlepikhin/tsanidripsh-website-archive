@@ -20,13 +20,18 @@ let dispatcher hook =
 					Cmd (A "../make_galleryinfo")
 				);
 
-				rule "Install static" ~prod:"install.static" ~deps:["generate.gallery_info"; "copy.js_main"; binary] (fun env builder ->
+				rule "Generate s.css" ~prods:["generate.css"; "s.css"] ~dep:"source.s.css" (fun env builder ->
+					Cmd (S[A"sh"; A"-c"; A"ccss <source.s.css > s.css.uncompressed && yui-compressor --type=css < s.css.uncompressed > s.css"])
+				);
+				rule_cp "Copy CSS" ~prod:"copy.css" "s.css" "../static/";
+
+				rule "Install static" ~prod:"install.static" ~deps:["generate.gallery_info"; "copy.js_main"; "copy.css"; binary] (fun env builder ->
 					let open Command in
 					let binary = "../" ^ binary in
 					Cmd (A binary)
 				);
 
-				rule "Install with gallery" ~prod:"install.with_gallery" ~deps:["generate.gallery_info"; "copy.js_main"; binary] (fun env builder ->
+				rule "Install with gallery" ~prod:"install.with_gallery" ~deps:["generate.gallery_info"; "copy.js_main"; "copy.css"; binary] (fun env builder ->
 					let open Command in
 					let binary = "../" ^ binary in
 					Cmd (S[A binary; A "gallery"])
