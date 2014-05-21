@@ -36,6 +36,7 @@ let dispatcher hook =
 					let binary = "../" ^ binary in
 					let args = List.map (fun a -> A a) args in
 					Cmd (A binary :: args)
+				in
 
 				rule "Install static" ~prod:"install.static" ~deps:install_deps (cmd_install []);
 
