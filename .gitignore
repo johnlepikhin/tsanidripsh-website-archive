@@ -3,4 +3,5 @@ static/gallery
 .*.swp
 *.native
 static/js_main.js
+static/s.css
 ftp
