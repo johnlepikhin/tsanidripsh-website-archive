@@ -21,7 +21,7 @@ div.tpl_main_header {
 	text-transform: uppercase;
 	font-style: normal;
 	font-size: 1.5em;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "sans-serif";
 	font-weight: bold;
 
 	background-image: url("/title.jpg");
@@ -78,7 +78,7 @@ div.tpl_main_content {
 /*
 	background-color: rgba(255,255,255,0.5);
 */
-	background-color: #d0d0d0;;
+	background-color: #d0d0d0;
 	box-shadow: 0 0 20px rgba(0,0,0,0.4);
 	border-bottom-left-radius: 1em 1em;
 	border-bottom-right-radius: 1em 1em;
@@ -99,7 +99,7 @@ aside.tpl_main_left {
 h1 {
 	font-style: normal;
 	font-size: 1.6em;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "sans-serif";
 	font-weight: bold;
 	text-align: center;
 	margin: 0.5em;
@@ -109,7 +109,7 @@ h1 {
 h2 {
 	font-style: normal;
 	font-size: 1.2em;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "sans-serif";
 	font-weight: bold;
 	text-align: left;
 	margin: 0.8em;
@@ -129,7 +129,7 @@ div.tpl_main_center {
 div.main_service_title {
 	font-style: normal;
 	font-size: 1.2em;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "sans-serif";
 	font-weight: bold;
 	text-align: left;
 	margin: 0.5em;
@@ -152,16 +152,13 @@ details.main_service_details[open] {
 
 /* main menu */
 
-div.main_menu {
-}
-
 a.main_menu {
 	color: yellow;
 }
 
 div.main_menu_el {
 	font-style: normal;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "sans-serif";
 	font-weight: bold;
 
 	color: yellow;
@@ -210,7 +207,7 @@ a.main_menu_bottom {
 
 div.main_menu_bottom_el {
 	font-style: normal;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "sans-serif";
 	font-weight: bold;
 
 	color: yellow;
@@ -222,12 +219,6 @@ div.main_menu_bottom_el {
 div.main_menu_bottom_el_current {
 	cursor: default;
 	color: black;
-}
-
-div.main_menu_bottom_el_selectable {
-}
-
-div.main_menu_bottom_el_selectable:hover {
 }
 
 
@@ -324,7 +315,7 @@ div.gallery_view_description_main {
 	border-top-right-radius: 5px 5px;
 	border-bottom-right-radius: 5px 5px;
 
-	background-color: #d0d0d0;;
+	background-color: #d0d0d0;
 /*
 	background-color: rgba(255,255,255,0.3);
 */
@@ -340,9 +331,6 @@ img.gallery_view_close {
 	z-index: 10000;
 	cursor: pointer;
 	position: absolute;
-}
-
-div.gallery_old_main {
 }
 
 div.gallery_old_el {
