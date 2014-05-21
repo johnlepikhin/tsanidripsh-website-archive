@@ -149,7 +149,7 @@ let yandex_metrika = Html5.Unsafe.data "
 "
 
 let tpl_base ?page ~title ~position ?keywords ?description ?left center =
-	let title = Printf.sprintf "%s — Отдых в Абхазии, Цандрипш. %s" title Config.year in
+	let title = Printf.sprintf "%s — Отдых в Абхазии %s, Цандрипш." title Config.year in
 	let main_menu = Main_menu.tpl1 position in
 	let main_menu_bottom = Main_menu.tpl2 position in
 	let phones = List.map (fun (phone, _, op) -> << <div>$str:phone$</div> >>) Config.phones in

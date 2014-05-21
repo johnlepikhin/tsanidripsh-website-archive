@@ -5,11 +5,11 @@ let gallery_src_path = "./gallery"
 
 let save_path = "/tmp/tsandripsh"
 
-let year = "Лето 2014"
+let year = "2014"
 
-let keywords = Printf.sprintf "Абхазия, Цандрипш, частный сектор, отдых, жилье, %s" year
+let keywords = Printf.sprintf "Цандрипш, частный сектор, без посредников, отдых, Абхазия, %s" year
 
-let description = Printf.sprintf "Поселок Цандрипш, частный сектор. Отдых и жилье в Абхазии. %s." year
+let description = Printf.sprintf "Поселок Цандрипш, частный сектор. Отдых Абхазии. %s." year
 
 let phones = [
 	"+7(928)447-56-81", "Минас", "Мегафон";

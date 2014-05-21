@@ -140,7 +140,7 @@ let center =
 			<div class="float_clean"/>
 
 			<h2>Почему лучше обратить внимание на отдых в частном секторе, на Цандрипш?</h2>
-			$Tpl_img.text_img ~right:true ~text:"Цандрипш, частный сектор" Gallery.Condition Gallery.condition08$
+			$Tpl_img.text_img ~right:true ~text:(Printf.sprintf "Отдых в Абхазии %s, частный сектор" Config.year) Gallery.Condition Gallery.condition08$
 			<ul>
 				<li>Частный сектор Цандрипша — отличное место для отдыха с детьми. Тишина, сады, природа. Дети увидят много необычных для них животных, жучков, увидят как растут и спеют
 					их любимые фрукты.
