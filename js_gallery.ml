@@ -6,9 +6,9 @@ module G = Gallery
 let root = ref (Dom_html.createDiv Dom_html.document)
 
 let init_root () =
-	lwt newroot = (Js_eid.init Common_config.div_center_gallery Dom_html.CoerceTo.div) () in
-	root := newroot;
-	Lwt.return newroot
+	match Dom_html.of_id ~coerce:Dom_html.CoerceTo.div Id.div_center_gallery with
+		| None -> ()
+		| Some el -> root := el
 
 let max_width = ref 512.
 
@@ -164,6 +164,13 @@ module View =
 			let content = Printf.sprintf "<h1>%s</h1>%s" !current_title (Html_print.elt_to_string p.G.description) in
 			div_descr##innerHTML <- Js.string content;
 			Dom.appendChild div_descr_main div_descr;
+
+			let all_photos = Dom_html.createA Dom_html.document in
+			all_photos##href <- Js.string (Page.url Page.p_gallery);
+			all_photos##innerHTML <- Js.string "Перейти в фотоальбом";
+			Dom.appendChild div_descr (Dom_html.createBr Dom_html.document);
+			Dom.appendChild div_descr all_photos;
+
 
 			(* close *)
 			let close_img = Dom_html.createImg Dom_html.document in
@@ -345,7 +352,7 @@ module GRows =
 					check_width_periodically (Some w)
 
 		let init () =
-			lwt root = init_root () in
+			init_root ();
 			ignore (check_width_periodically None);
 			let l = List.rev !Gallery.items in
 			list := l;

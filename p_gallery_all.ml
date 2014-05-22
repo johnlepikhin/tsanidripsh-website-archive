@@ -31,5 +31,5 @@ include Page.Make (struct
 
 	let path = Page.p_gallery_all
 
-	let doc () = Tpl.tpl_base ~page:"gallery_all" ~position:Tpl.Position.Gallery ~title center
+	let doc () = Tpl.tpl_base ~position:Tpl.Position.Gallery ~title center
 end)

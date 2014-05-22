@@ -20,6 +20,20 @@ module Dom =
 				| Some p -> Dom.removeChild p el
 	end
 
+module Dom_html =
+	struct
+		include Dom_html
+
+		let of_id ~coerce id =
+			let s = Id.to_string id in
+			let r = document##getElementById (Js.string s) in
+			match Js.Opt.to_option r with
+				| None -> None
+				| Some r ->
+					let r = coerce r in
+					Js.Opt.to_option r
+	end
+
 let alert s =
 	let s = Js.string s in
 	Dom_html.window##alert (s)
@@ -42,8 +56,7 @@ let handler f r = Dom_html.handler (fun v -> eignore f v; r)
 let body = ref (Dom_html.createBody Dom_html.document)
 
 let init_body () =
-	lwt newbody = (Js_eid.init Common_config.body Dom_html.CoerceTo.body) () in
-	body := newbody;
-	Lwt.return ()
-
-
+	match Dom_html.of_id ~coerce:Dom_html.CoerceTo.body Id.body with
+		| None -> ()
+		| Some el ->
+			body := el

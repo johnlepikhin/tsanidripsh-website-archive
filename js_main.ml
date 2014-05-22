@@ -1,7 +1,8 @@
 
 let init () =
-	lwt () = Js_util.init_body () in
+	Js_util.init_body ();
 	let open Js_page in
+	Js_anypage.init ();
 	match page with
 		| Gallery ->
 			Js_gallery.GRows.init ()

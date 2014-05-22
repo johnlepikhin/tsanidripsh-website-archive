@@ -18,7 +18,7 @@ let center = <<
 		<p>
 			<b>Кликните на интересующую фотографию, чтобы рассмотреть в подробностях. Фотографии в просмотре можно листать стрелочками на клавиатуре ← →</b>
 		</p>
-		<div id=$str:Common_config.div_center_gallery$ class="gallery_main">
+		<div id=$str:Id.to_string Id.div_center_gallery$ class="gallery_main">
 		</div>
 		<small>
 			<a href=$Page_common.url Page_common.p_gallery_all$>Для старых браузеров: все фотографии одним списком</a>
@@ -33,5 +33,5 @@ include Page.Make (struct
 
 	let path = Page.p_gallery
 
-	let doc () = Tpl.tpl_base ~page:"gallery" ~position:Tpl.Position.Gallery ~title center
+	let doc () = Tpl.tpl_base ~position:Tpl.Position.Gallery ~title center
 end)

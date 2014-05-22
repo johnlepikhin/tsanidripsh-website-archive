@@ -79,39 +79,6 @@ module Main_menu =
 			<< <div class="main_menu_bottom">$list:divs$</div> >>
 	end
 
-(*
-let yandex_metrika =
-	let script = Html5.cdata_script "
-		(function (d, w, c) {
-			 (w[c] = w[c] || []).push(function() {
-				  try {
-						w.yaCounter17405770 = new Ya.Metrika({id:17405770, enableAll: true, webvisor:true});
-				  } catch(e) { }
-			 });
-			 
-			 var n = d.getElementsByTagName(\"script\")[0],
-				  s = d.createElement(\"script\"),
-				  f = function () { n.parentNode.insertBefore(s, n); };
-			 s.type = \"text/javascript\";
-			 s.async = true;
-			 s.src = (d.location.protocol == \"https:\" ? \"https:\" : \"http:\") + \"//mc.yandex.ru/metrika/watch.js\";
-
-			 if (w.opera == \"[object Opera]\") {
-				  d.addEventListener(\"DOMContentLoaded\", f);
-			 } else { f(); }
-		})(document, window, \"yandex_metrika_callbacks\");
-	" in
-	let noscript = Html5.Unsafe.data "<noscript><div><img src=\"//mc.yandex.ru/watch/17405770\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>" in
-	<<
-		<div>
-			<script>
-				$script$
-			</script>
-			$noscript$
-		</div>
-	>>
-*)
-
 let yandex_metrika = Html5.Unsafe.data "
 	<!-- Yandex.Metrika informer -->
 	<a href=\"https://metrika.yandex.ru/stat/?id=17405770&amp;from=informer\"
@@ -148,24 +115,18 @@ let yandex_metrika = Html5.Unsafe.data "
 	<!-- /Yandex.Metrika counter -->
 "
 
-let tpl_base ?page ~title ~position ?keywords ?description ?left center =
+let tpl_base ~title ~position ?keywords ?description ?left center =
 	let title = Printf.sprintf "%s — Отдых в Абхазии %s, Цандрипш." title Config.year in
 	let main_menu = Main_menu.tpl1 position in
-	let main_menu_bottom = Main_menu.tpl2 position in
 	let phones = List.map (fun (phone, _, op) -> << <div>$str:phone$</div> >>) Config.phones in
 	let left = match left with
 		| None -> << <div/> >>
 		| Some el -> << <aside class="tpl_main_left">$el$</aside> >>
 	in
-	let page = match page with
-		| None -> ""
-		| Some page -> page
-	in
-	let script_page = Html5.cdata_script (Printf.sprintf "%s = '%s';" Common_config.page_var page) in
 	html ~title ?keywords ?description <<
-		<body class="tpl_main" id=$str:Common_config.body$>
-			<script>$script_page$</script>
+		<body class="tpl_main" id=$str:Id.to_string Id.body$>
 			<div class="tpl_main">
+			<!--
 				<script>
 						function moveTitle (maxmove, time) {
 							e = document.getElementById ('tpl_main_header');
@@ -199,7 +160,8 @@ let tpl_base ?page ~title ~position ?keywords ?description ?left center =
 
 						moveTitlePeriodically ();
 				</script>
-				<div class="tpl_main_header" onclick="moveTitle(2000, 1)" id="tpl_main_header">
+				-->
+				<div class="tpl_main_header" id=$Id.to_string Id.tpl_main_header$>
 					<div class="tpl_main_header_content">
 						<a href=$Page.url Page.p_main$>
 							<div class="tpl_main_logo">
