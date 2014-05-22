@@ -14,6 +14,7 @@ let center =
 	" in
 	<<
 		<div class="tpl_main_center">
+			<h1>Отзывы о нас</h1>
 			<div id="disqus_thread"/>
 			<script>$script$</script>
 		</div>

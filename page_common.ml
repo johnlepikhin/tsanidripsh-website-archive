@@ -17,6 +17,8 @@ let p_contacts = Purl.make Path.root "contacts"
 
 let p_feedbacks = Purl.make Path.root "feedbacks"
 
+let p_questions = Purl.make Path.root "questions"
+
 let p_information = Purl.make Path.root "information"
 
 let p_gallery_all = Purl.make Path.root "gallery_all"

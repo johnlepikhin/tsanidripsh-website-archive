@@ -27,9 +27,10 @@ module Position =
 			| Tours
 			| Information
 			| Feedbacks
+			| Questions
 			| Contacts
 
-		let all = [ Main; Gallery; Prices; Tours; Information; Feedbacks; Contacts ]
+		let all = [ Main; Gallery; Prices; Tours; Information; Feedbacks; Questions; Contacts ]
 
 		let to_url t = 
 			let p =
@@ -40,6 +41,7 @@ module Position =
 					| Tours -> Page.p_tours
 					| Information -> Page.p_information
 					| Feedbacks -> Page.p_feedbacks
+					| Questions -> Page.p_questions
 					| Contacts -> Page.p_contacts
 			in
 			Page.url p
@@ -55,7 +57,8 @@ module Main_menu =
 			| Prices -> "Цены"
 			| Tours -> "Экскурсии"
 			| Information -> "Информация"
-			| Feedbacks -> "Отзывы о нас"
+			| Feedbacks -> "Отзывы"
+			| Questions -> "Вопросы"
 			| Contacts -> "Контакты"
 
 		let tpl1 position =

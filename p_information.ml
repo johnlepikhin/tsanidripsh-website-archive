@@ -103,7 +103,7 @@ let left =
 	>>
 
 let center =
-	let els = List.map (fun (title, answer, id) -> << <div><h1 id=$str:"info"^(string_of_int id)$>$str:title$</h1>$answer$<br/></div> >>) lst in
+	let els = List.map (fun (title, answer, id) -> << <div><h2 id=$str:"info"^(string_of_int id)$>$str:title$</h2>$answer$<br/></div> >>) lst in
 	<<
 		<div class="tpl_main_center">
 			$list:els$
