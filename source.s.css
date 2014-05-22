@@ -1,6 +1,8 @@
 
 TitleFont: "Trebuchet MS", "Arial", "Helvetica", "sans-serif";
 
+MinPageWidth: 840px;
+
 body.tpl_main {
 	background-image: url("/main_background.jpg");
 }
@@ -12,7 +14,7 @@ div.tpl_main {
 }
 
 div.tpl_main_header {
-	min-width: 800px;
+	min-width: MinPageWidth;
 	max-width: 1500px;
 	width: 100%;
 	height: 200px;
@@ -76,7 +78,7 @@ div.tpl_main_content {
 	overflow: hidden;
 
 	width: 100%;
-	min-width: 800px;
+	min-width: MinPageWidth;
 /*
 	background-color: rgba(255,255,255,0.5);
 */
@@ -370,8 +372,29 @@ div.text_img img {
 	border-radius: 10px;
 }
 
+Rotate0: rotate(0deg);
+Rotate2: rotate(-2deg);
+
 div.zoomable img {
 	cursor: pointer;
+
+	-webkit-transform: Rotate0;
+	-moz-transform: Rotate0;
+	-ms-transform: Rotate0;
+	-o-transform: Rotate0;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	-ms-transition: -ms-transform 0.3s;
+	-o-transition: -o-transform 0.3s;
+	box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+div.zoomable img:hover {
+	-webkit-transform: Rotate2;
+	-moz-transform: Rotate2;
+	-ms-transform: Rotate2;
+	-o-transform: Rotate2;
+	transform: Rotate2;
 }
 
 div.main_info {
