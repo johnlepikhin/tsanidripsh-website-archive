@@ -2,6 +2,12 @@
 include Gallery_make
 
 
+let we04 = make "04_we04" "jpg" [We; ] <<
+	<div>
+		Хозяева дома. Сообща мы обеспечиваем комфорт нашим гостям.
+	</div>
+>>
+
 let condition01 = make "01_condition01" "jpg" [Condition; ] <<
 	<div>
 Вид из окна нашего дома.
@@ -177,12 +183,6 @@ let we02 = make "04_we02" "jpg" [Condition; We; Canyon; Alps; ] <<
 let we03 = make "04_we03" "jpg" [We; ] <<
 	<div>
 		Алина и наша младшая дочь Катя.
-	</div>
->>
-
-let we04 = make "04_we04" "jpg" [We; ] <<
-	<div>
-		Хозяева дома. Сообща мы обеспечиваем комфорт нашим гостям.
 	</div>
 >>
 
