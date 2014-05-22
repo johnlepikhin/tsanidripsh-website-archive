@@ -112,7 +112,12 @@ module View =
 					div_next##style##height <- Js.string ((string_of_int img_height) ^ "px");
 					div_next##style##marginLeft <- Js.string ((string_of_int (img_width-100+5)) ^ "px");
 					div_next##style##lineHeight <- Js.string ((string_of_int (img_height)) ^ "px");
-					div_next##innerHTML <- Js.string "→";
+
+					let arrow = Dom_html.createImg Dom_html.document in
+					let string_url = Static.url Static.arrow_right in
+					arrow##src <- Js.string string_url;
+					arrow##style##width <- Js.string "50px";
+					Dom.appendChild div_next arrow;
 
 					div_next##onclick <- handler (fun _ -> add_image div id_next) Js._false;
 
@@ -134,8 +139,14 @@ module View =
 					div_prev##className <- Js.string "gallery_view_prev";
 					div_prev##style##height <- Js.string ((string_of_int img_height) ^ "px");
 					div_prev##style##lineHeight <- Js.string ((string_of_int (img_height)) ^ "px");
+
+					let arrow = Dom_html.createImg Dom_html.document in
+					let string_url = Static.url Static.arrow_left in
+					arrow##src <- Js.string string_url;
+					arrow##style##width <- Js.string "50px";
+					Dom.appendChild div_prev arrow;
+
 					div_prev##onclick <- handler (fun _ -> add_image div id_prev) Js._false;
-					div_prev##innerHTML <- Js.string "←";
 
 					img##style##opacity <- Js.def (Js.string "1");
 					Js.Unsafe.set (div_prev##style) (Js.string "transition") (Js.string "opacity 0.3s");
@@ -177,8 +188,9 @@ module View =
 			let string_url = Static.url Static.button_close in
 			close_img##src <- Js.string string_url;
 			close_img##className <- Js.string "gallery_view_close";
-			close_img##style##marginLeft <- Js.string ((string_of_int (div_width-20)) ^ "px");
-			close_img##style##marginTop <- Js.string ((string_of_int (-10)) ^ "px");
+			close_img##style##width <- Js.string "50px";
+			close_img##style##marginLeft <- Js.string ((string_of_int (div_width-30)) ^ "px");
+			close_img##style##marginTop <- Js.string ((string_of_int (-20)) ^ "px");
 			close_img##onclick <- handler (close div) Js._true;
 			Dom.appendChild div close_img;
 

@@ -265,6 +265,8 @@ div.gallery_preview_element_first {
 	clear: left;
 }
 
+Scale12: scale(1.2,1.2);
+
 div.gallery_view_main {
 	background-image: url("/main_background.jpg");
 	border: solid 1px black;
@@ -289,14 +291,19 @@ div.gallery_view_prev {
 	position: absolute;
 	width: 100px;
 	height: 100px;
-	background-image: linear-gradient(to left, rgba(30,87,153,0), rgba(30,87,153,0.8));
 	vertical-align: middle;
 	cursor: pointer;
 	float: left;
 	color: yellow;
 	vertical-align: middle;
-	font-size: 2em;
 	text-align: center;
+}
+
+div.gallery_view_prev img:hover {
+	-webkit-transform: Scale12;
+	-ms-transform: Scale12;
+	-o-transform: Scale12;
+	-moz-transform: Scale12;
 }
 
 div.gallery_view_next {
@@ -305,14 +312,19 @@ div.gallery_view_next {
 	position: absolute;
 	width: 100px;
 	height: 100px;
-	background-image: linear-gradient(to right, rgba(30,87,153,0), rgba(30,87,153,0.8));
 	vertical-align: middle;
 	cursor: pointer;
 	float: left;
 	color: yellow;
 	vertical-align: middle;
-	font-size: 2em;
 	text-align: center;
+}
+
+div.gallery_view_next img:hover {
+	-webkit-transform: Scale12;
+	-ms-transform: Scale12;
+	-o-transform: Scale12;
+	-moz-transform: Scale12;
 }
 
 div.gallery_view_description_main {
@@ -338,6 +350,14 @@ img.gallery_view_close {
 	cursor: pointer;
 	position: absolute;
 }
+
+img.gallery_view_close:hover {
+	-webkit-transform: Scale12;
+	-ms-transform: Scale12;
+	-o-transform: Scale12;
+	-moz-transform: Scale12;
+}
+
 
 div.gallery_old_el {
 	margin: 1em;

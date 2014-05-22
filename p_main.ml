@@ -104,11 +104,14 @@ let center =
 				<li>Отличный климат, благодаря которому даже поездка на 3-4 дня не омрачится постоянными тучами.</li>
 			</ul>
 
+
+<!--
 			<div class="float_clean"/>
 
 			<div class="text_video">
 				$video$
 			</div>
+-->
 
 			<div class="float_clean"/>
 
