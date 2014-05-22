@@ -1,70 +1,6 @@
 
 module Html5 = Html5.M
 
-(*
-let left = <<
-	<aside class="main">
-		<h1>Коротко об услугах</h1>
-
-		<div class="main_service_title">
-			Номера
-		</div>
-		<details class="main_service_details">
-			Классы эконом и стандарт
-		</details>
-
-		<div class="main_service_title">
-			Трансфер
-		</div>
-		<details class="main_service_details">
-			Поможем добраться до нас от аэропорта Сочи, от ж/д вокзала или от границы.
-		</details>
-
-		<div class="main_service_title">
-			Место для машины
-		</div>
-		<details class="main_service_details">
-			За закрывающимися воротами двора всегда найдется место для вашей машины
-		</details>
-
-		<div class="main_service_title">
-			Экскурсии
-		</div>
-		<details class="main_service_details">
-			Хотите посетить известные места Абхазии, а также недоступные для туристов по путевке уголки страны?
-			Цандрипшский каньон, озеро Рица (дача Сталина), Новоафонский монастырь, Новоафонская пещера, альпийские
-			луга южного Кавказа.
-		</details>
-
-
-		<div class="main_service_title">
-			Домашнее вино и чача
-		</div>
-		<details class="main_service_details">
-			Из своего винограда для своих гостей мы ежегодно делаем вино и чачу (виноградную водку).
-		</details>
-
-		<div class="main_service_title">
-			Фрукты из сада
-		</div>
-		<details class="main_service_details">
-				Виноград, хурма, фейхоа, мандарины, апельсины, лимоны — всё это растет в нашем саду.
-				<br/>
-				Когда фрукты еще не поспели, мы можем предложить недорогой мандариновый сок.
-		</details>
-
-		<div class="main_service_title">
-			Мангал
-		</div>
-		<details class="main_service_details">
-			Всегда доступен большой удобный мангал
-		</details>
-
-		<a href=$Page_common.url Page.p_prices$>Все цены</a>
-	</aside>
->>
-*)
-
 let left () =
 	let rec loop = function
 		| [] -> []
@@ -82,7 +18,7 @@ let left () =
 	
 
 let center =
-	let video = Html5.Unsafe.data "<iframe width=\"640\" height=\"360\" src=\"//www.youtube.com/embed/y2C_XU1YRCQ\" frameborder=\"0\" allowfullscreen></iframe>" in
+	let video = Html5.Unsafe.data "<iframe class=\"youtube\" width=\"640\" height=\"360\" src=\"//www.youtube.com/embed/y2C_XU1YRCQ\" frameborder=\"0\" allowfullscreen></iframe>" in
 	<<
 		<div class="tpl_main_center">
 			<h1>Отдых в Абхазии, поселок Цандрипш, частный сектор</h1>
@@ -154,6 +90,18 @@ let center =
 					и вернуться обратно. Кстати, с нашей терассы видно стадион Фишт и другие объекты Олимпиады!
 				</li>
 				<li>В Цандрипше есть вся необходимая для туристов инфраструктура. Магазины, сувенирные лавки, экскурсионные бюро, аптеки, много кафе на любой вкус, клубы.</li>
+			</ul>
+
+			<div class="float_clean"/>
+
+			<h2>Почему отдых в Абхазии?</h2>
+			$Tpl_img.text_img ~right:true Gallery.Sea Gallery.sea11$
+			Хотелось бы кратко перечислить, чем отдых в Абхазии выгодно отличается от отдыха во многих других регионах:
+			<ul>
+				<li>Значительно ниже цены на проживание, экскурсии, внутренний транспорт.</li>
+				<li>Уникальность природы, древнейшие памятники культуры. Просто загляните на страничку предлагаемых нами экскурсий.</li>
+				<li>Чистейшее море, чистые и не перегруженные пляжи.</li>
+				<li>Отличный климат, благодаря которому даже поездка на 3-4 дня не омрачится постоянными тучами.</li>
 			</ul>
 
 			<div class="float_clean"/>

@@ -21,3 +21,5 @@ let root = make []
 let tours = make ["tours"]
 
 let gallery = make ["gallery"]
+
+let articles = make ["articles"]

@@ -22,7 +22,7 @@ let tbl_living =
 		in
 		let sizes = make_sizes sizes in
 		let tbl = tbl_price ~head:(name :: months) [ << <th> Мест в номере: $str:sizes$ </th> >> :: (List.map (fun p -> p.price) prices |> tbl_row) ] in
-		<< <div> <h3>Номера "$str:name$"</h3>$tbl$ </div> >>
+		<< <div> <h3>Номера "$str:name$"</h3>$tbl$ * Цены указаны за человека в сутки.</div> >>
 	in
 	let classes = List.map make_class_table Prices_make.agregated_live in
 	<< <div> $list:classes$ </div> >>
@@ -146,7 +146,7 @@ let center =
 	let els = List.map (fun (title, answer, id) -> << <div><h2 id=$str:"info"^(string_of_int id)$>$str:title$</h2>$answer$<br/></div> >>) lst in
 	<<
 		<div class="tpl_main_center">
-			<h1>$str:Config.year$: цены</h1>
+			<h1>Цены на сезон $str:Config.year$</h1>
 			$list:els$
 		</div>
 	>>

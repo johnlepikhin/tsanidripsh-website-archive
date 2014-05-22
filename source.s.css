@@ -365,6 +365,9 @@ div.text_img_right {
 
 div.text_img img {
 	width: 100%;
+
+	border:2px solid grey;
+	border-radius: 10px;
 }
 
 div.zoomable img {
@@ -383,6 +386,8 @@ div.coltitle_img {
 
 div.coltitle_img img {
 	width: 192px;
+	border:2px solid grey;
+	border-radius: 10px;
 }
 
 div.text_video {
@@ -391,4 +396,8 @@ div.text_video {
 
 h2.center {
 	text-align: center;
+}
+
+iframe.youtube {
+	border:2px solid grey;
 }

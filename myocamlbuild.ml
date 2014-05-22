@@ -38,7 +38,7 @@ let dispatcher hook =
 
 				let cmd_install args env builder =
 					let open Command in
-					let binary = "../" ^ binary in
+					let binary = "./" ^ binary in
 					let args = List.map (fun a -> A a) args in
 					Cmd (S(A binary :: args))
 				in
