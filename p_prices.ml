@@ -154,7 +154,7 @@ let center =
 include Page.Make (struct
 	let title = "Цены и услуги"
 
-	let contents_name = Some (Config.year ^ ". Полный прайслист.")
+	let contents_name = Some (Config.season ^ ". Полный прайслист.")
 
 	let path = Page.p_prices
 

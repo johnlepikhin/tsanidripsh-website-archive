@@ -23,7 +23,7 @@ let center =
 		<div class="tpl_main_center">
 			<h1>Отдых в Абхазии, поселок Цандрипш, частный сектор</h1>
 			<p>
-				<b>$str:Config.year$!</b> Предлагаем <b>жилье в частном секторе Абхазии без посредников</b>!
+				<b>$str:Config.season$!</b> Предлагаем <b>жилье в частном секторе Абхазии без посредников</b>!
 			</p>
 
 			$Tpl_img.text_img ~right:true Gallery.We Gallery.we04$
@@ -76,7 +76,7 @@ let center =
 			<div class="float_clean"/>
 
 			<h2>Почему лучше обратить внимание на отдых в частном секторе, на Цандрипш?</h2>
-			$Tpl_img.text_img ~right:true ~text:(Printf.sprintf "Отдых в Абхазии %s, частный сектор" Config.year) Gallery.Condition Gallery.condition08$
+			$Tpl_img.text_img ~right:true ~text:(Printf.sprintf "Отдых в Абхазии %s, частный сектор" Config.season) Gallery.Condition Gallery.condition08$
 			<ul>
 				<li>Частный сектор Цандрипша — отличное место для отдыха с детьми. Тишина, сады, природа. Дети увидят много необычных для них животных, жучков, увидят как растут и спеют
 					их любимые фрукты.

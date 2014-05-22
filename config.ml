@@ -7,6 +7,8 @@ let install_path = ref "/tmp/tsandripsh"
 
 let year = "2014"
 
+let season = "Лето 2014"
+
 let keywords = Printf.sprintf "Цандрипш, частный сектор, без посредников, отдых, Абхазия, %s" year
 
 let description = Printf.sprintf "Поселок Цандрипш, частный сектор. Отдых Абхазии. %s." year
