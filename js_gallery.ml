@@ -22,6 +22,7 @@ module View =
 	struct
 		let do_close div =
 			is_active := false;
+			Dom_html.window##location##href <- Js.string "#";
 			div##style##opacity <- Js.def (Js.string "0");
 			div##style##width <- Js.string "0px";
 			div##style##height <- Js.string "0px";
@@ -97,7 +98,7 @@ module View =
 			Dom.appendChild div img;
 			img##style##opacity <- Js.def (Js.string "0");
 			Js.Unsafe.set (img##style) (Js.string "transition") (Js.string "opacity 0.3s");
-			lwt () = Lwt_js.sleep 0.05 in
+			lwt () = Lwt_js.sleep 0.1 in
 			img##style##opacity <- Js.def (Js.string "1");
 
 			let img_width = img##clientWidth in
