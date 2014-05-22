@@ -179,11 +179,14 @@ module View =
 			div_descr##innerHTML <- Js.string content;
 			Dom.appendChild div_descr_main div_descr;
 
-			let all_photos = Dom_html.createA Dom_html.document in
-			all_photos##href <- Js.string (Page.url Page.p_gallery);
-			all_photos##innerHTML <- Js.string "Перейти в фотоальбом";
-			Dom.appendChild div_descr (Dom_html.createBr Dom_html.document);
-			Dom.appendChild div_descr all_photos;
+			if Js_page.page <> Js_page.Gallery then
+			begin
+				let all_photos = Dom_html.createA Dom_html.document in
+				all_photos##href <- Js.string (Page.url Page.p_gallery);
+				all_photos##innerHTML <- Js.string "Перейти в фотоальбом";
+				Dom.appendChild div_descr (Dom_html.createBr Dom_html.document);
+				Dom.appendChild div_descr all_photos;
+			end;
 
 
 			(* close *)
