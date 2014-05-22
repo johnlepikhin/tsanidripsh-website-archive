@@ -86,6 +86,8 @@ module View =
 
 			let (p, img) = preload_image id in
 
+			Dom_html.window##location##href <- Js.string (Printf.sprintf "#gview=%i" p.Gallery.id);
+
 			let (frame_width, frame_height) = resize div p in
 
 			let img_height = frame_height - 10 in
@@ -387,6 +389,24 @@ let view ?(pos=0) ?photo l =
 			find 0 l
 	in
 	View.view pos
+
+let check_url =
+	let module R = Regexp in
+	let regexp = R.regexp "#gview=(\\d+)" in
+	fun () ->
+		let href = Js.to_string (Dom_html.window##location##href) in
+		let r = R.string_match regexp href 0 in
+		match r with
+			| None -> Lwt.return ()
+			| Some r ->
+				let r = R.matched_group r 1 in
+				match r with
+				| None -> Lwt.return ()
+				| Some id ->
+					let id = int_of_string id in
+					let lst = !Gallery.items in
+					let pos = Gallery.pos_of_id id lst in
+					view ~pos lst
 
 let js_view (title : Js.js_string Js.t) (pos : int) (arr : int Js.js_array Js.t) =
 	let arr = Js.to_array arr in
