@@ -98,109 +98,111 @@ module View =
 			Dom.appendChild div img;
 			img##style##opacity <- Js.def (Js.string "0");
 			Js.Unsafe.set (img##style) (Js.string "transition") (Js.string "opacity 0.3s");
-			lwt () = Lwt_js.sleep 0.1 in
-			img##style##opacity <- Js.def (Js.string "1");
+			img##onload <- handler (fun _ ->
+				img##style##opacity <- Js.def (Js.string "1");
 
-			let img_width = img##clientWidth in
-			let div_width = div##clientWidth in
+				let img_width = img##clientWidth in
+				let div_width = div##clientWidth in
 
-			(* neighbours *)
-			let has_next =
-				if id + 1 < List.length !list then
+				(* neighbours *)
+				let has_next =
+					if id + 1 < List.length !list then
+					begin
+						let id_next = id + 1 in
+						ignore (preload_image id_next);
+						let div_next = Dom_html.createDiv Dom_html.document in
+						div_next##className <- Js.string "gallery_view_next";
+						div_next##style##height <- Js.string ((string_of_int img_height) ^ "px");
+						div_next##style##marginLeft <- Js.string ((string_of_int (img_width-100+5)) ^ "px");
+						div_next##style##lineHeight <- Js.string ((string_of_int (img_height)) ^ "px");
+
+						let arrow = Dom_html.createImg Dom_html.document in
+						let string_url = Static.url Static.arrow_right in
+						arrow##src <- Js.string string_url;
+						arrow##style##width <- Js.string "50px";
+						Dom.appendChild div_next arrow;
+
+						div_next##onclick <- handler (fun _ -> add_image div id_next) Js._false;
+
+						img##style##opacity <- Js.def (Js.string "1");
+						Js.Unsafe.set (div_next##style) (Js.string "transition") (Js.string "opacity 0.3s");
+						Dom.appendChild div div_next;
+						true
+					end
+					else
+						false
+				in
+
+				let has_prev =
+					if id > 0 then
+					begin
+						let id_prev = id - 1 in
+						ignore (preload_image id_prev);
+						let div_prev = Dom_html.createDiv Dom_html.document in
+						div_prev##className <- Js.string "gallery_view_prev";
+						div_prev##style##height <- Js.string ((string_of_int img_height) ^ "px");
+						div_prev##style##lineHeight <- Js.string ((string_of_int (img_height)) ^ "px");
+
+						let arrow = Dom_html.createImg Dom_html.document in
+						let string_url = Static.url Static.arrow_left in
+						arrow##src <- Js.string string_url;
+						arrow##style##width <- Js.string "50px";
+						Dom.appendChild div_prev arrow;
+
+						div_prev##onclick <- handler (fun _ -> add_image div id_prev) Js._false;
+
+						img##style##opacity <- Js.def (Js.string "1");
+						Js.Unsafe.set (div_prev##style) (Js.string "transition") (Js.string "opacity 0.3s");
+						Dom.appendChild div div_prev;
+						true
+					end
+					else
+						false
+				in
+
+				Dom_html.document##onkeydown <- handler (event_keypress ~has_next ~has_prev ~id div) Js._true;
+
+				let right_width = Js.string ((string_of_int (div_width - img_width - 15)) ^ "px") in
+
+				(* description main frame *)
+				let div_descr_main = Dom_html.createDiv Dom_html.document in
+				div_descr_main##className <- Js.string "gallery_view_description_main";
+				div_descr_main##style##marginLeft <- Js.string ((string_of_int (img_width+10)) ^ "px");
+				div_descr_main##style##height <- Js.string ((string_of_int img_height) ^ "px");
+				div_descr_main##style##width <- right_width;
+				Dom.appendChild div div_descr_main;
+
+				(* description content frame *)
+				let div_descr = Dom_html.createDiv Dom_html.document in
+				div_descr##className <- Js.string "gallery_view_description_content";
+				let content = Printf.sprintf "<h1>%s</h1>%s" !current_title (Html_print.elt_to_string p.G.description) in
+				div_descr##innerHTML <- Js.string content;
+				Dom.appendChild div_descr_main div_descr;
+
+				if Js_page.page <> Js_page.Gallery then
 				begin
-					let id_next = id + 1 in
-					ignore (preload_image id_next);
-					let div_next = Dom_html.createDiv Dom_html.document in
-					div_next##className <- Js.string "gallery_view_next";
-					div_next##style##height <- Js.string ((string_of_int img_height) ^ "px");
-					div_next##style##marginLeft <- Js.string ((string_of_int (img_width-100+5)) ^ "px");
-					div_next##style##lineHeight <- Js.string ((string_of_int (img_height)) ^ "px");
-
-					let arrow = Dom_html.createImg Dom_html.document in
-					let string_url = Static.url Static.arrow_right in
-					arrow##src <- Js.string string_url;
-					arrow##style##width <- Js.string "50px";
-					Dom.appendChild div_next arrow;
-
-					div_next##onclick <- handler (fun _ -> add_image div id_next) Js._false;
-
-					img##style##opacity <- Js.def (Js.string "1");
-					Js.Unsafe.set (div_next##style) (Js.string "transition") (Js.string "opacity 0.3s");
-					Dom.appendChild div div_next;
-					true
-				end
-				else
-					false
-			in
-
-			let has_prev =
-				if id > 0 then
-				begin
-					let id_prev = id - 1 in
-					ignore (preload_image id_prev);
-					let div_prev = Dom_html.createDiv Dom_html.document in
-					div_prev##className <- Js.string "gallery_view_prev";
-					div_prev##style##height <- Js.string ((string_of_int img_height) ^ "px");
-					div_prev##style##lineHeight <- Js.string ((string_of_int (img_height)) ^ "px");
-
-					let arrow = Dom_html.createImg Dom_html.document in
-					let string_url = Static.url Static.arrow_left in
-					arrow##src <- Js.string string_url;
-					arrow##style##width <- Js.string "50px";
-					Dom.appendChild div_prev arrow;
-
-					div_prev##onclick <- handler (fun _ -> add_image div id_prev) Js._false;
-
-					img##style##opacity <- Js.def (Js.string "1");
-					Js.Unsafe.set (div_prev##style) (Js.string "transition") (Js.string "opacity 0.3s");
-					Dom.appendChild div div_prev;
-					true
-				end
-				else
-					false
-			in
-
-			Dom_html.document##onkeydown <- handler (event_keypress ~has_next ~has_prev ~id div) Js._true;
-
-			let right_width = Js.string ((string_of_int (div_width - img_width - 15)) ^ "px") in
-
-			(* description main frame *)
-			let div_descr_main = Dom_html.createDiv Dom_html.document in
-			div_descr_main##className <- Js.string "gallery_view_description_main";
-			div_descr_main##style##marginLeft <- Js.string ((string_of_int (img_width+10)) ^ "px");
-			div_descr_main##style##height <- Js.string ((string_of_int img_height) ^ "px");
-			div_descr_main##style##width <- right_width;
-			Dom.appendChild div div_descr_main;
-
-			(* description content frame *)
-			let div_descr = Dom_html.createDiv Dom_html.document in
-			div_descr##className <- Js.string "gallery_view_description_content";
-			let content = Printf.sprintf "<h1>%s</h1>%s" !current_title (Html_print.elt_to_string p.G.description) in
-			div_descr##innerHTML <- Js.string content;
-			Dom.appendChild div_descr_main div_descr;
-
-			if Js_page.page <> Js_page.Gallery then
-			begin
-				let all_photos = Dom_html.createA Dom_html.document in
-				all_photos##href <- Js.string (Page.url Page.p_gallery);
-				all_photos##innerHTML <- Js.string "Перейти в фотоальбом";
-				Dom.appendChild div_descr (Dom_html.createBr Dom_html.document);
-				Dom.appendChild div_descr all_photos;
-			end;
+					let all_photos = Dom_html.createA Dom_html.document in
+					all_photos##href <- Js.string (Page.url Page.p_gallery);
+					all_photos##innerHTML <- Js.string "Перейти в фотоальбом";
+					Dom.appendChild div_descr (Dom_html.createBr Dom_html.document);
+					Dom.appendChild div_descr all_photos;
+				end;
 
 
-			(* close *)
-			let close_img = Dom_html.createImg Dom_html.document in
-			let string_url = Static.url Static.button_close in
-			close_img##src <- Js.string string_url;
-			close_img##className <- Js.string "gallery_view_close";
-			close_img##style##width <- Js.string "50px";
-			close_img##style##marginLeft <- Js.string ((string_of_int (div_width-30)) ^ "px");
-			close_img##style##marginTop <- Js.string ((string_of_int (-20)) ^ "px");
-			close_img##onclick <- handler (close div) Js._true;
-			Dom.appendChild div close_img;
+				(* close *)
+				let close_img = Dom_html.createImg Dom_html.document in
+				let string_url = Static.url Static.button_close in
+				close_img##src <- Js.string string_url;
+				close_img##className <- Js.string "gallery_view_close";
+				close_img##style##width <- Js.string "50px";
+				close_img##style##marginLeft <- Js.string ((string_of_int (div_width-30)) ^ "px");
+				close_img##style##marginTop <- Js.string ((string_of_int (-20)) ^ "px");
+				close_img##onclick <- handler (close div) Js._true;
+				Dom.appendChild div close_img;
 
-			Lwt.return ()
+				Lwt.return ()
+		) Js._true;
+		Lwt.return ()
 
 		let view id =
 			is_active := true;
@@ -408,7 +410,7 @@ let check_url =
 				| None -> Lwt.return ()
 				| Some id ->
 					let id = int_of_string id in
-					let lst = !Gallery.items in
+					let lst = List.rev !Gallery.items in
 					let pos = Gallery.pos_of_id id lst in
 					view ~pos lst
 
