@@ -205,16 +205,11 @@ div.main_menu_bottom {
 	overflow: hidden;
 }
 
-a.main_menu_bottom {
-	color: yellow;
-}
-
 div.main_menu_bottom_el {
 	font-style: normal;
 	font-family: TitleFont;
 	font-weight: bold;
 
-	color: yellow;
 	float: left;
 	padding: 0.7em;
 	margin-left: 1.5em;

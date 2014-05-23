@@ -119,6 +119,26 @@ let condition18 = make "01_condition18" "jpg" [Condition; ] <<
 	</div>
 >>
 
+let condition19 = make "01_condition19" "jpg" [Condition; ] <<
+	<div>
+		Рядом с домом.
+	</div>
+>>
+
+let condition20 = make "01_condition20" "jpg" [Condition; ] <<
+	<div>
+		Летняя кухня.
+	</div>
+>>
+
+let condition21 = make "01_condition21" "jpg" [Condition; Plant; ] <<
+	<div>
+		Мандарины в нашем саду.
+	</div>
+>>
+
+
+
 let tsandripsh01 = make "05_tsandripsh01" "jpg" [Tsandripsh; ] <<
 	<div>
 		Окраина Цандипша.
@@ -164,6 +184,12 @@ let tsandripsh07 = make "05_tsandripsh07" "jpg" [Tsandripsh; ] <<
 let tsandripsh08 = make "05_tsandripsh08" "jpg" [Tsandripsh; ] <<
 	<div>
 		Раннехристианский памятник архитектуры. Храм в Цандрипше. Ему полторы тысячи лет!
+	</div>
+>>
+
+let tsandripsh09 = make "05_tsandripsh09" "jpg" [Tsandripsh; ] <<
+	<div>
+		Зимняя панорама Цандрипша.
 	</div>
 >>
 
@@ -249,6 +275,10 @@ let sea11 = make "02_sea11" "jpg" [Sea; ] <<
 	</div>
 >>
 
+let sea12 = make "02_sea12" "jpg" [Sea; ] <<
+	<div>
+	</div>
+>>
 
 
 
