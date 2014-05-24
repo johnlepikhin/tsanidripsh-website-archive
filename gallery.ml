@@ -137,6 +137,13 @@ let condition21 = make "01_condition21" "jpg" [Condition; Plant; ] <<
 	</div>
 >>
 
+let condition22 = make "01_condition22" "jpg" [Condition; ] <<
+	<div>
+		Летняя кухня.
+	</div>
+>>
+
+
 
 
 let tsandripsh01 = make "05_tsandripsh01" "jpg" [Tsandripsh; ] <<
@@ -375,6 +382,23 @@ let riza04 = make "02_riza04" "jpg" [Tours; Riza; ] <<
 		в одном из самых чистых районов Кавказа.
 	</div>
 >>
+
+let riza05 = make "02_riza05" "jpg" [Tours; Riza; ] <<
+	<div>
+		Место, где «умер» Шерлок Холмс. Гегский водопад.
+	</div>
+>>
+
+let riza06 = make "02_riza06" "jpg" [Tours; Riza; ] <<
+	<div>
+		Место, где «умер» Шерлок Холмс. Гегский водопад.
+	</div>
+>>
+
+
+
+
+
 let alps01 = make "03_alps01" "jpg" [Tours; Alps; Animal;] <<
 	<div>
 	</div>
@@ -441,6 +465,13 @@ let alps12 = make "03_alps12" "jpg" [Tours; Alps; We; ] <<
 		Наша дочь Валя тоже иногда принимает участие в поездках на альпийские луга.
 	</div>
 >>
+
+let alps13 = make "03_alps13" "jpg" [] <<
+	<div>
+		Июльские снега.
+	</div>
+>>
+
 
 let afon01 = make "05_afon01" "jpg" [Tours; Afon; Plant; ] <<
 	<div>
