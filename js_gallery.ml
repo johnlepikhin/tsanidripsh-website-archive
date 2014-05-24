@@ -99,6 +99,7 @@ module View =
 			img##style##opacity <- Js.def (Js.string "0");
 			Js.Unsafe.set (img##style) (Js.string "transition") (Js.string "opacity 0.3s");
 			img##onload <- handler (fun _ ->
+				lwt () = Lwt_js.sleep 0.1 in
 				img##style##opacity <- Js.def (Js.string "1");
 
 				let img_width = img##clientWidth in
