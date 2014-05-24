@@ -1,7 +1,9 @@
 include Page_common
 
+type path = Path.t * string
+
 type t = {
-	path : Path.t * string;
+	path : path;
 	doc : unit -> Html5.M.doc;
 	title : string;
 	contents_name : string option;

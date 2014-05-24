@@ -31,3 +31,5 @@ let p_tours_riza = Purl.make Path.tours "tour_ozero_riza"
 let p_tours_alps = Purl.make Path.tours "tour_alps"
 
 let p_old_tours_afon = Purl.make Path.tours "afon"
+
+let a_tsandripsh = Purl.make Path.articles "tsandripsh"
