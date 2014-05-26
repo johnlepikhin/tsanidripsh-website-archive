@@ -5,6 +5,7 @@ MinPageWidth: 840px;
 
 body.tpl_main {
 	background-image: url("/main_background.jpg");
+	font-family: TitleFont;
 }
 
 div.tpl_main {
@@ -128,6 +129,8 @@ div.tpl_main_center {
 */
 
 	border-radius: 1em 1em;
+
+	text-align: justify;
 }
 
 div.main_service_title {
