@@ -200,6 +200,24 @@ let tsandripsh09 = make "05_tsandripsh09" "jpg" [Tsandripsh; ] <<
 	</div>
 >>
 
+let tsandripsh10 = make "05_tsandripsh10" "jpg" [Tsandripsh; ] <<
+	<div>
+	</div>
+>>
+
+let tsandripsh11 = make "05_tsandripsh11" "jpg" [Tsandripsh; ] <<
+	<div>
+		Вид на Цандрипш с гор близ поселка.
+	</div>
+>>
+
+let tsandripsh12 = make "05_tsandripsh12" "jpg" [Tsandripsh; ] <<
+	<div>
+		Вид на Цандрипш.
+	</div>
+>>
+
+
 let we01 = make "04_we01" "jpg" [ We; ] <<
 	<div>		
 		Наша семья. Минас, Алина и старшая дочь Валя.
@@ -284,8 +302,36 @@ let sea11 = make "02_sea11" "jpg" [Sea; ] <<
 
 let sea12 = make "02_sea12" "jpg" [Sea; ] <<
 	<div>
+		Наш пляж. Цандрипш, начало Белых Скал.
 	</div>
 >>
+
+
+let sea13 = make "02_sea13" "jpg" [Sea; ] <<
+	<div>
+		Наш пляж. Цандрипш, начало Белых Скал.
+	</div>
+>>
+
+
+let sea14 = make "02_sea14" "jpg" [Sea; ] <<
+	<div>
+		Наш пляж. Песчаная часть.
+	</div>
+>>
+
+let sea15 = make "02_sea15" "jpg" [Sea; ] <<
+	<div>
+		Наш пляж. Цандрипш, вид на пляж Белые скалы.
+	</div>
+>>
+
+let sea16 = make "02_sea16" "jpg" [Sea; ] <<
+	<div>
+	</div>
+>>
+
+
 
 
 

@@ -27,6 +27,11 @@ let cmake p file = smake p p file
 
 let umake (path, file) = cmake path file
 
+
+let sitemap = cmake Path.root "sitemap.xml"
+
+let google_verify = cmake Path.root "google315ff116e4d934b7.html"
+
 let css = cmake Path.root "s.css"
 
 let main_background = cmake Path.root "main_background.jpg"
