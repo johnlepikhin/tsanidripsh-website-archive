@@ -2,7 +2,7 @@
 ЕСЛИ НАДО ДОБАВИТЬ ФОТОГРАФИИ:
 
 
-1. Добавить новые фотографии в gallery
+1. Добавить новые фотографии в ./gallery
 
 
 2. Описать их в gallery.ml
@@ -11,12 +11,12 @@
 3. Запустить инсталляцию:
 
 
-ocamlbuild -use-ocamlfind -plugin-tag "package(js_of_ocaml.ocamlbuild)" install.with_gallery
+make install.with_gallery
 
 
 
 ЕСЛИ ФОТОГРАФИИ НЕ МЕНЯЛИСЬ:
 
 
-ocamlbuild -use-ocamlfind -plugin-tag "package(js_of_ocaml.ocamlbuild)" install
+make install.static
 
