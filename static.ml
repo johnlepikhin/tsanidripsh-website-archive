@@ -38,6 +38,8 @@ let main_background = cmake Path.root "main_background.jpg"
 
 let title = cmake Path.root "title.jpg"
 
+let title_new_year = cmake Path.root "title_new_year.png"
+
 let js_main = cmake Path.root "js_main.js"
 
 let button_close = cmake Path.root "button_close.png"
@@ -49,3 +51,9 @@ let robots = cmake Path.root "robots.txt"
 let arrow_left = cmake Path.root "arrow_left.png"
 
 let arrow_right = cmake Path.root "arrow_right.png"
+
+let christmas_tree = cmake Path.root "christmas_tree.svg"
+let yacht = cmake Path.root "yacht.svg"
+let sea = cmake Path.root "sea.svg"
+let orange = cmake Path.root "orange.svg"
+

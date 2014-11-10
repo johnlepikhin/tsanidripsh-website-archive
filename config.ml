@@ -5,9 +5,9 @@ let gallery_src_path = "/home/eugene/programming/tsandripsh/gallery"
 
 let install_path = ref "/tmp/tsandripsh"
 
-let year = "2014"
+let year = "2015"
 
-let season = "Лето 2014"
+let season = "Зима 2015"
 
 let keywords = Printf.sprintf "Цандрипш, частный сектор, без посредников, отдых, Абхазия, %s" year
 

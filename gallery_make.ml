@@ -47,6 +47,7 @@ type t = {
 	dest_256 : Purl.t;
 	dest_512 : Purl.t;
 	dest_1024 : Purl.t;
+	dest_2048 : Purl.t;
 	dest : Purl.t;
 }
 
@@ -64,8 +65,9 @@ let make =
 		let dest_256 = make_url 256 in
 		let dest_512 = make_url 512 in
 		let dest_1024 = make_url 1024 in
+		let dest_2048 = make_url 2048 in
 		let dest = Purl.make Path.gallery (Printf.sprintf "%s.%s" file ext) in
-		let t = { id = !id; file; ext; tags; description; dest_64; dest_256; dest_512; dest_1024; dest; } in
+		let t = { id = !id; file; ext; tags; description; dest_64; dest_256; dest_512; dest_1024; dest_2048; dest; } in
 		items := t :: !items;
 		incr id;
 		t

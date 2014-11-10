@@ -12,7 +12,7 @@ let left () =
 	<<
 		<aside class="main">
 			<h2>Содержание</h2>
-			$list:loop !Page.pages$
+			$list:List.sort (fun a b -> compare a.Page.contents_name b.Page.contents_name) !Page.pages |> loop$
 		</aside>
 	>>
 	
@@ -41,6 +41,9 @@ let center () =
 			<p>
 				<b>$str:Config.season$!</b> Предлагаем <b>жилье в частном секторе Абхазии без посредников</b>!
 			</p>
+			<div class="attention">
+				<b>Открыто бронирование на <a href=$Page_common.url Page.p_new_year$>новогоднюю ночь!</a></b>
+			</div>
 
 			$Tpl_img.text_img ~right:true Gallery.We Gallery.we04$
 
@@ -92,7 +95,7 @@ let center () =
 			<div class="float_clean"/>
 
 			<h2>Почему лучше обратить внимание на отдых в частном секторе, на Цандрипш?</h2>
-			$Tpl_img.text_img ~right:true ~text:(Printf.sprintf "Отдых в Абхазии %s, частный сектор" Config.season) Gallery.Condition Gallery.condition08$
+			$Tpl_img.text_img ~right:true ~text:(Printf.sprintf "Отдых в Абхазии %s, частный сектор" Config.season) Gallery.Condition Gallery.condition30$
 			<ul>
 				<li>Частный сектор Цандрипша — отличное место для отдыха с детьми. Тишина, сады, природа. Дети увидят много необычных для них животных, жучков, увидят как растут и спеют
 					их любимые фрукты.
@@ -111,7 +114,7 @@ let center () =
 			<div class="float_clean"/>
 
 			<h2>Почему отдых в Абхазии?</h2>
-			$Tpl_img.text_img ~right:true Gallery.Sea Gallery.sea11$
+			$Tpl_img.text_img ~right:true Gallery.Sea Gallery.sea26$
 			Хотелось бы кратко перечислить, чем отдых в Абхазии ($str:Config.year$-й год актуальность) выгодно отличается от отдыха во многих других регионах:
 			<ul>
 				<li>Значительно ниже цены на проживание, питание, экскурсии, внутренний транспорт.</li>

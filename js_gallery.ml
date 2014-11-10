@@ -20,9 +20,16 @@ let is_active = ref false
 
 module View =
 	struct
+		let remove_gview =
+			let open Regexp in
+			let rex = regexp "\\?gview=\\d+" in
+			fun () ->
+				let loc = Dom_html.window##location##href |> Js.to_string in
+				global_replace rex loc ""
+
 		let do_close div =
 			is_active := false;
-			Dom_html.window##location##href <- Js.string "#";
+			Dom_html.window##history##pushState ((), (Js.string "Галерея"), (Js.some (Js.string (remove_gview ()))));
 			div##style##opacity <- Js.def (Js.string "0");
 			div##style##width <- Js.string "0px";
 			div##style##height <- Js.string "0px";
@@ -87,7 +94,7 @@ module View =
 
 			let (p, img) = preload_image id in
 
-			Dom_html.window##location##href <- Js.string (Printf.sprintf "#gview=%i" p.Gallery.id);
+			Dom_html.window##history##pushState ((), (Js.string "Галерея"), (Js.some (Js.string (Printf.sprintf "?gview=%i" p.Gallery.id))));
 
 			let (frame_width, frame_height) = resize div p in
 
@@ -174,9 +181,21 @@ module View =
 				Dom.appendChild div div_descr_main;
 
 				(* description content frame *)
+
 				let div_descr = Dom_html.createDiv Dom_html.document in
 				div_descr##className <- Js.string "gallery_view_description_content";
 				let content = Printf.sprintf "<h1>%s</h1>%s" !current_title (Html_print.elt_to_string p.G.description) in
+				let content =
+					let string_url_orig = Purl.to_string p.Gallery.dest in
+					let info = Gallery_info.get string_url_orig in
+					match info with
+						| Some info ->
+							if info.Gallery_info.width > img_width || info.Gallery_info.height > img_height then
+								Printf.sprintf "%s<p><a href=\"%s\">Посмотреть большего размера</a></p>" content (Purl.to_string p.Gallery_make.dest_2048)
+							else
+								content
+						| None -> content
+				in
 				div_descr##innerHTML <- Js.string content;
 				Dom.appendChild div_descr_main div_descr;
 
@@ -399,7 +418,7 @@ let view ?(pos=0) ?photo l =
 
 let check_url =
 	let module R = Regexp in
-	let regexp = R.regexp "#gview=(\\d+)" in
+	let regexp = R.regexp "\\?gview=(\\d+)" in
 	fun () ->
 		let href = Js.to_string (Dom_html.window##location##href) in
 		let r = R.string_match regexp href 0 in

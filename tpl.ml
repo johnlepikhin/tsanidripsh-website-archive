@@ -64,7 +64,7 @@ module Main_menu =
 		let tpl1 position =
 			let make_el p =
 				if p = position then
-					<< <div class="main_menu_el main_menu_el_current">$str:to_name p$</div> >>
+					<< <a class="main_menu" href=$str:to_url p$><div class="main_menu_el main_menu_el_current">$str:to_name p$</div></a> >>
 				else
 					<< <a class="main_menu" href=$str:to_url p$><div class="main_menu_el main_menu_el_selectable">$str:to_name p$</div></a> >>
 			in
@@ -118,54 +118,28 @@ let yandex_metrika = Html5.Unsafe.data "
 	<!-- /Yandex.Metrika counter -->
 "
 
-let tpl_base ~title ~position ?keywords ?description ?left center =
+let tpl_tpl_base
+	?(add_class="")
+	~title
+	~position
+	?keywords
+	?description
+	?(left : Html5_types.div_content Html5.elt option)
+	(center : Html5_types.div_content Html5.elt)
+	: [> Html5_types.html ] Html5.elt =
 	let title = Printf.sprintf "%s — Отдых в Абхазии %s, Цандрипш." title Config.year in
 	let main_menu = Main_menu.tpl1 position in
 	let main_menu_bottom = Main_menu.tpl2 position in
 	let phones = List.map (fun (phone, _, op) -> << <div>$str:phone$</div> >>) Config.phones in
 	let left = match left with
 		| None -> << <div/> >>
-		| Some el -> << <aside class="tpl_main_left">$el$</aside> >>
+		| Some el ->
+			<< <aside class="tpl_main_left">$el$</aside> >>
 	in
 	html ~title ?keywords ?description <<
 		<body class="tpl_main" id=$str:Id.to_string Id.body$>
 			<div class="tpl_main">
-			<!--
-				<script>
-						function moveTitle (maxmove, time) {
-							e = document.getElementById ('tpl_main_header');
-							if (typeof(bgPosX) == "undefined") {
-								bgPosX = 800;
-								bgPosY = 10;
-							}
-
-							e.style.transition = "background-position " + time + "s";
-							max_x = e.offsetWidth;
-							max_y = 200;
-							tmpx = -1;
-							tmpy = -1;
-							i = 0;
-							while (Math.max(tmpx, -1) == -1 || Math.max (tmpy, -1) == -1 || Math.max (tmpx, max_x) == tmpx || Math.max (tmpy, max_y) == tmpy) {
-								tmpx = bgPosX + Math.random () * maxmove - maxmove/2;
-								tmpy = bgPosY + Math.random () * maxmove - maxmove/2;
-								i++;
-								if (i == 1000) {
-									return;
-								}
-							}
-							e.style.backgroundPosition = "-" + tmpx + "px -" + tmpy + "px";
-							bgPosX = tmpx;
-							bgPosY = tmpy;
-						}
-
-						function moveTitlePeriodically () {
-							window.setTimeout("moveTitle (300, 3); moveTitlePeriodically ()", 7000);
-						}
-
-						moveTitlePeriodically ();
-				</script>
-				-->
-				<div class="tpl_main_header" id=$Id.to_string Id.tpl_main_header$>
+				<div class=$Printf.sprintf "tpl_main_header %s" add_class$ id=$Id.to_string Id.tpl_main_header$>
 					<div class="tpl_main_header_content">
 						<a href=$Page.url Page.p_main$>
 							<div class="tpl_main_logo">
@@ -187,6 +161,11 @@ let tpl_base ~title ~position ?keywords ?description ?left center =
 					$main_menu$
 					<div class="float_clean"/>
 					$left$
+
+			<div class="attention">
+				<b>Открыто бронирование на</b> <a href=$Page_common.url Page.p_new_year$> новогоднюю ночь</a>!
+			</div>
+
 					$center$
 					<div class="main_menu_bottom_container">
 						$main_menu_bottom$
@@ -202,6 +181,9 @@ let tpl_base ~title ~position ?keywords ?description ?left center =
 			</div>
 		</body>
 	>>
+
+let tpl_base = tpl_tpl_base ~add_class:""
+let tpl_base_newyear = tpl_tpl_base ~add_class:"new_year_main_header"
 
 let tpl_redirect path =
 	let meta = Html5.Unsafe.data (Printf.sprintf "<meta http-equiv=\"refresh\" content=\"0; url=http://%s%s\" />" Config.site_domain (Page.url path)) in

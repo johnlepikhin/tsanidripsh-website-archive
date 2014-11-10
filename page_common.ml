@@ -11,7 +11,11 @@ let p_gallery = Purl.make Path.root "gallery"
 
 let p_prices = Purl.make Path.root "prices"
 
+let p_billing = Purl.make Path.root "billing"
+
 let p_tours = Purl.make Path.root "tours"
+
+let p_rooms = Purl.make Path.root "rooms"
 
 let p_contacts = Purl.make Path.root "contacts"
 
@@ -33,3 +37,5 @@ let p_tours_alps = Purl.make Path.tours "tour_alps"
 let p_old_tours_afon = Purl.make Path.tours "afon"
 
 let a_tsandripsh = Purl.make Path.articles "tsandripsh"
+
+let p_new_year = Purl.make Path.root "new_year"

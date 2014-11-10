@@ -28,3 +28,13 @@ let coltitle_img tag img =
 			$t$
 		</div>
 	>>
+
+let textbig_img tag img =
+	let t = Html5.img ~src:(Purl.to_string img.Gallery.dest_1024) ~alt:(alt_of_tags [tag]) () in
+	let js = Gallery_static.gen_jscall_of_tag ~start:img tag in
+	let c = "textbig_img" in
+	<<
+		<div class=$str:c$ onclick=$js$>
+			$t$
+		</div>
+	>>

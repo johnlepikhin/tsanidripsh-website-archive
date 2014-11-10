@@ -8,52 +8,9 @@ let we04 = make "04_we04" "jpg" [We; ] <<
 	</div>
 >>
 
-let condition01 = make "01_condition01" "jpg" [Condition; ] <<
-	<div>
-Вид из окна нашего дома.
-	</div>
->>
-
-let condition02 = make "01_condition02" "jpg" [Condition; ] <<
-	<div>
-Санузел на этаже.
-	</div>
->>
-
-let condition03 = make "01_condition03" "jpg" [Condition; ] <<
-	<div>
-
-	</div>
->>
-
-let condition04 = make "01_condition04" "jpg" [Condition; ] <<
-	<div>
-На кухне можно самостоятельно приготовить себе обед.
-	</div>
->>
-
-let condition05 = make "01_condition05" "jpg" [Condition; ] <<
-	<div>
-
-	</div>
->>
-
-let condition06 = make "01_condition06" "jpg" [Condition; Sea; Tsandripsh; ] <<
-	<div>
-Вид на поселок и море с террасы нашего дома.
-	</div>
->>
-
-(*
-let condition07 = make "01_condition07" "jpg" [Condition; ] <<
-	<div>
-Уютная терраса,увешанная ветками виноградника, где можно замечательно провести обеденное время в жаркий летний день или попить чай в интересной дружеской компании.
-	</div>
->>
-*)
-
 let condition08 = make "01_condition08" "jpg" [Condition; ] <<
 	<div>		
+		В одном из номеров.
 	</div>
 >>
 
@@ -69,27 +26,123 @@ let condition10 = make "01_condition10" "jpg" [Condition; ] <<
 	</div>
 >>
 
-let condition11 = make "01_condition11" "jpg" [Condition; ] <<
-	<div>
-		Небольшой коридор между номерами.
-	</div>
->>
-
 let condition12 = make "01_condition12" "jpg" [Condition; ] <<
 	<div>
 		В одном из номеров.
 	</div>
 >>
 
-let condition13 = make "01_condition13" "jpg" [Condition; Sea; Tsandripsh; ] <<
+let condition23 = make "01_condition23" "jpg" [Condition; ] <<
 	<div>
-		Вид из дома на море.
+		В одном из номеров.
 	</div>
 >>
 
-let condition14 = make "01_condition14" "jpg" [Condition; ] <<
+let condition24 = make "01_condition24" "jpg" [Condition; ] <<
 	<div>
-		Вид из дома в сторону гор.
+		В одном из номеров.
+	</div>
+>>
+
+let condition25 = make "01_condition25" "jpg" [Condition; ] <<
+	<div>
+		В одном из номеров.
+	</div>
+>>
+
+let condition26 = make "01_condition26" "jpg" [Condition; ] <<
+	<div>
+		В одном из номеров.
+	</div>
+>>
+
+let condition27 = make "01_condition27" "jpg" [Condition; ] <<
+	<div>
+		В одном из номеров.
+	</div>
+>>
+
+let condition30 = make "01_condition30" "jpg" [Condition; ] <<
+	<div>
+		В одном из номеров.
+	</div>
+>>
+
+let condition31 = make "01_condition31" "jpg" [Condition; ] <<
+	<div>
+		В одном из номеров.
+	</div>
+>>
+
+let condition29 = make "01_condition29" "jpg" [Condition; ] <<
+	<div>
+		Часть номеров у нас с персональными балконами, где приятно посидеть вечером в тени мандариновых деревьев.
+	</div>
+>>
+
+let condition01 = make "01_condition01" "jpg" [Condition; ] <<
+	<div>
+Вид из окна нашего дома.
+	</div>
+>>
+
+let condition28 = make "01_condition28" "jpg" [Condition; ] <<
+	<div>
+		Небольшой коридор между номерами.
+	</div>
+>>
+
+let condition02 = make "01_condition02" "jpg" [Condition; ] <<
+	<div>
+Санузел на этаже.
+	</div>
+>>
+
+let condition03 = make "01_condition03" "jpg" [Condition; ] <<
+	<div>
+Санузел на этаже.
+	</div>
+>>
+
+let condition18 = make "01_condition18" "jpg" [Condition; ] <<
+	<div>
+		Для гостей мы предоставляем современные душевые.
+	</div>
+>>
+
+let condition04 = make "01_condition04" "jpg" [Condition; ] <<
+	<div>
+На кухне можно самостоятельно приготовить себе обед.
+	</div>
+>>
+
+let condition05 = make "01_condition05" "jpg" [Condition; ] <<
+	<div>
+Кухня.
+	</div>
+>>
+
+let condition20 = make "01_condition20" "jpg" [Condition; ] <<
+	<div>
+		Летняя кухня.
+	</div>
+>>
+
+let condition22 = make "01_condition22" "jpg" [Condition; ] <<
+	<div>
+		Летняя кухня.
+	</div>
+>>
+
+let condition06 = make "01_condition06" "jpg" [Condition; Sea; Tsandripsh; ] <<
+	<div>
+Вид на море с террасы нашего дома.
+	</div>
+>>
+
+let condition13 = make "01_condition13" "jpg" [Condition; Sea; Tsandripsh; ] <<
+	<div>
+		Вид из дома на море.
 	</div>
 >>
 
@@ -107,27 +160,9 @@ let condition16 = make "01_condition16" "jpg" [Condition; ] <<
 	</div>
 >>
 
-let condition17 = make "01_condition17" "jpg" [Condition; ] <<
-	<div>
-		Вид с веранды.
-	</div>
->>
-
-let condition18 = make "01_condition18" "jpg" [Condition; ] <<
-	<div>
-		Для гостей мы предоставляем современные душевые.
-	</div>
->>
-
 let condition19 = make "01_condition19" "jpg" [Condition; ] <<
 	<div>
 		Рядом с домом.
-	</div>
->>
-
-let condition20 = make "01_condition20" "jpg" [Condition; ] <<
-	<div>
-		Летняя кухня.
 	</div>
 >>
 
@@ -137,9 +172,15 @@ let condition21 = make "01_condition21" "jpg" [Condition; Plant; ] <<
 	</div>
 >>
 
-let condition22 = make "01_condition22" "jpg" [Condition; ] <<
+let condition32 = make "01_condition32" "jpg" [Condition; ] <<
 	<div>
-		Летняя кухня.
+		Панорамный вид на море и поселок из нашего дома.
+	</div>
+>>
+
+let condition33 = make "01_condition33" "jpg" [Condition; ] <<
+	<div>
+		Панорамный вид из нашего дома назад, на горы.
 	</div>
 >>
 
@@ -214,6 +255,30 @@ let tsandripsh11 = make "05_tsandripsh11" "jpg" [Tsandripsh; ] <<
 let tsandripsh12 = make "05_tsandripsh12" "jpg" [Tsandripsh; ] <<
 	<div>
 		Вид на Цандрипш.
+	</div>
+>>
+
+let tsandripsh13 = make "05_tsandripsh13" "jpg" [Tsandripsh; ] <<
+	<div>
+		Один из переулков улицы Нагорной в Цандрипше.
+	</div>
+>>
+
+let tsandripsh14 = make "05_tsandripsh14" "jpg" [Tsandripsh; ] <<
+	<div>
+		Лианы близ вокзала Цандрипша.
+	</div>
+>>
+
+let tsandripsh15 = make "05_tsandripsh15" "jpg" [Tsandripsh; ] <<
+	<div>
+		Ноябрь на пляже Цандрипша.
+	</div>
+>>
+
+let tsandripsh16 = make "05_tsandripsh16" "jpg" [Tsandripsh; ] <<
+	<div>
+		На центральном рынке Цандрипша.
 	</div>
 >>
 
@@ -331,6 +396,83 @@ let sea16 = make "02_sea16" "jpg" [Sea; ] <<
 	</div>
 >>
 
+let sea17 = make "02_sea17" "jpg" [Sea; ] <<
+	<div>
+		Пляж Белые скалы.
+	</div>
+>>
+
+let sea18 = make "02_sea18" "jpg" [Sea; ] <<
+	<div>
+		Пляж Белые скалы.
+	</div>
+>>
+
+let sea19 = make "02_sea19" "jpg" [Sea; ] <<
+	<div>
+		Пляж Белые скалы.
+	</div>
+>>
+
+let sea20 = make "02_sea20" "jpg" [Sea; ] <<
+	<div>
+		Пляж Белые скалы.
+	</div>
+>>
+
+let sea21 = make "02_sea21" "jpg" [Sea; ] <<
+	<div>
+		Пляж Белые скалы.
+	</div>
+>>
+
+let sea22 = make "02_sea22" "jpg" [Sea; ] <<
+	<div>
+		Пляж Белые скалы.
+	</div>
+>>
+
+let sea23 = make "02_sea23" "jpg" [Sea; ] <<
+	<div>
+		Пляж Белые скалы.
+	</div>
+>>
+
+let sea24 = make "02_sea24" "jpg" [Sea; ] <<
+	<div>
+		Пляж Белые скалы.
+	</div>
+>>
+
+let sea25 = make "02_sea25" "gif" [Sea; ] <<
+	<div>
+		Пляж Белые скалы.
+	</div>
+>>
+
+let sea26 = make "02_sea26" "jpg" [Sea; ] <<
+	<div>
+		Наш пляж.
+	</div>
+>>
+
+let sea27 = make "02_sea27" "jpg" [Sea; ] <<
+	<div>
+		Наш пляж.
+	</div>
+>>
+
+let sea28 = make "02_sea28" "jpg" [Sea; ] <<
+	<div>
+		Наш пляж.
+	</div>
+>>
+
+let sea29 = make "02_sea29" "jpg" [Sea; ] <<
+	<div>
+		Наш пляж.
+	</div>
+>>
 
 
 
@@ -756,9 +898,45 @@ let mimoza = make "05_mimoza" "jpg" [Plant; ] <<
 	</div>
 >>
 
-let vinograd01 = make "05_vinograd01" "jpg" [Plant; ] <<
+let fruits01 = make "06_fruits01" "jpg" [Plant; ] <<
 	<div>
 		Виноград в нашем саду. Поспевает в октябре, а уже в ноябре есть молодое вино.
+	</div>
+>>
+
+let fruits02 = make "06_fruits02" "jpg" [Plant; ] <<
+	<div>
+		Мандарины.
+	</div>
+>>
+
+let fruits03 = make "06_fruits03" "jpg" [Plant; ] <<
+	<div>
+		Мандарины.
+	</div>
+>>
+
+let fruits04 = make "06_fruits04" "jpg" [Plant; ] <<
+	<div>
+		Хурма.
+	</div>
+>>
+
+let fruits05 = make "06_fruits05" "jpg" [Plant; ] <<
+	<div>
+		Хурма.
+	</div>
+>>
+
+let fruits06 = make "06_fruits06" "jpg" [Plant; ] <<
+	<div>
+		Фейхоа.
+	</div>
+>>
+
+let fruits07 = make "06_fruits07" "jpg" [Plant; ] <<
+	<div>
+		Фейхоа.
 	</div>
 >>
 
