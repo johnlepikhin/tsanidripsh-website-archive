@@ -29,9 +29,10 @@ let rec node_filter = function
 				empty () :: node_filter tl
 			| Comment s ->
 				node_filter tl
-			| EncodedPCDATA s -> if has_data s then encodedpcdata (remove_spaces s) :: node_filter tl else node_filter tl
-			| PCDATA s -> if has_data s then pcdata (remove_spaces s) :: node_filter tl else node_filter tl
-			| Entity s -> if has_data s then entity (remove_spaces s) :: node_filter tl else node_filter tl
+			| EncodedPCDATA s ->
+				encodedpcdata (if has_data s then remove_spaces s else " ") :: node_filter tl
+			| PCDATA s -> pcdata (if has_data s then remove_spaces s else " ") :: node_filter tl
+			| Entity s -> entity (if has_data s then remove_spaces s else " ") :: node_filter tl
 			| Leaf (name, a) -> leaf ~a name :: node_filter tl
 			| Node (name, a, l) ->
 				match name with

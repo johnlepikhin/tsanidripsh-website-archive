@@ -37,6 +37,81 @@ div.tpl_main_header {
 	box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
+
+
+div.new_year_main_header {
+	background-image: url("/title_new_year.png");
+}
+
+.attention {
+	color: #805000;
+	margin: 20px;
+}
+
+div.textnb_img {
+	float: left;
+	width: 20%;
+	margin: 30px;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+div.textnb_img_right {
+	float: right;
+}
+
+div.textnb_img img {
+	width: 100%;
+}
+
+div.swing {
+	-moz-animation: swing 5s infinite ease;
+	-webkit-animation: swing 5s infinite ease;
+	transform-origin: 50% 90%;
+}
+
+@-moz-keyframes swing {
+	0% {
+		-moz-transform: rotate(-5deg);
+	}
+	50% {
+		-moz-transform: rotate(5deg);
+	}
+	100% {
+		-moz-transform: rotate(-5deg);
+	}
+}
+
+@-webkit-keyframes swing {
+	0% {
+		-webkit-transform: rotate(-5deg);
+	}
+	50% {
+		-webkit-transform: rotate(5deg);
+	}
+	100% {
+		-webkit-transform: rotate(-5deg);
+	}
+}
+
+div.sea_img {
+	width: 100%;
+	text-align: center;
+}
+
+div.sea_img img {
+	width: 90%;
+}
+
+ul {
+	list-style-image: url('orange.svg');
+}
+
+
+
+
+
+
 div.tpl_main_header_content {
 	width: 100%;
 	height: 200px;
@@ -378,6 +453,21 @@ div.text_img {
 	text-align: center;
 	font-size: 0.8em;
 }
+
+div.textbig_img {
+	width: 100%;
+	margin: 15px;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+div.textbig_img img {
+	width: 80%;
+	border:2px solid grey;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
 
 div.text_img_right {
 	float: right;
