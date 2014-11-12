@@ -18,6 +18,19 @@ let html ~title ?(keywords=Config.keywords) ?(description=Config.description) bo
 	</html>
 >>
 
+let tpl_banner image alt page =
+	let t = Html5.img ~src:(Static.url image) ~alt () in
+	<<
+		<div class="banner rock">
+			<a href=$Page.url page$>
+				$t$
+				<div class="banner_text">
+					$str:alt$
+				</div>
+			</a>
+		</div>
+	>>
+
 module Position =
 	struct
 		type t =
@@ -130,6 +143,9 @@ let tpl_tpl_base
 	let title = Printf.sprintf "%s — Отдых в Абхазии %s, Цандрипш." title Config.year in
 	let main_menu = Main_menu.tpl1 position in
 	let main_menu_bottom = Main_menu.tpl2 position in
+
+	let banner = tpl_banner Static.christmas_tree "Приглашаем на Новый Год!" Page.p_new_year in
+
 	let phones = List.map (fun (phone, _, op) -> << <div>$str:phone$</div> >>) Config.phones in
 	let left = match left with
 		| None -> << <div/> >>
@@ -138,6 +154,7 @@ let tpl_tpl_base
 	in
 	html ~title ?keywords ?description <<
 		<body class="tpl_main" id=$str:Id.to_string Id.body$>
+			$banner$
 			<div class="tpl_main">
 				<div class=$Printf.sprintf "tpl_main_header %s" add_class$ id=$Id.to_string Id.tpl_main_header$>
 					<div class="tpl_main_header_content">
@@ -161,10 +178,6 @@ let tpl_tpl_base
 					$main_menu$
 					<div class="float_clean"/>
 					$left$
-
-			<div class="attention">
-				<b>Открыто бронирование на</b> <a href=$Page_common.url Page.p_new_year$> новогоднюю ночь</a>!
-			</div>
 
 					$center$
 					<div class="main_menu_bottom_container">

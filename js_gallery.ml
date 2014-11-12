@@ -191,7 +191,7 @@ module View =
 					match info with
 						| Some info ->
 							if info.Gallery_info.width > img_width || info.Gallery_info.height > img_height then
-								Printf.sprintf "%s<p><a href=\"%s\">Посмотреть большего размера</a></p>" content (Purl.to_string p.Gallery_make.dest_2048)
+								Printf.sprintf "%s<p><a target=\"_blank\" href=\"%s\">Посмотреть большего размера</a></p>" content (Purl.to_string p.Gallery_make.dest_2048)
 							else
 								content
 						| None -> content
