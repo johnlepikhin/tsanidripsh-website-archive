@@ -33,17 +33,23 @@ let articles () =
 		</div>
 	>>
 
+let attention_new_year = <<
+	<div class="attention">
+		<b>Открыто бронирование на <a href=$Page_common.url Page.p_new_year$>новогоднюю ночь!</a></b>
+	</div>
+>>
+
+let attention_empty = << <div/> >>
+
 let center () =
 	let video = Html5.Unsafe.data "<iframe class=\"youtube\" width=\"640\" height=\"360\" src=\"//www.youtube.com/embed/y2C_XU1YRCQ\" frameborder=\"0\" allowfullscreen></iframe>" in
 	<<
 		<div class="tpl_main_center">
-			<h1>Отдых в Абхазии, поселок Цандрипш, частный сектор</h1>
+			<h1>$str:Config.main_title$, поселок Цандрипш, частный сектор</h1>
 			<p>
 				<b>$str:Config.season$!</b> Предлагаем <b>жилье в частном секторе Абхазии без посредников</b>!
 			</p>
-			<div class="attention">
-				<b>Открыто бронирование на <a href=$Page_common.url Page.p_new_year$>новогоднюю ночь!</a></b>
-			</div>
+			$if Config.is_new_year then attention_new_year else attention_empty$
 
 			$Tpl_img.text_img ~right:true Gallery.We Gallery.we04$
 

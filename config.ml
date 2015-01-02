@@ -1,4 +1,6 @@
 
+let is_new_year = false
+
 let static_path = "/home/eugene/programming/tsandripsh/static"
 
 let gallery_src_path = "/home/eugene/programming/tsandripsh/gallery"
@@ -8,6 +10,8 @@ let install_path = ref "/tmp/tsandripsh"
 let year = "2015"
 
 let season = "Зима 2015"
+
+let main_title = "Новый год в Абхазии"
 
 let keywords = Printf.sprintf "Цандрипш, частный сектор, без посредников, отдых, Абхазия, %s" year
 

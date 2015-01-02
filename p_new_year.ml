@@ -79,7 +79,7 @@ let center = <<
 include Page.Make (struct
 	let title = "В Абхазию на Новый Год"
 
-	let contents_name = Some "Встреча Нового Года"
+	let contents_name = if Config.is_new_year then Some "Встреча Нового Года" else None
 
 	let path = Page.p_new_year
 

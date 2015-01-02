@@ -140,11 +140,16 @@ let tpl_tpl_base
 	?(left : Html5_types.div_content Html5.elt option)
 	(center : Html5_types.div_content Html5.elt)
 	: [> Html5_types.html ] Html5.elt =
-	let title = Printf.sprintf "%s — Отдых в Абхазии %s, Цандрипш." title Config.year in
+	let title = Printf.sprintf "%s — %s %s, Цандрипш." title Config.main_title Config.year in
 	let main_menu = Main_menu.tpl1 position in
 	let main_menu_bottom = Main_menu.tpl2 position in
 
-	let banner = tpl_banner Static.christmas_tree "Приглашаем на Новый Год!" Page.p_new_year in
+	let banner =
+		if Config.is_new_year then
+			tpl_banner Static.christmas_tree "Приглашаем на Новый Год!" Page.p_new_year
+		else
+			<< <div/> >>
+	in
 
 	let phones = List.map (fun (phone, _, op) -> << <div>$str:phone$</div> >>) Config.phones in
 	let left = match left with
