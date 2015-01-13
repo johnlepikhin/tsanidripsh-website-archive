@@ -1,6 +1,9 @@
 
 module Html5 = Html5.M
 
+let yaCounterID = "17405770"
+
+let reachGoal name = Printf.sprintf "yaCounter%s.reachGoal('%s'); return true;" yaCounterID name
 
 let html ~title ?(keywords=Config.keywords) ?(description=Config.description) body =
 	let meta_yandex = Html5.Unsafe.data "<meta name='yandex-verification' content='6cb12c4bf700b317' />" in
@@ -173,7 +176,7 @@ let tpl_tpl_base
 								</div>
 							</div>
 						</a>
-						<div class="tpl_main_contacts">
+						<div class="tpl_main_contacts" onmouseover=$reachGoal "view_contacts"$>
 							$list:phones$
 							<a href=$str:"mailto:" ^ Config.mailto$>$str:Config.mailto$</a>
 						</div>

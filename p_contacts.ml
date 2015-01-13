@@ -43,20 +43,21 @@ let center =
 	<<
 		<div class="tpl_main_center">
 			<script>$script$</script>
-			<h2>Телефоны для вопросов и бронирования</h2>
-			$list:phones$
-			<br/>
+			<div onmouseover=$Tpl.reachGoal "view_contacts"$>
+				<h2>Телефоны для вопросов и бронирования</h2>
+				$list:phones$
+			</div>
 			Номера привязаны к Краснодарскому краю России, стоимость звонка из любого региона около 2-5 рублей. Мы ждем вашего звонка с 9 утра до 11 вечера по Московскому времени.
 			<b id="validCallTime"/>
 			<script>var el = document.getElementById(id="validCallTime"); fillCallTime(el); checkCallTimePeriodically ();</script>
 
 			<h2>Социальные сети</h2>
-			ВКонтакте: <a href="http://vk.com/id51333406">Минас Рогонян</a>
+			ВКонтакте: <a onmousedown=$Tpl.reachGoal "view_contacts_vkontakte"$ href="http://vk.com/id51333406">Минас Рогонян</a>
 			<br/>
-			Одноклассники: <a href="http://www.odnoklassniki.ru/profile/340785123423">Минас Рогонян</a>
+			Одноклассники: <a onmousedown=$Tpl.reachGoal "view_contacts_odnoklassniki"$ href="http://www.odnoklassniki.ru/profile/340785123423">Минас Рогонян</a>
 
 			<h2>E-mail</h2>
-			<a href=$str:"mailto:" ^ Config.mailto$>$str:Config.mailto$</a>
+			<a onmousedown=$Tpl.reachGoal "view_contacts_email"$ href=$str:"mailto:" ^ Config.mailto$>$str:Config.mailto$</a>
 
 			<h2>Наш адрес</h2>
 			Абхазия, Гагринский район, Цандрипш, ул.Нагорная, д.21
