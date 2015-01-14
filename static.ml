@@ -57,3 +57,10 @@ let yacht = cmake Path.root "yacht.svg"
 let sea = cmake Path.root "sea.svg"
 let orange = cmake Path.root "orange.svg"
 
+let internet_instruction_billing = cmake Path.root "internet-instruction-billing.html"
+let internet_instr01 = cmake Path.root "internet-instruction-01.png"
+let internet_instr02 = cmake Path.root "internet-instruction-02.png"
+let internet_instr03 = cmake Path.root "internet-instruction-03.png"
+let internet_instr04 = cmake Path.root "internet-instruction-04.png"
+let internet_instr05 = cmake Path.root "internet-instruction-05.png"
+
