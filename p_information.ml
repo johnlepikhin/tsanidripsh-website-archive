@@ -53,18 +53,12 @@ let lst = [
 
 	"Какой у вас климат? Когда можно купаться?",
 	(
-		let img1 = Html5.img ~src:"http://info.weather.yandex.net/gagra/2_white.ru.png" ~alt:"" () in
-		let img2 = Html5.img ~src:"http://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*http://img.yandex.ru/i/pix.gif" ~alt:"" () in
 		<<
 			<div>
-				<div class="weather_informer">
-					<a href="http://clck.yandex.ru/redir/dtype=stred/pid=7/cid=1228/*http://pogoda.yandex.ru/gagra">
-						$img1$
-						$img2$
-					</a>
-				</div>
+				$P_climate.yandex_weather$
 				Высокий сезон в Абхазии начинается с в июне и заканчивается в сентябре. В это время страну посещает максимум туристов (пик приходится на
-				июль и август). Но купаться можно и в мае, и в октябре. Просто вода будет не 26°C, а ближе к 20°C.
+				июль и август). Но купаться можно и в мае, и в октябре. Просто вода будет не 26°C, а ближе к 20°C. Специально для желающих узнать подробности, мы
+				создали <a href=$Page_common.url Page.p_climate$>специальную страницу</a>.
 			</div>
 		>>
 	);

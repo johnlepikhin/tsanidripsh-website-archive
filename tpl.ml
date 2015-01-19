@@ -3,6 +3,8 @@ module Html5 = Html5.M
 
 let yaCounterID = "17405770"
 
+let googleAnalyticsID = "UA-58581213-1"
+
 let reachGoal name = Printf.sprintf "yaCounter%s.reachGoal('%s'); return true;" yaCounterID name
 
 let html ~title ?(keywords=Config.keywords) ?(description=Config.description) body =
@@ -98,11 +100,11 @@ module Main_menu =
 			<< <div class="main_menu_bottom">$list:divs$</div> >>
 	end
 
-let yandex_metrika = Html5.Unsafe.data "
+let yandex_metrika = Html5.Unsafe.data (Printf.sprintf "
 	<!-- Yandex.Metrika informer -->
-	<a href=\"https://metrika.yandex.ru/stat/?id=17405770&amp;from=informer\"
-	target=\"_blank\" rel=\"nofollow\"><img src=\"//bs.yandex.ru/informer/17405770/1_1_8B97DCFF_6B77BCFF_0_pageviews\"
-	style=\"width:80px; height:15px; border:0;\" alt=\"Яндекс.Метрика\" title=\"Яндекс.Метрика: данные за сегодня (просмотры)\" onclick=\"try{Ya.Metrika.informer({i:this,id:17405770,lang:'ru'});return false}catch(e){}\"/></a>
+	<a href=\"https://metrika.yandex.ru/stat/?id=%s&amp;from=informer\"
+	target=\"_blank\" rel=\"nofollow\"><img src=\"//bs.yandex.ru/informer/%s/1_1_8B97DCFF_6B77BCFF_0_pageviews\"
+	style=\"width:80px; height:15px; border:0;\" alt=\"Яндекс.Метрика\" title=\"Яндекс.Метрика: данные за сегодня (просмотры)\" onclick=\"try{Ya.Metrika.informer({i:this,id:%s,lang:'ru'});return false}catch(e){}\"/></a>
 	<!-- /Yandex.Metrika informer -->
 
 	<!-- Yandex.Metrika counter -->
@@ -110,7 +112,7 @@ let yandex_metrika = Html5.Unsafe.data "
 	(function (d, w, c) {
 		 (w[c] = w[c] || []).push(function() {
 			  try {
-					w.yaCounter17405770 = new Ya.Metrika({id:17405770,
+					w.yaCounter%s = new Ya.Metrika({id:%s,
 							  webvisor:true,
 							  clickmap:true,
 							  trackLinks:true,
@@ -130,9 +132,22 @@ let yandex_metrika = Html5.Unsafe.data "
 		 } else { f(); }
 	})(document, window, \"yandex_metrika_callbacks\");
 	</script>
-	<noscript><div><img src=\"//mc.yandex.ru/watch/17405770\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>
+	<noscript><div><img src=\"//mc.yandex.ru/watch/%s\" style=\"position:absolute; left:-9999px;\" alt=\"\" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
-"
+" yaCounterID yaCounterID yaCounterID yaCounterID yaCounterID yaCounterID)
+
+let googl_analytics = Html5.Unsafe.data ("
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '" ^ googleAnalyticsID ^ "', 'auto');
+    ga('send', 'pageview');
+
+	 </script>
+")
 
 let tpl_tpl_base
 	?(add_class="")
@@ -195,6 +210,7 @@ let tpl_tpl_base
 				<div class="tpl_main_copyright">
 					© 2003-$str:let open Unix in string_of_int ((localtime(time ())).tm_year + 1900)$ Минас Рогонян
 					$yandex_metrika$
+					$googl_analytics$
 				</div>
 			</div>
 			<div>

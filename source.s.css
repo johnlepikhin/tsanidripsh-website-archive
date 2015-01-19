@@ -192,7 +192,7 @@ div.tpl_main_header_content {
 	background-color: rgba(0,0,0,0.3);
 }
 
-div.float_clean {
+.float_clean {
 	clear: both;
 }
 
@@ -390,8 +390,9 @@ div.contacts_phone {
 }
 
 div.weather_informer {
-	padding: 0.1em;
+	padding: 0.3em;
 	float: right;
+	text-align: center;
 }
 
 div.gallery_main {
@@ -602,6 +603,10 @@ div.text_video {
 
 h2.center {
 	text-align: center;
+}
+
+p.small_font {
+	font-size: 0.8em;
 }
 
 iframe.youtube {

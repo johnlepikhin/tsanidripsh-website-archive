@@ -39,3 +39,5 @@ let p_old_tours_afon = Purl.make Path.tours "afon"
 let a_tsandripsh = Purl.make Path.articles "tsandripsh"
 
 let p_new_year = Purl.make Path.root "new_year"
+
+let p_climate = Purl.make Path.root "climate"
