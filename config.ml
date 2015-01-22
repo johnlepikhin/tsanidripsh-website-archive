@@ -12,9 +12,13 @@ let year = "2015"
 let season = "Весна-лето 2015"
 
 let main_title =
-	if is_new_year
-	then "Новый год в Абхазии"
-	else "Отдых в Абхазии"
+	let title =
+		if is_new_year then
+			"Новый год в Абхазии"
+		else
+			"Отдых в Абхазии"
+	in
+	title ^ " " ^ season
 
 let keywords = Printf.sprintf "Цандрипш, частный сектор, без посредников, отдых, Абхазия, %s" year
 
