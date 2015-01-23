@@ -17,19 +17,10 @@ let left () =
 	>>
 	
 let articles () =
-	let f a =
-		let page = Article.page a in
-		<<
-			<div>
-				<a href=$str:Page.url page.Page.path$>$str:page.Page.title$</a>
-			</div>
-		>>
-	in
-	let l = Article.all ~limit:10 () |> List.map f in
 	<<
 		<div>
 			<h2>Новое на сайте! Интересные статьи</h2>
-			$list:l$
+			$list:Article.articles_list 10$
 		</div>
 	>>
 

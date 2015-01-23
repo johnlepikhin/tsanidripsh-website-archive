@@ -46,3 +46,15 @@ module M
 
 include M
 
+
+let articles_list limit =
+	let module Html5 = Html5.M in
+	let f a =
+		let page = page a in
+		<<
+			<div>
+				<a href=$str:Page.url page.Page.path$>$str:page.Page.title$</a>
+			</div>
+		>>
+	in
+	all ~limit () |> List.map f

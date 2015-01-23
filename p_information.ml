@@ -91,8 +91,10 @@ let left =
 	let els = List.map (fun (title, _, id) -> << <p><a href=$str:"#info"^(string_of_int id)$>$str:title$</a></p> >>) lst in
 	<<
 		<aside>
-			<h1>Оглавление</h1>
+			<h1>Частые вопросы</h1>
 			$list:els$
+			<h1>Полезные статьи</h1>
+			$list:Article.articles_list 100$
 		</aside>
 	>>
 
