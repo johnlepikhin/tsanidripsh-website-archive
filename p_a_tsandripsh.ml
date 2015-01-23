@@ -2,7 +2,7 @@
 open Article
 module Html5 = Html5.M
 
-let tsandripsh = make Page_common.a_tsandripsh "Цандрипш — наш курорт" <<
+let tsandripsh = make ~path:Page_common.a_tsandripsh ~title:"Цандрипш — наш курорт" <<
 	<div class="tpl_main_center">
 		<h1>Цандрипш — наш курорт</h1>
 

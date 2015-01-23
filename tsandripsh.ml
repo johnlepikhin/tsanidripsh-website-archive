@@ -12,10 +12,10 @@ let () =
 	let module P = P_old_testimonials in
 	let module P = P_old_tours_afon in
 	let module P = P_a_tsandripsh in
+	let module P = P_a_climate in
 	let module P = P_billing in
 	let module P = P_rooms in
 	let module P = P_new_year in
-	let module P = P_climate in
 	Install_path.create_all ();
 	if Array.length Sys.argv > 1 && Sys.argv.( 1 ) = "gallery" then
 		Install_gallery.create_all ();

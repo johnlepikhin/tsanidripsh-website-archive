@@ -5,7 +5,13 @@ module M
 
 		val all: ?limit:int -> unit -> t list
 
-		val make: ?contents_name:string -> Page.path -> string -> Html5_types.div_content Tpl.Html5.elt -> t
+		val make:
+			?contents_name:string ->
+			path:Page.path ->
+			title:string ->
+			?left:Html5_types.div_content Tpl.Html5.elt ->
+			Html5_types.div_content Tpl.Html5.elt ->
+			t
 
 		val page: t -> Page.t
 	end
@@ -28,8 +34,8 @@ module M
 					in
 					loop 1 !list
 
-		let make ?contents_name path title text =
-			let doc () = Tpl.tpl_base ~title ~position:Tpl.Position.Information text in
+		let make ?contents_name ~path ~title ?left text =
+			let doc () = Tpl.tpl_base ~title ~position:Tpl.Position.Information ?left text in
 			let page = Page.anonymous ?contents_name path doc title in
 			let article = { page } in
 			list := article :: !list;

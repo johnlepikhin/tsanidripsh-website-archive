@@ -1,3 +1,4 @@
+open Article
 module Html5 = Html5.M
 
 let yandex_weather =
@@ -951,12 +952,6 @@ let left =
 		</aside>
 	>>
 
-include Page.Make (struct
-	let title = "Климат и времена года"
 
-	let contents_name = Some "Выбор времени года для отпуска"
+let tsandripsh = make ~path:Page_common.a_climate ~title:"Климат и времена года" ~left center
 
-	let path = Page.p_climate
-
-	let doc () = Tpl.tpl_base ~position:Tpl.Position.Information ~title ~left center
-end)
