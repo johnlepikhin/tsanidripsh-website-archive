@@ -177,8 +177,10 @@ div.sea_img img {
 	width: 90%;
 }
 
+
 ul {
 	list-style-image: url('orange.svg');
+	list-style-position: inside;
 }
 
 
