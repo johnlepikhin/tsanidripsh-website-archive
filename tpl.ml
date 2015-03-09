@@ -201,6 +201,7 @@ let tpl_tpl_base
 					$main_menu$
 					<div class="float_clean"/>
 					$left$
+					$Html5.Unsafe.data Tpl_social.buttons$
 
 					$center$
 					<div class="main_menu_bottom_container">

@@ -614,3 +614,10 @@ p.small_font {
 iframe.youtube {
 	border:2px solid grey;
 }
+
+div.social_buttons {
+	font-size: 0.7em;
+	font-color: #909090;
+	text-align: right;
+	margin-right: 2em;
+}
