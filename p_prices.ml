@@ -34,7 +34,7 @@ let tbl_transfer = tbl_price [
 	<< <th>От границы (встреча), за машину</th> >> :: tbl_row [Prices.transfer_from_border];
 	<< <th>От ж/д вокзала Цандрипша, за машину</th> >> :: tbl_row [Prices.transfer_from_border];
 	<< <th>До границы (проводы), за машину</th> >> :: tbl_row [Prices.transfer_to_border];
-	<< <th>До аэропорта/вокзала Адлера, за машину<br/>услуги носильщика на границе</th> >> :: tbl_row [Prices.transfer_to_aeroport];
+	<< <th>До аэропорта/вокзала Адлера, за машину<br/>помощь с багажом на границе</th> >> :: tbl_row [Prices.transfer_to_aeroport];
 ]
 
 let tbl_tours = tbl_price [
