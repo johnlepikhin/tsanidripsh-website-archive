@@ -621,3 +621,8 @@ div.social_buttons {
 	text-align: right;
 	margin-right: 2em;
 }
+
+div.subcolumn_right {
+	float: right;
+	width: 60%;
+}

@@ -57,4 +57,4 @@ let articles_list limit =
 			</div>
 		>>
 	in
-	all ~limit () |> List.map f
+	all ~limit () |> List.rev |> List.map f

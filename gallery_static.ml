@@ -8,10 +8,18 @@ let rexs = [
 let escape s = List.fold_left (fun str (rex, templ) -> Str.global_replace rex templ str) s rexs
 
 let gen_jscall title pos lst =
-	let lst = List.map (fun p -> string_of_int p.id) lst in
-	let lst = String.concat "," lst in
-	let title = escape title in
-	Printf.sprintf "gallery_view(\"%s\", %i, [%s])" title pos lst
+	try
+		let current = List.nth lst pos in
+		let lst = List.filter (fun p -> p != current) lst in
+		let lst = List.map (fun p -> string_of_int p.id) (current :: lst) |> String.concat "," in
+		let title = escape title in
+		Printf.sprintf "gallery_view(\"%s\", 0, [%s])" title lst
+	with
+		| Not_found ->
+			let lst = List.filter (fun p -> p.id <> pos) lst in
+			let lst = List.map (fun p -> string_of_int p.id) lst |> String.concat "," in
+			Printf.eprintf "gallery_static.ml, gen_jscall: pos(=%i) not found in lst(=%s)\n" pos lst;
+			exit 1
 
 let gen_jscall_one title p =
 	gen_jscall title 0 [p]
