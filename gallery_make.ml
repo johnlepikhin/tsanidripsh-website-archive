@@ -16,6 +16,10 @@ module Tag =
 			| Plant
 			| Animal
 			| We
+			| Winter
+			| Spring
+			| Summer
+			| Autumn
 
 		let to_title = function
 			| Condition -> "Условия проживания"
@@ -30,6 +34,10 @@ module Tag =
 			| Plant -> "Растения"
 			| Animal -> "Животные"
 			| We -> "Наша семья"
+			| Winter -> "Зима в Абхазии"
+			| Spring -> "Весна в Абхазии"
+			| Summer -> "Лето в Абхазии"
+			| Autumn -> "Осень в Абхазии"
 
 
 		let all = [ Condition; Sea; Tsandripsh; Tours; Canyon; Riza; Alps; Afon; Cave; Plant; Animal; We ]
@@ -49,7 +57,10 @@ type t = {
 	dest_1024 : Purl.t;
 	dest_2048 : Purl.t;
 	dest : Purl.t;
+	hidden : bool;
 }
+
+let for_install : t list ref = ref []
 
 let items : t list ref = ref []
 
@@ -59,7 +70,7 @@ let make_url path file ext size =
 
 let make =
 	let id = ref 0 in
-	fun file ext tags description ->
+	fun file ?(hidden=false) ext tags description ->
 		let make_url = make_url Path.gallery file ext in
 		let dest_64 = make_url 64 in
 		let dest_256 = make_url 256 in
@@ -67,8 +78,10 @@ let make =
 		let dest_1024 = make_url 1024 in
 		let dest_2048 = make_url 2048 in
 		let dest = Purl.make Path.gallery (Printf.sprintf "%s.%s" file ext) in
-		let t = { id = !id; file; ext; tags; description; dest_64; dest_256; dest_512; dest_1024; dest_2048; dest; } in
-		items := t :: !items;
+		let t = { id = !id; file; ext; tags; description; dest_64; dest_256; dest_512; dest_1024; dest_2048; dest; hidden; } in
+		if not hidden then
+			items := t :: !items;
+		for_install := t :: !for_install;
 		incr id;
 		t
 

@@ -134,7 +134,7 @@ let condition22 = make "01_condition22" "jpg" [Condition; ] <<
 	</div>
 >>
 
-let condition06 = make "01_condition06" "jpg" [Condition; Sea; Tsandripsh; ] <<
+let condition06 = make "01_condition06" "jpg" [Condition; Sea; Tsandripsh; Autumn; ] <<
 	<div>
 Вид на море с террасы нашего дома.
 	</div>
@@ -154,7 +154,7 @@ let condition15 = make "01_condition15" "jpg" [Condition; ] <<
 >>
 *)
 
-let condition16 = make "01_condition16" "jpg" [Condition; ] <<
+let condition16 = make "01_condition16" "jpg" [Condition; Summer; ] <<
 	<div>
 		Виноградник, вход во двор.
 	</div>
@@ -166,13 +166,13 @@ let condition19 = make "01_condition19" "jpg" [Condition; ] <<
 	</div>
 >>
 
-let condition21 = make "01_condition21" "jpg" [Condition; Plant; ] <<
+let condition21 = make "01_condition21" "jpg" [Condition; Plant; Winter; ] <<
 	<div>
 		Мандарины в нашем саду.
 	</div>
 >>
 
-let condition32 = make "01_condition32" "jpg" [Condition; ] <<
+let condition32 = make "01_condition32" "jpg" [Condition; Autumn; ] <<
 	<div>
 		Панорамный вид на море и поселок из нашего дома.
 	</div>
@@ -193,7 +193,7 @@ let tsandripsh01 = make "05_tsandripsh01" "jpg" [Tsandripsh; ] <<
 	</div>
 >>
 
-let tsandripsh02 = make "05_tsandripsh02" "jpg" [Tsandripsh; Plant; ] <<
+let tsandripsh02 = make "05_tsandripsh02" "jpg" [Tsandripsh; Plant; Summer; ] <<
 	<div>
 		В Цандрипше даже пальмы подстригают!
 	</div>
@@ -258,7 +258,7 @@ let tsandripsh12 = make "05_tsandripsh12" "jpg" [Tsandripsh; ] <<
 	</div>
 >>
 
-let tsandripsh13 = make "05_tsandripsh13" "jpg" [Tsandripsh; ] <<
+let tsandripsh13 = make "05_tsandripsh13" "jpg" [Tsandripsh; Autumn; ] <<
 	<div>
 		Один из переулков улицы Нагорной в Цандрипше.
 	</div>
@@ -270,7 +270,7 @@ let tsandripsh14 = make "05_tsandripsh14" "jpg" [Tsandripsh; ] <<
 	</div>
 >>
 
-let tsandripsh15 = make "05_tsandripsh15" "jpg" [Tsandripsh; ] <<
+let tsandripsh15 = make "05_tsandripsh15" "jpg" [Tsandripsh; Autumn; ] <<
 	<div>
 		Ноябрь на пляже Цандрипша.
 	</div>
@@ -359,13 +359,13 @@ let sea10 = make "02_sea10" "jpg" [Sea; ] <<
 	</div>
 >>
 
-let sea11 = make "02_sea11" "jpg" [Sea; ] <<
+let sea11 = make "02_sea11" "jpg" [Sea; Winter; ] <<
 	<div>
 		Пляж в Цандрипше.
 	</div>
 >>
 
-let sea12 = make "02_sea12" "jpg" [Sea; ] <<
+let sea12 = make "02_sea12" "jpg" [Sea; Winter; ] <<
 	<div>
 		Наш пляж. Цандрипш, начало Белых Скал.
 	</div>
@@ -500,7 +500,7 @@ let canyon04 = make "02_canyon04" "jpg" [Tours; Canyon; Plant; ] <<
 	</div>
 >>
 
-let canyon05 = make "02_canyon05" "jpg" [Tours; Canyon; ] <<
+let canyon05 = make "02_canyon05" "jpg" [Tours; Canyon; Summer; ] <<
 	<div>		
 		В самшитовом лесу можно устроить очень необычный пикник!
 	</div>
@@ -598,7 +598,7 @@ let alps02 = make "03_alps02" "jpg" [Tours; Alps; Plant; ] <<
 	</div>
 >>
 
-let alps03 = make "03_alps03" "jpg" [Tours; Alps; Animal;] <<
+let alps03 = make "03_alps03" "jpg" [Tours; Alps; Animal; Summer; ] <<
 	<div>
 	</div>
 >>
@@ -727,13 +727,13 @@ let bambuk01 = make "05_bambuk01" "jpg" [Plant; ] <<
 	</div>
 >>
 
-let bambuk02 = make "05_bambuk02" "jpg" [Plant; ] <<
+let bambuk02 = make "05_bambuk02" "jpg" [Plant; Autumn; ] <<
 	<div>
 		Бамбуковый лес в Пицунде.
 	</div>
 >>
 
-let bambuk03 = make "05_bambuk03" "jpg" [Plant; ] <<
+let bambuk03 = make "05_bambuk03" "jpg" [Plant; Autumn; ] <<
 	<div>
 		Бамбуковый лес в Пицунде.
 	</div>
@@ -745,7 +745,7 @@ let banan01 = make "05_banan01" "jpg" [Plant; ] <<
 	</div>
 >>
 
-let banan02 = make "05_banan02" "jpg" [Plant; ] <<
+let banan02 = make "05_banan02" "jpg" [Plant; Summer; ] <<
 	<div>
 		Будущие бананы и цветок растения.
 	</div>
@@ -886,7 +886,7 @@ let gagra_park15 = make "05_gagra_park15" "jpg" [Plant; ] <<
 	</div>
 >>
 
-let granat_flowers = make "05_granat_flowers" "jpg" [Plant; ] <<
+let granat_flowers = make "05_granat_flowers" "jpg" [Plant; Spring; ] <<
 	<div>
 		Цветут гранаты.
 	</div>

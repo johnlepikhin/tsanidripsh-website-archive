@@ -3,7 +3,7 @@ module Html5 = Html5.M
 
 let center =
 	let open Gallery in
-	let img = Tpl_img.textbig_img Condition in
+	let img i = Tpl_img.textbig_img (Gallery_static.Tag (i, Gallery.Condition)) in
 	<<
 		<div class="tpl_main_center">
 			Все наши номера класса "Стандарт" имеют единое оформление:

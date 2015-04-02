@@ -1,5 +1,9 @@
 open Gallery
 
+type content =
+	| Tag of (Gallery.t * Gallery_make.tag) (* start image + tag *)
+	| One of (Gallery.t * string) (* image + title *)
+
 let rexs = [
 	(Str.regexp "\\\\"), "\\\\\\\\";
 	(Str.regexp "\""), "\\\\\"";
@@ -33,3 +37,7 @@ let gen_jscall_of_tag ?start tag =
 	in
 	let title = Tag.to_title tag in
 	gen_jscall title pos lst
+
+let jscall_of_content = function
+	| Tag (start, tag) -> gen_jscall_of_tag ~start tag
+	| One (img, title) -> gen_jscall_one title img

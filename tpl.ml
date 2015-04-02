@@ -193,7 +193,7 @@ let tpl_tpl_base
 						</a>
 						<div class="tpl_main_contacts" onmouseover=$reachGoal "view_contacts"$>
 							$list:phones$
-							<a href=$str:"mailto:" ^ Config.mailto$>$str:Config.mailto$</a>
+							<a onmousedown=$reachGoal "view_contacts_email"$ href=$str:"mailto:" ^ Config.mailto$>$str:Config.mailto$</a>
 						</div>
 					</div>
 				</div>

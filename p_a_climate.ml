@@ -25,6 +25,7 @@ let center =
 
 			<h1 class="float_clean" id="winter">Зима</h1>
 			<div class="subcolumn_right">
+				$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.condition21, Gallery.Winter))$
 				<p>
 					Абхазия отличается самой мягкой зимой на всей территории. Теплая погода характерна для середины декабря
 					и февраля (температура воздуха на солнце достигает отметки +18 градусов). Вечерняя прохлада зеленых
@@ -198,6 +199,7 @@ let center =
 
 			<h1 id="spring">Весна</h1>
 			<div class="subcolumn_right">
+				$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.granat_flowers, Gallery.Spring))$
 				<p>
 					Весна в Абхазии очень ранняя. Март непредсказуем в своем настроении. Он может порадовать теплой и ясной
 					погодой, а может расстроить планы частыми дождями.
@@ -470,6 +472,7 @@ let center =
 
 			<h1 id="summer">Лето</h1>
 			<div class="subcolumn_right">
+				$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.condition16, Gallery.Summer))$
 				<p>
 					Жаркое и влажное лето в Абхазии обусловлено субтропическим климатом. Если вы не переносите жару
 					и едите отдыхать с маленькими детьми,то вам лучше запланировать свой отдых на июнь, сентябрь или
@@ -737,6 +740,7 @@ let center =
 
 			<h1 id="autumn">Осень</h1>
 			<div class="subcolumn_right">
+				$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.condition32, Gallery.Autumn))$
 				<p>
 					"Здравствуйте, хмурые дни, горное солнце, прощай!" — нет, эти слова не про Абхазию. С приходом
 					сентября здесь начинается "бархатный сезон" - это пора полноценного отдыха: нет изнуряющей жары,

@@ -42,7 +42,7 @@ let center () =
 			</p>
 			$if Config.is_new_year then attention_new_year else attention_empty$
 
-			$Tpl_img.text_img ~right:true Gallery.We Gallery.we04$
+			$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.we04, Gallery.We))$
 
 			<p>
 				Мы рады приветствовать вас на сайте гостевого дома семьи Минаса и Алины Рогонян! Наш дом расположен
@@ -71,7 +71,7 @@ let center () =
 
 			<div class="main_info">
 				<h2 class="center">Проживание</h2>
-				$Tpl_img.coltitle_img Gallery.Condition Gallery.condition08$
+				$Tpl_img.coltitle_img (Gallery_static.Tag (Gallery.condition08, Gallery.Condition))$
 				<p>
 					Мы предлагаем проживание в номерах <a href=$Page.url Page.p_prices$>"эконом" и "стандарт" класса</a>. В каждом номере
 					есть кровати, шкафы для одежды, тумбочка для мелких вещей, вентилятор. В каждую комнату
@@ -80,7 +80,7 @@ let center () =
 			</div>
 			<div class="main_info">
 				<h2 class="center">Экскурсии</h2>
-				$Tpl_img.coltitle_img Gallery.Tours Gallery.canyon07$
+				$Tpl_img.coltitle_img (Gallery_static.Tag (Gallery.canyon07, Gallery.Tours))$
 				<p>
 					<b>Абхазия</b> — страна огромных гор, чистых ручьев и древней истории. Прикоснитесь к прекрасному вместе с нами!
 				</p>
@@ -92,7 +92,7 @@ let center () =
 			<div class="float_clean"/>
 
 			<h2>Почему лучше обратить внимание на отдых в частном секторе, на Цандрипш?</h2>
-			$Tpl_img.text_img ~right:true ~text:(Printf.sprintf "Отдых в Абхазии %s, частный сектор" Config.season) Gallery.Condition Gallery.condition30$
+			$Tpl_img.text_img ~right:true ~text:(Printf.sprintf "Отдых в Абхазии %s, частный сектор" Config.season) (Gallery_static.Tag (Gallery.condition30, Gallery.Condition))$
 			<ul>
 				<li>Частный сектор Цандрипша — отличное место для отдыха с детьми. Тишина, сады, природа. Дети увидят много необычных для них животных, жучков, увидят как растут и спеют
 					их любимые фрукты.
@@ -111,7 +111,7 @@ let center () =
 			<div class="float_clean"/>
 
 			<h2>Почему отдых в Абхазии?</h2>
-			$Tpl_img.text_img ~right:true Gallery.Sea Gallery.sea26$
+			$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.sea26, Gallery.Sea))$
 			Хотелось бы кратко перечислить, чем отдых в Абхазии ($str:Config.year$-й год актуальность) выгодно отличается от отдыха во многих других регионах:
 			<ul>
 				<li>Значительно ниже цены на проживание, питание, экскурсии, внутренний транспорт.</li>

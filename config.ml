@@ -9,7 +9,7 @@ let install_path = ref "/tmp/tsandripsh"
 
 let year = "2015"
 
-let season = "Весна-лето 2015"
+let season = "Лето 2015"
 
 let main_title =
 	let title =

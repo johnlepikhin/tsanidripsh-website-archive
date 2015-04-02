@@ -70,7 +70,7 @@ let lst = [
 	"Проживание",
 	<<
 		<div class="prices_main">
-			$Tpl_img.text_img ~right:true ~text:"Вид на море из нашего дома. 550 метров напрямую, 750 метров по дорожкам, 7 минут пешком." Gallery.Condition Gallery.condition06$
+			$Tpl_img.text_img ~right:true ~text:"Вид на море из нашего дома. 550 метров напрямую, 750 метров по дорожкам, 7 минут пешком." (Gallery_static.Tag (Gallery.condition06, Gallery.Condition))$
 			<p>
 				Наш гостевой дом расположен в прибрежной части курортного поселка Цандрипш Гагринского района Абхазии. Дом находится
 				в достаточной удаленности от магистралей и шумных кафе, но при этом близко к морю — это идеальное место для отдыха в дали от городской суеты.
@@ -123,7 +123,7 @@ let lst = [
 	"Туры",
 	<<
 		<div class="prices_main">
-			$Tpl_img.text_img ~right:true Gallery.Tours Gallery.afon04$
+			$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.afon04, Gallery.Tours))$
 			<p>
 				Абхазия — древняя и удивительная страна. В ней можно увидеть крепости раннего средневековья, побывать в гигантских пещерах или увидеть мир с высоты птичьего полета.
 				Мы предлагаем вам <a href=$Page.url Page.p_tours$>взглянуть на эти красоты</a>.
