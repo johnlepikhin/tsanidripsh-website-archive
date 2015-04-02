@@ -181,7 +181,7 @@ let tpl_tpl_base
 			<div class="tpl_main">
 				<div class=$Printf.sprintf "tpl_main_header %s" add_class$ id=$Id.to_string Id.tpl_main_header$>
 					<div class="tpl_main_header_content">
-						<a href=$Page.url Page.p_main$>
+						<a href=$Page.url ~shrink_index:true Page.p_main$>
 							<div class="tpl_main_logo">
 								<div class="tpl_main_logo_1">
 									Частный сектор в Абхазии
