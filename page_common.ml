@@ -1,9 +1,15 @@
-let url (path, file) =
+let url ?(shrink_index=false) (path, file) =
 	if path = [] then
-		Printf.sprintf "/%s.html" file
+		if file = "index" && shrink_index then
+			"/"
+		else
+			Printf.sprintf "/%s.html" file
 	else
 		let p = Path.to_string path in
-		Printf.sprintf "%s/%s.html" p file
+		if file = "index" && shrink_index then
+			p
+		else
+			Printf.sprintf "%s/%s.html" p file
 
 let p_main = Purl.make Path.root "index"
 

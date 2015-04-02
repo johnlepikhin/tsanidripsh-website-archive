@@ -62,7 +62,7 @@ module Position =
 					| Questions -> Page.p_questions
 					| Contacts -> Page.p_contacts
 			in
-			Page.url p
+			Page.url ~shrink_index:true p
 	end
 
 module Main_menu =
