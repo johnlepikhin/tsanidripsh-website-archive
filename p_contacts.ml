@@ -58,14 +58,6 @@ let center =
 
 			<h2>E-mail</h2>
 			<a onmousedown=$Tpl.reachGoal "view_contacts_email"$ href=$str:"mailto:" ^ Config.mailto$>$str:Config.mailto$</a>
-
-			<h2>Наш адрес</h2>
-			Абхазия, Гагринский район, Цандрипш, ул.Нагорная, д.21
-
-			<h2>Карта нашего дома и его окрестностей</h2>
-			<iframe width="100%" height="400" src="https://www.google.com/maps/d/embed?mid=ztnHhEsfVMrg.k2-9qhTfo6k4"/>
-			<br/>
-			Просмотреть <a href="https://maps.google.com/maps/ms?ie=UTF8&hl=ru&oe=UTF8&msa=0&msid=215654546826584296819.0004a8692b6bc72add6ed&t=h&ll=43.382508,40.051362&spn=0.02344,0.08788&source=embed">наш дом</a> на карте большего размера
 		</div>
 	>>
 
