@@ -71,7 +71,7 @@ let center () =
 
 			<div class="main_info">
 				<h2 class="center">Проживание</h2>
-				$Tpl_img.coltitle_img (Gallery_static.Tag (Gallery.condition08, Gallery.Condition))$
+				$Tpl_img.coltitle_img (Gallery_static.Tag (Gallery.condition42, Gallery.Condition))$
 				<p>
 					Мы предлагаем проживание в номерах <a href=$Page.url Page.p_prices$>"эконом" и "стандарт" класса</a>. В каждом номере
 					есть кровати, шкафы для одежды, тумбочка для мелких вещей, вентилятор. В каждую комнату

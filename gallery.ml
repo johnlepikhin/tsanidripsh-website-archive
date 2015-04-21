@@ -184,7 +184,53 @@ let condition33 = make "01_condition33" "jpg" [Condition; ] <<
 	</div>
 >>
 
+let condition35 = make "01_condition35" "jpg" [Condition; ] <<
+	<div>
+		Веранда второго этажа.
+	</div>
+>>
 
+let condition36 = make "01_condition36" "jpg" [Condition; ] <<
+	<div>
+		Веранда второго этажа.
+	</div>
+>>
+
+let condition37 = make "01_condition37" "jpg" [Condition; ] <<
+	<div>
+		Двухместный номер в новом доме.
+	</div>
+>>
+
+let condition38 = make "01_condition38" "jpg" [Condition; ] <<
+	<div>
+		Двухместный номер в новом доме.
+	</div>
+>>
+
+let condition39 = make "01_condition39" "jpg" [Condition; ] <<
+	<div>
+		Трехместный номер в новом доме.
+	</div>
+>>
+
+let condition40 = make "01_condition40" "jpg" [Condition; ] <<
+	<div>
+		Трехместный номер в новом доме.
+	</div>
+>>
+
+let condition41 = make "01_condition41" "jpg" [Condition; ] <<
+	<div>
+		Четырехместный номер в новом доме.
+	</div>
+>>
+
+let condition42 = make "01_condition42" "jpg" [Condition; ] <<
+	<div>
+		Четырехместный номер в новом доме.
+	</div>
+>>
 
 
 let tsandripsh01 = make "05_tsandripsh01" "jpg" [Tsandripsh; ] <<
