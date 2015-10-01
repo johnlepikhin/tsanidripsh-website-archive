@@ -1,15 +1,15 @@
 
-let is_new_year = false
+let is_new_year = true
 
-let static_path = "/home/eugene/programming/tsandripsh/static"
+let static_path = "/home/eugene/projects/auto_tsandripsh_hotel/static"
 
-let gallery_src_path = "/home/eugene/programming/tsandripsh/gallery"
+let gallery_src_path = "/home/eugene/projects/auto_tsandripsh_hotel/gallery"
 
 let install_path = ref "/tmp/tsandripsh"
 
-let year = "2015"
+let year = "2016"
 
-let season = "Лето-осень 2015"
+let season = "Осень-зима 2015"
 
 let main_title =
 	let title =

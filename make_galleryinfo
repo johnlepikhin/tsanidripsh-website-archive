@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /home/eugene/programming/tsandripsh/
+cd /home/eugene/projects/auto_tsandripsh_hotel/
 
 f=./_build/gallery_info.ml
 
