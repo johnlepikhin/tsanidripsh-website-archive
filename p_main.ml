@@ -33,7 +33,7 @@ let attention_new_year = <<
 let attention_empty = << <div/> >>
 
 let center () =
-	let video = Html5.Unsafe.data "<iframe class=\"youtube\" width=\"640\" height=\"360\" src=\"//www.youtube.com/embed/y2C_XU1YRCQ\" frameborder=\"0\" allowfullscreen></iframe>" in
+	let video = Html5.Unsafe.data "<iframe class=\"youtube\" width=\"640\" height=\"360\" src=\"https://www.youtube.com/embed/0cb0K28EkEg\" frameborder=\"0\" allowfullscreen></iframe>" in
 	<<
 		<div class="tpl_main_center">
 			<h1>$str:Config.main_title$, поселок Цандрипш, частный сектор</h1>
@@ -144,13 +144,11 @@ let center () =
 			</ul>
 
 
-<!--
 			<div class="float_clean"/>
 
 			<div class="text_video">
 				$video$
 			</div>
--->
 
 			<div class="float_clean"/>
 
@@ -161,7 +159,6 @@ let center () =
 			<p>
 				<b>Абхазия. Цандрипш. Отдых в частном секторе.</b> Вам захочется приехать вновь! <a href=$str:P_contacts.url$>Звоните</a>.
 			</p>
-
 		</div>
 	>>
 
