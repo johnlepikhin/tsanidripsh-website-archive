@@ -37,8 +37,6 @@ div.tpl_main_header {
 	box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
-
-
 div.new_year_main_header {
 	background-image: url("/title_new_year.png");
 }
@@ -99,9 +97,7 @@ div.banner {
 	position: absolute;
 	z-index: 10;
 	background-color: rgba(0,0,0,0.5);
--webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 1);
--moz-box-shadow:    0px 0px 30px 0px rgba(0, 0, 0, 1);
-box-shadow:         0px 0px 30px 0px rgba(0, 0, 0, 1);
+	box-shadow:         0px 0px 30px 0px rgba(0, 0, 0, 1);
 	border-radius: 1em 1em;
 	margin: 5px;
 	padding: 5px;
@@ -224,6 +220,7 @@ div.tpl_main_contacts {
 
 div.tpl_main_contacts a {
 	color: #c7c76d;
+	text-decoration: none;
 }
 
 div.tpl_main_content {
@@ -567,10 +564,6 @@ div.zoomable img {
 	-moz-transform: Rotate0;
 	-ms-transform: Rotate0;
 	-o-transform: Rotate0;
-	-webkit-transition: -webkit-transform 0.3s, box-shadow 0.5s;
-	-moz-transition: -moz-transform 0.3s, box-shadow 0.5s;
-	-ms-transition: -ms-transform 0.3s, box-shadow 0.5s;
-	-o-transition: -o-transform 0.3s, box-shadow 0.5s;
 	box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
