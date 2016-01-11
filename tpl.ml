@@ -169,7 +169,7 @@ let tpl_tpl_base
 			<< <div/> >>
 	in
 
-	let phones = List.map (fun (phone, _, op) -> << <div>$str:phone$</div> >>) Config.phones in
+	let phones = List.map (fun (phone, _, op) -> << <div><a href=$str:"tel:"^phone$>☎ $str:phone$</a></div> >>) Config.phones in
 	let left = match left with
 		| None -> << <div/> >>
 		| Some el ->
