@@ -153,6 +153,14 @@ let googl_analytics = Html5.Unsafe.data ("
 	 </script>
 ")
 
+let initial_mobile = Html5.Unsafe.data "
+<script>
+	if (window.innerWidth < 960 || navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i)) {
+		document.body.className = document.body.className + ' mobile';
+	}
+</script>
+"
+
 type center =  Html5_types.div_content Html5.elt
 
 let tpl_tpl_base
@@ -183,6 +191,7 @@ let tpl_tpl_base
 	in
 	html ~title:full_title ?keywords ?description <<
 		<body class="tpl_main" id=$str:Id.to_string Id.body$>
+			$initial_mobile$
 			$banner$
 			<div class="tpl_main">
 				<div class=$Printf.sprintf "tpl_main_header %s" add_class$ id=$Id.to_string Id.tpl_main_header$>
