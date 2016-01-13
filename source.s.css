@@ -2,17 +2,28 @@
 TitleFont: "Trebuchet MS", "Arial", "Helvetica", "sans-serif";
 
 MinPageWidth: 840px;
+MinPageWidthMobile: 200px;
 
 body.tpl_main {
 	background-image: url("/main_background.jpg");
 	font-family: TitleFont;
 }
 
+/*
+body.tablet, body.mobile {
+}
+*/
+
 div.tpl_main {
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 }
+
+body.tablet div.tpl_main, body.mobile div.tpl_main {
+	width: 95%;
+}
+
 
 div.tpl_main_header {
 	min-width: MinPageWidth;
@@ -36,6 +47,17 @@ div.tpl_main_header {
 	border-top-right-radius: 1em 1em;
 	box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
+
+body.tablet div.tpl_main_header, body.mobile div.tpl_main_header {
+	min-width: MinPageWidthMobile;
+	background-image: none;
+	box-shadow: none;
+}
+
+body.mobile div.tpl_main_header {
+	height: auto;
+}
+
 
 div.new_year_main_header {
 	background-image: url("/title_new_year.png");
@@ -101,6 +123,10 @@ div.banner {
 	border-radius: 1em 1em;
 	margin: 5px;
 	padding: 5px;
+}
+
+body.mobile div.banner {
+	box-shadow: none;
 }
 
 div.banner img {
@@ -190,6 +216,15 @@ div.tpl_main_header_content {
 	background-color: rgba(0,0,0,0.3);
 }
 
+div.tpl_main_header_content a {
+	text-decoration: none;
+}
+
+body.mobile div.tpl_main_header_content {
+	height: auto;
+}
+
+
 .float_clean {
 	clear: both;
 }
@@ -202,12 +237,27 @@ div.tpl_main_logo {
 	padding: 0.5em;
 }
 
+body.mobile div.tpl_main_logo {
+	display: block;
+	float: none;
+}
+
 div.tpl_main_logo_1 {
 	color: #ffaa00;
 }
+body.mobile div.tpl_main_logo_1 {
+	font-size: 0.8em;
+}
+
+
+
 div.tpl_main_logo_2 {
 	color: #ffaa00;
 	font-size: 3em;
+}
+
+body.mobile div.tpl_main_logo_2 {
+	font-size: 1.5em;
 }
 
 div.tpl_main_contacts {
@@ -217,6 +267,13 @@ div.tpl_main_contacts {
 	color: #c7c76d;
 	padding: 0.5em;
 }
+
+body.mobile div.tpl_main_contacts {
+	display: block;
+	float: none;
+	text-align: left;
+}
+
 
 div.tpl_main_contacts a {
 	color: #c7c76d;
@@ -237,6 +294,11 @@ div.tpl_main_content {
 	border-bottom-right-radius: 1em 1em;
 }
 
+body.mobile div.tpl_main_content {
+	box-shadow: none;
+	min-width: MinPageWidthMobile;
+}
+
 aside.tpl_main_left {
 	background-color: rgba(255,255,255,0.5);
 	width: 20em;
@@ -245,6 +307,10 @@ aside.tpl_main_left {
 
 	float: left;
 	border-radius: 1em 1em;
+}
+
+body.mobile aside.tpl_main_left {
+	display: none;
 }
 
 /* main text styles */
@@ -325,10 +391,23 @@ div.main_menu_el {
 	border-bottom-right-radius: 1em 1em;
 }
 
+body.mobile div.main_menu_el {
+	float: none;
+	border-bottom-left-radius: 0 0;
+	border-bottom-right-radius: 0 0;
+	margin-left: 0;
+	border-bottom: 1px solid #909090;
+	text-align: center;
+}
+
 div.main_menu_el_current {
 	background-color: rgba(60,60,255,1);
 	cursor: default;
 	height: 2em;
+}
+
+body.mobile div.main_menu_el_current {
+	height: auto;
 }
 
 div.main_menu_el_selectable {
@@ -337,16 +416,33 @@ div.main_menu_el_selectable {
 	height: 1em;
 }
 
+body.mobile div.main_menu_el_selectable {
+	transition: none;
+	box-shadow: none;
+	height: auto;
+}
+
+
 div.main_menu_el_selectable:hover {
 	background-color: rgba(80,80,255,0.8);
 	box-shadow: 0 0 6px rgba(0,0,0,0.8);
 	height: 1.5em;
 }
 
+body.mobile div.main_menu_el_selectable:hover {
+	box-shadow: none;
+	height: auto;
+}
+
+
 /* main menu bottom */
 
 div.main_menu_bottom_container {
 	text-align: center;
+}
+
+body.mobile div.main_menu_bottom_container {
+	display: none;
 }
 
 div.main_menu_bottom {
@@ -528,6 +624,12 @@ div.text_img {
 	font-size: 0.8em;
 }
 
+body.mobile div.text_img {
+	float: none;
+	width: 100%;
+}
+
+
 div.textbig_img {
 	width: 100%;
 	margin: 15px;
@@ -582,6 +684,12 @@ div.main_info {
 	float: left;
 }
 
+body.mobile div.main_info {
+	margin: 5px;
+	width: 100%;
+	float: none;
+}
+
 div.coltitle_img {
 	text-align: center;
 }
@@ -592,8 +700,24 @@ div.coltitle_img img {
 	border-radius: 10px;
 }
 
+body.mobile div.coltitle_img img {
+	width: 100%;
+}
+
 div.text_video {
+	position: relative;
+	padding-bottom: 56.25%;
 	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+
+div.text_video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 h2.center {

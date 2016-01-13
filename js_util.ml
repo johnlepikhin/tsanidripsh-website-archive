@@ -60,3 +60,44 @@ let init_body () =
 		| None -> ()
 		| Some el ->
 			body := el
+
+(* mobile *)
+
+let getWindowWidth () =
+	match Dom_html.window##innerWidth |> Js.Optdef.to_option with
+		| None -> 500
+		| Some v -> v
+
+let is_mobile () =
+	let rex = Regexp.regexp "Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile" in
+	match Regexp.string_match rex (Js.to_string Dom_html.window##navigator##userAgent) 0 with
+		| None ->
+			getWindowWidth () < 960
+		| Some _ -> true
+
+(* resize *)
+
+let resizeEvents = ref []
+
+let onResize =
+	let timeout_id = ref None in
+	let window = Dom_html.window in
+	fun _ ->
+		let () =
+			match !timeout_id with
+				| None -> ()
+				| Some id -> window##clearTimeout (id)
+		in
+		let id = window##setTimeout
+			((Js.wrap_callback (fun () ->
+				List.iter (fun e -> e ()) !resizeEvents)
+			),
+			300.)
+		in
+		timeout_id := Some id;
+		Js._true
+
+let () =
+	let window = Dom_html.window in
+	ignore (window##onresize <- Dom.handler onResize);
+	ignore (window##onorientationchange <- Dom.handler onResize);

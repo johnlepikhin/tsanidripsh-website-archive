@@ -46,5 +46,14 @@ let init_page_header () =
 			ignore (page_header_move_periodic div);
 			div##onclick <- handler (page_header_move_handler div) Js._true
 
+let init_mobile () =
+	if Js_util.is_mobile () then
+		(!Js_util.body)##className <- (Js.string "tpl_main mobile")
+	else
+		(!Js_util.body)##className <- (Js.string "tpl_main")
+
 let init () =
-	init_page_header ()
+	init_mobile ();
+	Js_util.(resizeEvents := init_mobile :: !resizeEvents);
+	if not (Js_util.is_mobile ()) then
+		init_page_header ()
