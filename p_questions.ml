@@ -13,14 +13,13 @@ let center =
 	" in
 	<<
 		<div class="tpl_main_center">
-			<h1>Новое! Мы рады будем ответить на ваши вопросы прямо на сайте</h1>
 			<div id="disqus_thread"/>
 			<script>$script$</script>
 		</div>
 	>>
 
 include Page.Make (struct
-	let title = "Вопросы и ответы"
+	let title = "Вопросы"
 
 	let contents_name = Some "Задать вопрос"
 

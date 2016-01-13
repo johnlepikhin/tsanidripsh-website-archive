@@ -10,8 +10,8 @@ let url t =
 	Purl.to_string t.dst
 
 let make psrc fsrc pdst fdst =
-	let src = psrc, fsrc in
-	let dst = pdst, fdst in
+	let src = Purl.make psrc fsrc in
+	let dst = Purl.make pdst fdst in
 	try
 		let _ = List.find (fun t -> t.dst = dst) !files in
 		raise (failwith (Printf.sprintf "Static file with destination '%s' registered twice" (Purl.to_string dst)))
@@ -25,8 +25,7 @@ let smake psrc pdst file = make psrc file pdst file
 
 let cmake p file = smake p p file
 
-let umake (path, file) = cmake path file
-
+let umake purl = Purl.(cmake purl.path purl.file)
 
 let sitemap = cmake Path.root "sitemap.xml"
 

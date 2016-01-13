@@ -4,8 +4,6 @@ module Html5 = Html5.M
 
 let tsandripsh = make ~path:Page_common.a_tsandripsh ~title:"Цандрипш — наш курорт" <<
 	<div class="tpl_main_center">
-		<h1>Цандрипш — наш курорт</h1>
-
 		<p>
 			Цандрипш — наша малая родина, здесь мы выросли, здесь родились наши дети, здесь есть то, о чем бы хотелось вам рассказать и показать. 
 		</p>

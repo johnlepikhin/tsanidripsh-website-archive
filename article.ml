@@ -10,7 +10,7 @@ module M
 			path:Page.path ->
 			title:string ->
 			?left:Html5_types.div_content Tpl.Html5.elt ->
-			Html5_types.div_content Tpl.Html5.elt ->
+			Tpl.center ->
 			t
 
 		val page: t -> Page.t
@@ -34,8 +34,8 @@ module M
 					in
 					loop 1 !list
 
-		let make ?contents_name ~path ~title ?left text =
-			let doc () = Tpl.tpl_base ~title ~position:Tpl.Position.Information ?left text in
+		let make ?contents_name ~path ~title ?left center =
+			let doc () = Tpl.tpl_base ~title ~position:Tpl.Position.Information ?left center in
 			let page = Page.anonymous ?contents_name path doc title in
 			let article = { page } in
 			list := article :: !list;

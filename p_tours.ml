@@ -39,7 +39,7 @@ let center =
 	let lst = List.map (fun t ->
 			<<
 				<div>
-					<h1 id=$str:Printf.sprintf "tour_%s" t.str_id$>$str:t.title$</h1>
+					<h2 id=$str:Printf.sprintf "tour_%s" t.str_id$>$str:t.title$</h2>
 					<b>$str:t.descr$</b>
 					$t.preview$
 					<p>
@@ -57,7 +57,7 @@ let center =
 	>>
 
 include Page.Make (struct
-	let title = "Туры и экскурсии"
+	let title = "Туры"
 
 	let contents_name = Some "Экскурсии по Абхазии и горам"
 

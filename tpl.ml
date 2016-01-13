@@ -73,7 +73,7 @@ module Main_menu =
 			| Main -> "Главная"
 			| Gallery -> "Фотографии"
 			| Prices -> "Цены"
-			| Tours -> "Экскурсии"
+			| Tours -> "Туры"
 			| Information -> "Информация"
 			| Feedbacks -> "Отзывы"
 			| Questions -> "Вопросы"
@@ -86,8 +86,12 @@ module Main_menu =
 				else
 					<< <a class="main_menu" href=$str:to_url p$><div class="main_menu_el main_menu_el_selectable">$str:to_name p$</div></a> >>
 			in
-			let divs = List.map make_el all in
-			<< <div class="main_menu">$list:divs$</div> >>
+			let els = List.map make_el all in
+			<<
+				<nav class="main_menu">
+					$list:els$
+				</nav>
+			>>
 
 		let tpl2 position =
 			let make_el p =
@@ -149,6 +153,8 @@ let googl_analytics = Html5.Unsafe.data ("
 	 </script>
 ")
 
+type center =  Html5_types.div_content Html5.elt
+
 let tpl_tpl_base
 	?(add_class="")
 	~title
@@ -156,9 +162,9 @@ let tpl_tpl_base
 	?keywords
 	?description
 	?(left : Html5_types.div_content Html5.elt option)
-	(center : Html5_types.div_content Html5.elt)
+	(center : center)
 	: [> Html5_types.html ] Html5.elt =
-	let title = Printf.sprintf "%s — %s, Цандрипш." title Config.main_title in
+	let full_title = Printf.sprintf "%s — %s, Цандрипш." title Config.main_title in
 	let main_menu = Main_menu.tpl1 position in
 	let main_menu_bottom = Main_menu.tpl2 position in
 
@@ -175,7 +181,7 @@ let tpl_tpl_base
 		| Some el ->
 			<< <aside class="tpl_main_left">$el$</aside> >>
 	in
-	html ~title ?keywords ?description <<
+	html ~title:full_title ?keywords ?description <<
 		<body class="tpl_main" id=$str:Id.to_string Id.body$>
 			$banner$
 			<div class="tpl_main">
@@ -203,6 +209,7 @@ let tpl_tpl_base
 					$left$
 					$Html5.Unsafe.data Tpl_social.buttons$
 
+					<h1>$str:title$</h1>
 					$center$
 					<div class="main_menu_bottom_container">
 						$main_menu_bottom$

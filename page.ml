@@ -1,6 +1,6 @@
 include Page_common
 
-type path = Path.t * string
+type path = Purl.t
 
 type t = {
 	path : path;
@@ -17,7 +17,7 @@ module type PAGE =
 
 		val contents_name : string option
 
-		val path : Path.t * string
+		val path : path
 
 		val doc : unit -> Html5.M.doc
 	end

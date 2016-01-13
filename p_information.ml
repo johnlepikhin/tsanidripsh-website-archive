@@ -91,9 +91,9 @@ let left =
 	let els = List.map (fun (title, _, id) -> << <p><a href=$str:"#info"^(string_of_int id)$>$str:title$</a></p> >>) lst in
 	<<
 		<aside>
-			<h1>Частые вопросы</h1>
+			<h2>Частые вопросы</h2>
 			$list:els$
-			<h1>Полезные статьи</h1>
+			<h2>Полезные статьи</h2>
 			$list:Article.articles_list 100$
 		</aside>
 	>>
@@ -107,7 +107,7 @@ let center =
 	>>
 
 include Page.Make (struct
-	let title = "Полезная информация"
+	let title = "Информация"
 
 	let contents_name = Some "Информация, которая вам пригодится"
 

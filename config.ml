@@ -18,7 +18,7 @@ let main_title =
 		else
 			"Отдых в Абхазии"
 	in
-	title ^ " " ^ season
+	title ^ ". " ^ season
 
 let keywords = Printf.sprintf "Цандрипш, частный сектор, без посредников, отдых, Абхазия, %s" year
 

@@ -27,6 +27,9 @@ let dispatcher hook =
 					Cmd (S[A"sh"; A"-c"; A"ccss <source.s.css > uncompressed.s.css"])
 				);
 
+				(* Sitemap *)
+				rule_cp ~prod:"copy.sitemap" "sitemap.xml" "../static/";
+
 				rule "Generate s.css" ~prod:"s.css" ~dep:"uncompressed.css.s" (fun env builder ->
 					Cmd (S[A"yui-compressor"; A"--type=css"; A"-o"; A"s.css"; A"uncompressed.s.css"])
 				);
@@ -34,7 +37,7 @@ let dispatcher hook =
 				rule_cp ~prod:"copy.css.s" "s.css" "../static/";
 
 				(* Install *)
-				let install_deps = ["generate.gallery_info"; "copy.js.main_js"; "copy.css.s"; binary] in
+				let install_deps = ["generate.gallery_info"; "copy.js.main_js"; "copy.css.s"; "copy.sitemap"; binary] in
 
 				let cmd_install args env builder =
 					let open Command in

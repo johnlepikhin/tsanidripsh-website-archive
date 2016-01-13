@@ -161,7 +161,7 @@ let left =
 	let els = List.map (fun (title, _, id) -> << <p><a href=$str:"#info"^(string_of_int id)$>$str:title$</a></p> >>) lst in
 	<<
 		<aside class="main">
-			<h1>Оглавление</h1>
+			<h2>Содержание</h2>
 			$list:els$
 		</aside>
 	>>
@@ -170,13 +170,12 @@ let center =
 	let els = List.map (fun (title, answer, id) -> << <div><h2 id=$str:"info"^(string_of_int id)$>$str:title$</h2>$answer$<br/></div> >>) lst in
 	<<
 		<div class="tpl_main_center">
-			<h1>Цены на сезон $str:Config.year$</h1>
 			$list:els$
 		</div>
 	>>
 
 include Page.Make (struct
-	let title = "Цены и услуги"
+	let title = "Цены"
 
 	let contents_name = Some (Config.season ^ ". Полный прайслист.")
 

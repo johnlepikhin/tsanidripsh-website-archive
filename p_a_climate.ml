@@ -23,7 +23,7 @@ let center =
 			Для любителей точных цифр, на этой странице мы постарались максимально подробно описать климат Цандрипша, а также дать некоторые советы по поездкам. Данные по температуре
 			и осадкам предоставлены фактические, по сводкам метеостанций за период 2011-2014 годов.
 
-			<h1 class="float_clean" id="winter">Зима</h1>
+			<h2 class="float_clean" id="winter">Зима</h2>
 			<div class="subcolumn_right">
 				$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.condition21, Gallery.Winter))$
 				<p>
@@ -197,7 +197,7 @@ let center =
 			</p>
 
 
-			<h1 id="spring">Весна</h1>
+			<h2 id="spring">Весна</h2>
 			<div class="subcolumn_right">
 				$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.granat_flowers, Gallery.Spring))$
 				<p>
@@ -470,7 +470,7 @@ let center =
 			</p>
 
 
-			<h1 id="summer">Лето</h1>
+			<h2 id="summer">Лето</h2>
 			<div class="subcolumn_right">
 				$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.condition16, Gallery.Summer))$
 				<p>
@@ -738,7 +738,7 @@ let center =
 			</p>
 
 
-			<h1 id="autumn">Осень</h1>
+			<h2 id="autumn">Осень</h2>
 			<div class="subcolumn_right">
 				$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.condition32, Gallery.Autumn))$
 				<p>
@@ -999,7 +999,7 @@ let center =
 
 
 			
-			<h1 id="winter2">И снова зима</h1>
+			<h2 id="winter2">И снова зима</h2>
 			<div class="subcolumn_right">
 				<p>
 					И вновь зима. Декабрь — теплый зимний месяц. Даже зимним его назвать сложно. Это некое
@@ -1097,7 +1097,7 @@ let center =
 let left =
 	<<
 		<aside>
-			<h1>Оглавление</h1>
+			<h2>Оглавление</h2>
 			<p><a href="#winter">Зима</a></p>
 			<p><a href="#spring">Весна</a></p>
 			<p><a href="#summer">Лето</a></p>
@@ -1107,5 +1107,5 @@ let left =
 	>>
 
 
-let tsandripsh = make ~path:Page_common.a_climate ~title:"Климат и времена года" ~left center
+let tsandripsh = make ~path:Page_common.a_climate ~title:"Климат" ~left center
 

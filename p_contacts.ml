@@ -39,7 +39,7 @@ let center =
 			window.setTimeout ('fillCallTime(document.getElementById(id=\"validCallTime\")); checkCallTimePeriodically();', 60000);
 		}
 	" in
-	let phones = List.map (fun (phone, name, op) -> << <div class="contacts_phone">$str:name$: $str:phone$ <small>(оператор $str:op$, Россия)</small></div> >>) Config.phones in
+	let phones = List.map (fun (phone, name, op) -> << <div class="contacts_phone">$str:name$: <a href=$str:"tel:"^phone$>☎</a> $str:phone$ <small>(оператор $str:op$, Россия)</small></div> >>) Config.phones in
 	<<
 		<div class="tpl_main_center">
 			<script>$script$</script>
@@ -62,7 +62,7 @@ let center =
 	>>
 
 include Page.Make (struct
-	let title = "Наши контакты"
+	let title = "Контакты"
 
 	let contents_name = Some "Где мы находимся, контакты, карта"
 

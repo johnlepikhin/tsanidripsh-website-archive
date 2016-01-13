@@ -36,7 +36,6 @@ let center () =
 	let video = Html5.Unsafe.data "<iframe class=\"youtube\" width=\"640\" height=\"360\" src=\"https://www.youtube.com/embed/0cb0K28EkEg\" frameborder=\"0\" allowfullscreen></iframe>" in
 	<<
 		<div class="tpl_main_center">
-			<h1>$str:Config.main_title$, поселок Цандрипш, частный сектор</h1>
 			<p>
 				<b>$str:Config.season$!</b> Предлагаем <b>жилье в частном секторе Абхазии без посредников</b>!
 			</p>
