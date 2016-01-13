@@ -9,10 +9,9 @@ body.tpl_main {
 	font-family: TitleFont;
 }
 
-/*
 body.tablet, body.mobile {
+	font-size: 1.5em;
 }
-*/
 
 div.tpl_main {
 	width: 80%;
@@ -398,6 +397,7 @@ body.mobile div.main_menu_el {
 	margin-left: 0;
 	border-bottom: 1px solid #909090;
 	text-align: center;
+	height: 2em;
 }
 
 div.main_menu_el_current {
