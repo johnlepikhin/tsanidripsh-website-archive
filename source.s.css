@@ -739,6 +739,10 @@ div.social_buttons {
 	margin-right: 2em;
 }
 
+body.mobile div.social_buttons {
+	display: none;
+}
+
 div.subcolumn_right {
 	float: right;
 	width: 60%;
