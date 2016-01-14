@@ -161,13 +161,16 @@ let initial_mobile = Html5.Unsafe.data "
 </script>
 "
 
-let order_button = Html5.Unsafe.data "
+let order_button = Html5.Unsafe.data (Printf.sprintf "
 	<a href=\"javascript:void( window.open( 'https://form.jotformeu.com/60132832553348', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) \" class=\"btn lightbox-60132832553348 order_button\">
-			<div>
-      	  Заказ номера
+			<div class='order_container'>
+				<div class='order_static_container'>
+	      		<div class='order_addition'>от %i рублей</div>
+			  		Запрос номера
+				</div>
 			</div>
 	</a>
-"
+" Prices.live_min)
 
 type center =  Html5_types.div_content Html5.elt
 

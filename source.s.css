@@ -753,7 +753,7 @@ a.order_button {
 	clear: both;
 }
 
-a.order_button div {
+a.order_button div.order_container {
 	display: inline;
 	background-color: #fa0;
 	font-size: 1em;
@@ -761,12 +761,35 @@ a.order_button div {
 	padding: 0.5em;
 	float: left;
 	cursor: pointer;
+	color: black;
+	width: 9em;
+	transition: box-shadow 0.3s, background-color 0.3s, width 0.5s;
+	overflow: hidden;
+	border-top-right-radius: 1em 1em;
+	border-bottom-right-radius: 1em 1em;
 }
 
-a.order_button div:hover {
-	box-shadow: 10px 10px 20px rgba(0,0,0,0.8);
+a.order_button div.order_container:hover {
+	background-color: #ff0;
+	transition: box-shadow 0.3s, background-color 0.3s, width 0.5s;
+	width: 20em;
 }
 
+
+div.order_static_container {
+	width: 20em;
+	padding: 0px;
+	margin: 0px;
+}
+
+div.order_container div.order_addition {
+	font-style: italic;
+	color: red;
+	width: 8em;
+	float: right;
+	padding: 0px;
+	margin: 0px;
+}
 
 body.mobile a.order_button {
 	display: block;
@@ -775,12 +798,16 @@ body.mobile a.order_button {
 	text-decoration: none;
 }
 
-body.mobile a.order_button div {
+body.mobile a.order_button div.order_container {
 	display: block;
-	float: none;
 	text-align: center;
+	transition: none;
+	width: 100%;
 }
 
-body.mobile a.order_button div:hover {
-	box-shadow: none;
+body.mobile a.order_button div.order_container:hover {
+	transition: none;
+	background-color: #fa0;
 }
+
+

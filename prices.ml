@@ -20,3 +20,9 @@ let live = [
 	"Эконом", [2;3;4], [ 150; 150; 150; 150; 150; 200; 250; 300; 250; 200; 200; 200; ];
 	"Стандарт", [2;3;4], [ 200; 200; 200; 200; 200; 250; 300; 350; 250; 250; 250; 250; ];
 ]
+
+let live_min =
+	List.fold_left (fun prev (_, _, lst) ->
+		let tmin = List.fold_left (fun prev n -> min prev n) max_int lst in
+		min tmin prev
+	) max_int live
