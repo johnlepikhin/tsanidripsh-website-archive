@@ -830,6 +830,6 @@ a.order_button_text div.order_button_text {
 
 a.order_button_text div.order_button_text:hover {
 	transition: box-shadow 0.3s, background-color 0.3s;
-	box-shadow: none;
+	box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
 	background-color: #ff0;
 }
