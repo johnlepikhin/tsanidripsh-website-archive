@@ -161,6 +161,14 @@ let initial_mobile = Html5.Unsafe.data "
 </script>
 "
 
+let order_button = Html5.Unsafe.data "
+	<a href=\"javascript:void( window.open( 'https://form.jotformeu.com/60132832553348', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) \" class=\"btn lightbox-60132832553348 order_button\">
+			<div>
+      	  Заказ номера
+			</div>
+	</a>
+"
+
 type center =  Html5_types.div_content Html5.elt
 
 let tpl_tpl_base
@@ -172,7 +180,9 @@ let tpl_tpl_base
 	?(left : Html5_types.div_content Html5.elt option)
 	(center : center)
 	: [> Html5_types.html ] Html5.elt =
+	(*
 	let full_title = Printf.sprintf "%s — %s, Цандрипш." title Config.main_title in
+	*)
 	let main_menu = Main_menu.tpl1 position in
 	let main_menu_bottom = Main_menu.tpl2 position in
 
@@ -189,7 +199,7 @@ let tpl_tpl_base
 		| Some el ->
 			<< <aside class="tpl_main_left">$el$</aside> >>
 	in
-	html ~title:full_title ?keywords ?description <<
+	html ~title:title ?keywords ?description <<
 		<body class="tpl_main" id=$str:Id.to_string Id.body$>
 			$initial_mobile$
 			$banner$
@@ -210,13 +220,13 @@ let tpl_tpl_base
 							$list:phones$
 							<a onmousedown=$reachGoal "view_contacts_email"$ href=$str:"mailto:" ^ Config.mailto$>$str:Config.mailto$</a>
 						</div>
+						$order_button$
 					</div>
 				</div>
 				<div class="tpl_main_content">
 					$main_menu$
 					<div class="float_clean"/>
 					$left$
-					$Html5.Unsafe.data Tpl_social.buttons$
 
 					<h1>$str:title$</h1>
 					$center$

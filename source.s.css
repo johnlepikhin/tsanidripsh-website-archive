@@ -747,3 +747,40 @@ div.subcolumn_right {
 	float: right;
 	width: 60%;
 }
+
+a.order_button {
+	float: left;
+	clear: both;
+}
+
+a.order_button div {
+	display: inline;
+	background-color: #fa0;
+	font-size: 1em;
+	font-weight: 700;
+	padding: 0.5em;
+	float: left;
+	cursor: pointer;
+}
+
+a.order_button div:hover {
+	box-shadow: 10px 10px 20px rgba(0,0,0,0.8);
+}
+
+
+body.mobile a.order_button {
+	display: block;
+	float: none;
+	color: black;
+	text-decoration: none;
+}
+
+body.mobile a.order_button div {
+	display: block;
+	float: none;
+	text-align: center;
+}
+
+body.mobile a.order_button div:hover {
+	box-shadow: none;
+}

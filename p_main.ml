@@ -91,7 +91,7 @@ let center () =
 			<div class="float_clean"/>
 
 			<h2>Почему лучше обратить внимание на отдых в частном секторе, на Цандрипш?</h2>
-			$Tpl_img.text_img ~right:true ~text:(Printf.sprintf "Отдых в Абхазии %s, частный сектор" Config.season) (Gallery_static.Tag (Gallery.condition30, Gallery.Condition))$
+			$Tpl_img.text_img ~right:true ~text:(Printf.sprintf "Отдых в Абхазии, Цандрипш, частный сектор. %s" Config.season) (Gallery_static.Tag (Gallery.condition09, Gallery.Condition))$
 			<ul>
 				<li>Частный сектор Цандрипша — отличное место для отдыха с детьми. Тишина, сады, природа. Дети увидят много необычных для них животных, жучков, увидят как растут и спеют
 					их любимые фрукты.
@@ -164,9 +164,12 @@ let center () =
 include Page.Make (struct
 	let contents_name = None
 
-	let title = "Жилье без посредников, частный сектор"
+	let title = Config.main_title
 
 	let path = Page.p_main
 
-	let doc () = Tpl.tpl_base ~position:Tpl.Position.Main ~title ~left:(left ()) (center ())
+	let description = Config.description ^ ". Наш гостевой дом расположен в частном секторе курортного поселка Цандрипш. Мы предоставляем около 20 комфортных номеров вместимостью от 2 мест. До моря 5 минут, рядом
+кафе и магазины"
+
+	let doc () = Tpl.tpl_base ~position:Tpl.Position.Main ~title ~description ~left:(left ()) (center ())
 end)

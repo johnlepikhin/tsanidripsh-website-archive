@@ -14,9 +14,6 @@ let center =
 			Трехместный номер:
 			$img condition40$
 			$img condition39$
-			Двухместный номер:
-			$img condition37$
-			$img condition38$
 			<h2>Второй дом</h2>
 			Дом построен в 2010 году. Все номера класса "Стандарт" имеют единое оформление.
 			$img condition08$
@@ -30,7 +27,6 @@ let center =
 			$img condition25$
 			$img condition26$
 			$img condition27$
-			$img condition30$
 			$img condition31$
 			Несколько 4-местных номеров имеют отдельный уютный балкон:
 			$img condition29$
@@ -42,14 +38,8 @@ let center =
 			$img condition03$
 			Душевая:
 			$img condition18$
-			Веранда второго этажа:
-			$img condition35$
-			$img condition36$
 			Предоставляем оборудованную кухню (две газовых плиты, два чайника, две микроволновки, вся необходимая посуда):
-			$img condition04$
-			$img condition05$
 			$img condition20$
-			$img condition22$
 		</div>
 	>>
 

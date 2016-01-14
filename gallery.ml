@@ -62,11 +62,13 @@ let condition27 = make "01_condition27" "jpg" [Condition; ] <<
 	</div>
 >>
 
+(*
 let condition30 = make "01_condition30" "jpg" [Condition; ] <<
 	<div>
 		В одном из номеров.
 	</div>
 >>
+*)
 
 let condition31 = make "01_condition31" "jpg" [Condition; ] <<
 	<div>
@@ -110,17 +112,21 @@ let condition18 = make "01_condition18" "jpg" [Condition; ] <<
 	</div>
 >>
 
+(*
 let condition04 = make "01_condition04" "jpg" [Condition; ] <<
 	<div>
 На кухне можно самостоятельно приготовить себе обед.
 	</div>
 >>
+*)
 
+(*
 let condition05 = make "01_condition05" "jpg" [Condition; ] <<
 	<div>
 Кухня.
 	</div>
 >>
+*)
 
 let condition20 = make "01_condition20" "jpg" [Condition; ] <<
 	<div>
@@ -128,11 +134,13 @@ let condition20 = make "01_condition20" "jpg" [Condition; ] <<
 	</div>
 >>
 
+(*
 let condition22 = make "01_condition22" "jpg" [Condition; ] <<
 	<div>
 		Летняя кухня.
 	</div>
 >>
+*)
 
 let condition06 = make "01_condition06" "jpg" [Condition; Sea; Tsandripsh; Autumn; ] <<
 	<div>
@@ -184,6 +192,7 @@ let condition33 = make "01_condition33" "jpg" [Condition; ] <<
 	</div>
 >>
 
+(*
 let condition35 = make "01_condition35" "jpg" [Condition; ] <<
 	<div>
 		Веранда второго этажа.
@@ -195,18 +204,23 @@ let condition36 = make "01_condition36" "jpg" [Condition; ] <<
 		Веранда второго этажа.
 	</div>
 >>
+*)
 
+(*
 let condition37 = make "01_condition37" "jpg" [Condition; ] <<
 	<div>
 		Двухместный номер в новом доме.
 	</div>
 >>
+*)
 
+(*
 let condition38 = make "01_condition38" "jpg" [Condition; ] <<
 	<div>
 		Двухместный номер в новом доме.
 	</div>
 >>
+*)
 
 let condition39 = make "01_condition39" "jpg" [Condition; ] <<
 	<div>
