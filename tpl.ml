@@ -172,6 +172,14 @@ let order_button = Html5.Unsafe.data (Printf.sprintf "
 	</a>
 " Prices.live_min)
 
+let order_button_text = Html5.Unsafe.data "
+	<a href=\"javascript:void( window.open( 'https://form.jotformeu.com/60132832553348', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) \" class=\"btn lightbox-60132832553348 order_button_text\">
+			<div class='order_button_text'>
+		  		Заказать номер
+			</div>
+	</a>
+"
+
 type center =  Html5_types.div_content Html5.elt
 
 let tpl_tpl_base

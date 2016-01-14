@@ -767,6 +767,7 @@ a.order_button div.order_container {
 	overflow: hidden;
 	border-top-right-radius: 1em 1em;
 	border-bottom-right-radius: 1em 1em;
+	text-decoration: none;
 }
 
 a.order_button div.order_container:hover {
@@ -795,7 +796,6 @@ body.mobile a.order_button {
 	display: block;
 	float: none;
 	color: black;
-	text-decoration: none;
 }
 
 body.mobile a.order_button div.order_container {
@@ -810,4 +810,26 @@ body.mobile a.order_button div.order_container:hover {
 	background-color: #fa0;
 }
 
+a.order_button_text {
+	text-decoration: none;
+}
 
+a.order_button_text div.order_button_text {
+	background-color: #fa0;
+	font-size: 1.2em;
+	font-weight: 700;
+	padding: 0.5em;
+	margin: 0.5em;
+	cursor: pointer;
+	color: black;
+	transition: box-shadow 0.3s, background-color 0.3s;
+	border-radius: 1em 1em;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.4);
+	display : inline-block;
+}
+
+a.order_button_text div.order_button_text:hover {
+	transition: box-shadow 0.3s, background-color 0.3s;
+	box-shadow: none;
+	background-color: #ff0;
+}
