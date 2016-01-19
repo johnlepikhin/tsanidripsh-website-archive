@@ -231,7 +231,6 @@ let tpl_tpl_base
 							$list:phones$
 							<a onmousedown=$reachGoal "view_contacts_email"$ href=$str:"mailto:" ^ Config.mailto$>$str:Config.mailto$</a>
 						</div>
-						$order_button$
 					</div>
 				</div>
 				<div class="tpl_main_content">

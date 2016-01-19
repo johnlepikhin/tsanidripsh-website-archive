@@ -109,7 +109,6 @@ let lst = [
 				Возможны индивидуальные скидки. Предоставляем возможность <a href=$Page_common.url Page.p_billing$>забронировать номер</a> с предварительной оплатой на наш счет в Сбербанке.
 				<a href=$Page_common.url Page.p_contacts$>Позвоните</a>, чтобы узнать подробности.
 			</p>
-			$Tpl.order_button_text$
 		</div>
 	>>;
 

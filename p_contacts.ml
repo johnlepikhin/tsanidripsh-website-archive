@@ -43,7 +43,6 @@ let center =
 	<<
 		<div class="tpl_main_center">
 			<script>$script$</script>
-			$Tpl.order_button_text$
 			<div onmouseover=$Tpl.reachGoal "view_contacts"$>
 				<h2>Телефоны для вопросов и бронирования</h2>
 				$list:phones$
