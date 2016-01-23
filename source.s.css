@@ -662,6 +662,7 @@ Rotate2: rotate(-2deg) scale(1.05);
 div.zoomable img {
 	cursor: pointer;
 
+	transition: all 0.3s ease;
 	-webkit-transform: Rotate0;
 	-moz-transform: Rotate0;
 	-ms-transform: Rotate0;
@@ -670,6 +671,7 @@ div.zoomable img {
 }
 
 div.zoomable img:hover {
+	transition: all 0.3s ease;
 	-webkit-transform: Rotate2;
 	-moz-transform: Rotate2;
 	-ms-transform: Rotate2;
