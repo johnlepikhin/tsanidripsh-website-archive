@@ -22,6 +22,9 @@ let live = [
 	"Стандарт", [2;3;4], [ 250; 250; 250; 250; 300; 350; 400; 450; 400; 350; 300; 250; ];
 ]
 
+let breakfast = 230
+let dinner = 270
+
 let live_min =
 	List.fold_left (fun prev (_, _, lst) ->
 		let tmin = List.fold_left (fun prev n -> min prev n) max_int lst in
