@@ -191,9 +191,7 @@ let tpl_tpl_base
 	?(left : Html5_types.div_content Html5.elt option)
 	(center : center)
 	: [> Html5_types.html ] Html5.elt =
-	(*
 	let full_title = Printf.sprintf "%s — %s, Цандрипш." title Config.main_title in
-	*)
 	let main_menu = Main_menu.tpl1 position in
 	let main_menu_bottom = Main_menu.tpl2 position in
 
@@ -210,7 +208,7 @@ let tpl_tpl_base
 		| Some el ->
 			<< <aside class="tpl_main_left">$el$</aside> >>
 	in
-	html ~title:title ?keywords ?description <<
+	html ~title:full_title ?keywords ?description <<
 		<body class="tpl_main" id=$str:Id.to_string Id.body$>
 			$initial_mobile$
 			$banner$
