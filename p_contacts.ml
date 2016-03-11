@@ -52,7 +52,7 @@ let center =
 			<script>var el = document.getElementById(id="validCallTime"); fillCallTime(el); checkCallTimePeriodically ();</script>
 
 			<h2>Социальные сети</h2>
-			ВКонтакте: <a onmousedown=$Tpl.reachGoal "view_contacts_vkontakte"$ href="http://vk.com/id51333406">Минас Рогонян</a>
+			ВКонтакте: <a onmousedown=$Tpl.reachGoal "view_contacts_vkontakte"$ href="https://vk.com/tsandipshhotel">наша группа</a>
 			<br/>
 			Одноклассники: <a onmousedown=$Tpl.reachGoal "view_contacts_odnoklassniki"$ href="http://www.odnoklassniki.ru/profile/340785123423">Минас Рогонян</a>
 
