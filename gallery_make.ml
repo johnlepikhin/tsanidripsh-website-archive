@@ -20,6 +20,7 @@ module Tag =
 			| Spring
 			| Summer
 			| Autumn
+			| Wine
 
 		let to_title = function
 			| Condition -> "Условия проживания"
@@ -38,6 +39,7 @@ module Tag =
 			| Spring -> "Весна в Абхазии"
 			| Summer -> "Лето в Абхазии"
 			| Autumn -> "Осень в Абхазии"
+			| Wine -> "Вина Абхазии"
 
 
 		let all = [ Condition; Sea; Tsandripsh; Tours; Canyon; Riza; Alps; Afon; Cave; Plant; Animal; We ]

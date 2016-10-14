@@ -1000,3 +1000,14 @@ let fruits07 = make "06_fruits07" "jpg" [Plant; ] <<
 	</div>
 >>
 
+let wine01 = make "01_wine" "jpg" [Wine; Condition; Tsandripsh ] <<
+	<div>
+		Молодое вино готово, теперь зальём его в бутылки, где оно будет зреть.
+	</div>
+>>
+
+let wine02 = make "02_wine" "jpg" [Wine; Condition; Tsandripsh; We ] <<
+	<div>
+		Вот так мы готовим вино к следующему сезону.
+	</div>
+>>
