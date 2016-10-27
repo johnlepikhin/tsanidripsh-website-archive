@@ -7,7 +7,7 @@ let gallery_src_path = "/home/eugene/projects/auto_tsandripsh_hotel/gallery"
 
 let install_path = ref "/tmp/tsandripsh"
 
-let year = "2016"
+let year = "2017"
 
 let season = "Осень-зима 2016"
 
