@@ -7,8 +7,6 @@ type agreagated = {
 	price : int;
 }
 
-let discount = 50
-
 let agregated_live =
 	let map (name, sizes, prices) =
 		let rec loop cur_month prev (lst : int list) =
@@ -17,7 +15,7 @@ let agregated_live =
 					match prev with
 						| None -> []
 						| Some (month_start, prev_price) ->
-							{ month_start; month_end = cur_month-1; price = prev_price - discount; } :: []
+							{ month_start; month_end = cur_month-1; price = prev_price - live_discount; } :: []
 				)
 				| price :: tl ->
 					match prev with
@@ -26,7 +24,7 @@ let agregated_live =
 							if prev_price = price then
 								loop (cur_month+1) prev tl
 							else
-								{ month_start; month_end = cur_month-1; price = prev_price - discount; } :: loop (cur_month+1) (Some (cur_month, price)) tl
+								{ month_start; month_end = cur_month-1; price = prev_price - live_discount; } :: loop (cur_month+1) (Some (cur_month, price)) tl
 		in
 		let prices = loop 1 None prices in
 		name, sizes, prices
