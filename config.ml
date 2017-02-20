@@ -1,5 +1,5 @@
 
-let is_new_year = true
+let is_new_year = false
 
 let static_path = "/home/eugene/projects/auto_tsandripsh_hotel/static"
 
@@ -9,7 +9,9 @@ let install_path = ref "/tmp/tsandripsh"
 
 let year = "2017"
 
-let season = "Осень-зима 2016"
+let season = "Лето 2017"
+
+let prices_relevance = "цены от февраля 2017, действуют до конца года"
 
 let main_title =
 	let title =

@@ -835,3 +835,7 @@ a.order_button_text div.order_button_text:hover {
 	box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
 	background-color: #ff0;
 }
+
+u.prices:hover {
+	cursor: help;
+}

@@ -28,9 +28,9 @@ let lst = [
 		<div>
 			Проще всего договориться с нами о встрече. Услуга трансфера стоит:
 			<ul>
-				<li>от аэропорта: $str:Tpl_prices.to_string Prices.transfer_aeroport$</li>
-				<li>от ж/д вокзала Адлера: $str:Tpl_prices.to_string Prices.transfer_railroad$</li>
-				<li>от ж/д вокзала Цандрипша: $str:Tpl_prices.to_string Prices.transfer_from_border$</li>
+				<li>от аэропорта: $Tpl_prices.to_string Prices.transfer_aeroport$</li>
+				<li>от ж/д вокзала Адлера: $Tpl_prices.to_string Prices.transfer_railroad$</li>
+				<li>от ж/д вокзала Цандрипша: $Tpl_prices.to_string Prices.transfer_from_border$</li>
 			</ul>
 			За эти деньги мы организуем трансфер на легковой машине (вместимость до четырех человек) до границы, плюс от границы до гостевого дома.
 			<p>
