@@ -20,7 +20,7 @@ let tbl_living =
 			| last :: [] -> Printf.sprintf "или %i" last
 			| hd :: tl -> Printf.sprintf "%i %s" hd (make_sizes tl)
 		in
-		let sizes = make_sizes sizes in
+		let sizes = if List.length sizes = 1 then Printf.sprintf "%i" (List.hd sizes) else make_sizes sizes in
 		let tbl = tbl_price ~head:(name :: months) [ << <th> Мест в номере: $str:sizes$ </th> >> :: (List.map (fun p -> p.price) prices |> tbl_row) ] in
 		<< <div> <h3>Номера "$str:name$"</h3>$tbl$ * Цены указаны за человека в сутки.</div> >>
 	in
