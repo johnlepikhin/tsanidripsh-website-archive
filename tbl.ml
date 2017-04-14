@@ -1,7 +1,7 @@
 
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
-let simple ?(className="") ?head (rows : [< Html5_types.tr_content ] Html5.elt list list) =
+let simple ?(className="") ?head (rows : [< Html_types.tr_content ] Html.elt list list) =
 	let head = match head with
 		| None -> []
 		| Some lst ->

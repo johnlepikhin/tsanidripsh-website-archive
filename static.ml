@@ -9,6 +9,9 @@ let files = ref []
 let url t =
 	Purl.to_string t.dst
 
+let url_full t =
+	"http://" ^ Config.site_domain ^ (url t)
+
 let make psrc fsrc pdst fdst =
 	let src = Purl.make psrc fsrc in
 	let dst = Purl.make pdst fdst in
@@ -63,3 +66,4 @@ let internet_instr03 = cmake Path.root "internet-instruction-03.png"
 let internet_instr04 = cmake Path.root "internet-instruction-04.png"
 let internet_instr05 = cmake Path.root "internet-instruction-05.png"
 
+let pano_room_standard_3beds = cmake Path.pano360 "room-standard-3beds.jpg"

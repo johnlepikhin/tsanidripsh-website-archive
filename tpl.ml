@@ -1,5 +1,5 @@
 
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 let yaCounterID = "17405770"
 
@@ -8,7 +8,7 @@ let googleAnalyticsID = "UA-58581213-1"
 let reachGoal name = Printf.sprintf "yaCounter%s.reachGoal('%s'); return true;" yaCounterID name
 
 let html ~title ?(keywords=Config.keywords) ?(description=Config.description) body =
-	let meta_yandex = Html5.Unsafe.data "<meta name='yandex-verification' content='6cb12c4bf700b317' />" in
+	let meta_yandex = Html.Unsafe.data "<meta name='yandex-verification' content='6cb12c4bf700b317' />" in
 	<<
 	<html>
 		<head>
@@ -24,7 +24,7 @@ let html ~title ?(keywords=Config.keywords) ?(description=Config.description) bo
 >>
 
 let tpl_banner image alt page =
-	let t = Html5.img ~src:(Static.url image) ~alt () in
+	let t = Html.img ~src:(Static.url image) ~alt () in
 	<<
 		<div class="banner rock">
 			<a href=$Page.url page$>
@@ -104,7 +104,7 @@ module Main_menu =
 			<< <div class="main_menu_bottom">$list:divs$</div> >>
 	end
 
-let yandex_metrika = Html5.Unsafe.data (Printf.sprintf "
+let yandex_metrika = Html.Unsafe.data (Printf.sprintf "
 	<!-- Yandex.Metrika informer -->
 	<a href=\"https://metrika.yandex.ru/stat/?id=%s&amp;from=informer\"
 	target=\"_blank\" rel=\"nofollow\"><img src=\"//bs.yandex.ru/informer/%s/1_1_8B97DCFF_6B77BCFF_0_pageviews\"
@@ -140,7 +140,7 @@ let yandex_metrika = Html5.Unsafe.data (Printf.sprintf "
 	<!-- /Yandex.Metrika counter -->
 " yaCounterID yaCounterID yaCounterID yaCounterID yaCounterID yaCounterID)
 
-let googl_analytics = Html5.Unsafe.data ("
+let googl_analytics = Html.Unsafe.data ("
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -153,7 +153,7 @@ let googl_analytics = Html5.Unsafe.data ("
 	 </script>
 ")
 
-let initial_mobile = Html5.Unsafe.data "
+let initial_mobile = Html.Unsafe.data "
 <script>
 	if (window.innerWidth < 960 || navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i)) {
 		document.body.className = document.body.className + ' mobile';
@@ -161,7 +161,7 @@ let initial_mobile = Html5.Unsafe.data "
 </script>
 "
 
-let order_button = Html5.Unsafe.data (Printf.sprintf "
+let order_button = Html.Unsafe.data (Printf.sprintf "
 	<a href=\"javascript:void( window.open( 'https://form.jotformeu.com/60132832553348', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) \" class=\"btn lightbox-60132832553348 order_button\">
 			<div class='order_container'>
 				<div class='order_static_container'>
@@ -172,7 +172,7 @@ let order_button = Html5.Unsafe.data (Printf.sprintf "
 	</a>
 " Prices.live_min)
 
-let order_button_text = Html5.Unsafe.data "
+let order_button_text = Html.Unsafe.data "
 	<a href=\"javascript:void( window.open( 'https://form.jotformeu.com/60132832553348', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) \" class=\"btn lightbox-60132832553348 order_button_text\">
 			<div class='order_button_text'>
 		  		Заказать номер
@@ -180,7 +180,7 @@ let order_button_text = Html5.Unsafe.data "
 	</a>
 "
 
-type center =  Html5_types.div_content Html5.elt
+type center =  Html_types.div_content Html.elt
 
 let tpl_tpl_base
 	?(add_class="")
@@ -188,9 +188,9 @@ let tpl_tpl_base
 	~position
 	?keywords
 	?description
-	?(left : Html5_types.div_content Html5.elt option)
+	?(left : Html_types.div_content Html.elt option)
 	(center : center)
-	: [> Html5_types.html ] Html5.elt =
+	: [> Html_types.html ] Html.elt =
 	let full_title = Printf.sprintf "%s — %s, Цандрипш." title Config.main_title in
 	let main_menu = Main_menu.tpl1 position in
 	let main_menu_bottom = Main_menu.tpl2 position in
@@ -258,7 +258,7 @@ let tpl_base = tpl_tpl_base ~add_class:""
 let tpl_base_newyear = tpl_tpl_base ~add_class:"new_year_main_header"
 
 let tpl_redirect path =
-	let meta = Html5.Unsafe.data (Printf.sprintf "<meta http-equiv=\"refresh\" content=\"0; url=http://%s%s\" />" Config.site_domain (Page.url path)) in
+	let meta = Html.Unsafe.data (Printf.sprintf "<meta http-equiv=\"refresh\" content=\"0; url=http://%s%s\" />" Config.site_domain (Page.url path)) in
 	<<
 		<html>
 			<head>

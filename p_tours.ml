@@ -1,12 +1,12 @@
 
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 type t = {
 	str_id : string;
 	title : string;
 	descr : string;
-	preview : Html5_types.div_content Html5.elt;
-	text : Html5_types.div_content Html5.elt;
+	preview : Html_types.div_content Html.elt;
+	text : Html_types.div_content Html.elt;
 	page : Page.t;
 }
 

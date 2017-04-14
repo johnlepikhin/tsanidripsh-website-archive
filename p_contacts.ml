@@ -1,5 +1,5 @@
 
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 let left = <<
 	<aside class="main">
@@ -7,7 +7,7 @@ let left = <<
 >>
 
 let center =
-	let script = Html5.cdata_script "
+	let script = Html.cdata_script "
 		function calcHour () {
 			var offset = 4;
 

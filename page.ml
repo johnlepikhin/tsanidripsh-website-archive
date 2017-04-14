@@ -1,10 +1,12 @@
 include Page_common
 
+module Html = Tyxml.Html
+
 type path = Purl.t
 
 type t = {
 	path : path;
-	doc : unit -> Html5.M.doc;
+	doc : unit -> Html.doc;
 	title : string;
 	contents_name : string option;
 }
@@ -19,7 +21,7 @@ module type PAGE =
 
 		val path : path
 
-		val doc : unit -> Html5.M.doc
+		val doc : unit -> Html.doc
 	end
 
 let register p =

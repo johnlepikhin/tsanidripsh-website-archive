@@ -23,3 +23,5 @@ let tours = make ["tours"]
 let gallery = make ["gallery"]
 
 let articles = make ["articles"]
+
+let pano360 = make ["pano360"]

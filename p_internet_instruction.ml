@@ -1,8 +1,8 @@
 
-module Html5 = Html5.M
+module Html = Html.M
 
 let img p =
-	let t = Html5.img ~src:(Static.url p) ~alt:"" () in
+	let t = Html.img ~src:(Static.url p) ~alt:"" () in
 	<<
 		<div class="textnb_img">
 			$t$
@@ -10,7 +10,7 @@ let img p =
 	>>
 
 let imgr p =
-	let t = Html5.img ~src:(Static.url p) ~alt:"" () in
+	let t = Html.img ~src:(Static.url p) ~alt:"" () in
 	<<
 		<div class="textnb_img textnb_img_right swing">
 			$t$
@@ -18,7 +18,7 @@ let imgr p =
 	>>
 
 let bottomimg =
-	let t = Html5.img ~src:(Static.url Static.sea) ~alt:"" () in
+	let t = Html.img ~src:(Static.url Static.sea) ~alt:"" () in
 	<<
 		<div class="sea_img">
 			$t$

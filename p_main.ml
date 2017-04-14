@@ -1,5 +1,5 @@
 
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 let left () =
 	let rec loop = function
@@ -33,7 +33,7 @@ let attention_new_year = <<
 let attention_empty = << <div/> >>
 
 let center () =
-	let video = Html5.Unsafe.data "<iframe class=\"youtube\" width=\"640\" height=\"360\" src=\"https://www.youtube.com/embed/0cb0K28EkEg\" frameborder=\"0\" allowfullscreen></iframe>" in
+	let video = Html.Unsafe.data "<iframe class=\"youtube\" width=\"640\" height=\"360\" src=\"https://www.youtube.com/embed/0cb0K28EkEg\" frameborder=\"0\" allowfullscreen></iframe>" in
 	<<
 		<div class="tpl_main_center">
 			<p>
@@ -150,6 +150,8 @@ let center () =
 			</div>
 
 			<div class="float_clean"/>
+
+			test: $Tpl_pano360.pano360 Static.pano_room_standard_3beds$
 
 			$articles ()$
 

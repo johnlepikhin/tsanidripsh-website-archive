@@ -1,5 +1,5 @@
 
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 module Tag =
 	struct
@@ -52,7 +52,7 @@ type t = {
 	file : string;
 	ext : string;
 	tags : tag list;
-	description : Html5_types.flow5 Html5.elt;
+	description : Html_types.flow5 Html.elt;
 	dest_64 : Purl.t;
 	dest_256 : Purl.t;
 	dest_512 : Purl.t;

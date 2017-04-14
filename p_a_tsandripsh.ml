@@ -1,6 +1,6 @@
 
 open Article
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 let tsandripsh = make ~path:Page_common.a_tsandripsh ~title:"Цандрипш — наш курорт" <<
 	<div class="tpl_main_center">

@@ -1,8 +1,8 @@
 
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 let center =
-	let script = Html5.cdata_script "
+	let script = Html.cdata_script "
 		var disqus_shortname = 'tsandripsh';
 		var disqus_identifier = 'testimonials';
 		var disqus_url = 'http://tsandripsh-hotel.ru/feedbacks.html';

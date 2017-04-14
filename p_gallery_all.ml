@@ -1,10 +1,10 @@
 
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 let lst =
 	let open Gallery in
 	let f p =
-		let img = Html5.img ~src:(Purl.to_string p.dest_512) ~alt:(Tpl_img.alt_of_tags p.tags) () in
+		let img = Html.img ~src:(Purl.to_string p.dest_512) ~alt:(Tpl_img.alt_of_tags p.tags) () in
 		<<
 			<div class="gallery_old_el">
 				$img$

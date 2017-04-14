@@ -1,9 +1,9 @@
 open Article
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 let yandex_weather =
-	let img1 = Html5.img ~src:"http://info.weather.yandex.net/gagra/2_white.ru.png" ~alt:"" () in
-	let img2 = Html5.img ~src:"http://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*http://img.yandex.ru/i/pix.gif" ~alt:"" () in
+	let img1 = Html.img ~src:"http://info.weather.yandex.net/gagra/2_white.ru.png" ~alt:"" () in
+	let img2 = Html.img ~src:"http://clck.yandex.ru/click/dtype=stred/pid=7/cid=1227/*http://img.yandex.ru/i/pix.gif" ~alt:"" () in
 	<<
 		<div class="weather_informer">
 			<small>Погода прямо сейчас:</small>

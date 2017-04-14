@@ -1,5 +1,5 @@
 
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 let center = <<
 	<div class="tpl_main_center">

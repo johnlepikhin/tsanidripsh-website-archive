@@ -1,5 +1,5 @@
 
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 let lst = [
 	"Нужна ли виза в Абхазию?",

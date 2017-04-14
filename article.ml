@@ -9,7 +9,7 @@ module M
 			?contents_name:string ->
 			path:Page.path ->
 			title:string ->
-			?left:Html5_types.div_content Tpl.Html5.elt ->
+			?left:Html_types.div_content Tpl.Html.elt ->
 			Tpl.center ->
 			t
 
@@ -48,7 +48,7 @@ include M
 
 
 let articles_list limit =
-	let module Html5 = Html5.M in
+	let module Html = Tyxml.Html in
 	let f a =
 		let page = page a in
 		<<

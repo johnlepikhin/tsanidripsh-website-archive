@@ -1,5 +1,5 @@
 
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 let alt_of_tags tags =
 	let titles = List.map Gallery.to_title tags in
@@ -20,7 +20,7 @@ let img_of_content content =
 let text_img ?right ?(text="") content =
 	let alt = alt_of_content ~text content in
 	let img = img_of_content content in
-	let t = Html5.img ~src:(Purl.to_string img.Gallery.dest_512) ~alt () in
+	let t = Html.img ~src:(Purl.to_string img.Gallery.dest_512) ~alt () in
 	let js = Gallery_static.jscall_of_content content in
 	let c_add = match right with | Some true -> " text_img_right" | Some false | None -> "" in
 	let c = "text_img zoomable" ^ c_add in
@@ -34,7 +34,7 @@ let text_img ?right ?(text="") content =
 let coltitle_img content =
 	let alt = alt_of_content content in
 	let img = img_of_content content in
-	let t = Html5.img ~src:(Purl.to_string img.Gallery.dest_256) ~alt () in
+	let t = Html.img ~src:(Purl.to_string img.Gallery.dest_256) ~alt () in
 	let js = Gallery_static.jscall_of_content content in
 	let c = "coltitle_img zoomable" in
 	<<
@@ -46,7 +46,7 @@ let coltitle_img content =
 let textbig_img content =
 	let alt = alt_of_content content in
 	let img = img_of_content content in
-	let t = Html5.img ~src:(Purl.to_string img.Gallery.dest_1024) ~alt () in
+	let t = Html.img ~src:(Purl.to_string img.Gallery.dest_1024) ~alt () in
 	let js = Gallery_static.jscall_of_content content in
 	let c = "textbig_img" in
 	<<

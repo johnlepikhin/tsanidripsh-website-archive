@@ -1,4 +1,4 @@
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 let to_string = function
 	| 0 -> << <u class="prices" title=$Config.prices_relevance$>бесплатно</u> >>

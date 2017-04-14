@@ -1,5 +1,5 @@
 
-module Html5 = Html5.M
+module Html = Tyxml.Html
 
 let tbl_row = List.map (fun p -> << <td>$Tpl_prices.to_string p$</td> >> )
 
