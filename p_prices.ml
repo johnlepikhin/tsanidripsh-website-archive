@@ -102,7 +102,7 @@ let lst = [
 			$tbl_living$
 
 			<p>
-				Подробно ознакомиться с номерами можно на <a href=$Page_common.url Page.p_rooms$>специальной странице</a>.
+				Подробно ознакомиться с номерами можно на <a href=$Page_common.url Page.p_rooms_tour$>3D-туре по номерам</a> и на <a href=$Page_common.url Page.p_rooms$>специальной странице</a>.
 			</p>
 			<p>
 				Возможны индивидуальные скидки. Предоставляем возможность <a href=$Page_common.url Page.p_billing$>забронировать номер</a> с предварительной оплатой на наш счет в Сбербанке.

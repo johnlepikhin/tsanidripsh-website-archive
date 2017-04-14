@@ -2,7 +2,7 @@
 open Article
 module Html = Tyxml.Html
 
-let tsandripsh = make ~path:Page_common.a_tsandripsh ~title:"Цандрипш — наш курорт" <<
+let tsandripsh = make ~path:Page_common.a_tsandripsh ~title:"Поселок Цандрипш" <<
 	<div class="tpl_main_center">
 		$Tpl_img.textbig_img (Gallery_static.Tag (Gallery.condition32, Gallery.Tsandripsh))$
 		<p>

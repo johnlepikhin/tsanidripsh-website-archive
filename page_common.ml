@@ -24,6 +24,8 @@ let p_tours = Purl.make Path.root "tours"
 
 let p_rooms = Purl.make Path.root "rooms"
 
+let p_rooms_tour = Purl.make Path.root "rooms_tour"
+
 let p_contacts = Purl.make Path.root "contacts"
 
 let p_feedbacks = Purl.make Path.root "feedbacks"

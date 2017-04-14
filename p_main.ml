@@ -144,8 +144,6 @@ let center () =
 
 			<div class="float_clean"/>
 
-			test: $Tpl_pano360.pano360 Static.pano_room_standard_3beds$
-
 			$articles ()$
 
 			<div class="float_clean"/>

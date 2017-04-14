@@ -70,4 +70,7 @@ let internet_instr03 = cmake Path.root "internet-instruction-03.png"
 let internet_instr04 = cmake Path.root "internet-instruction-04.png"
 let internet_instr05 = cmake Path.root "internet-instruction-05.png"
 
+let pano_room_standard_2beds = cmake Path.pano360 "room-standard-2beds.jpg"
 let pano_room_standard_3beds = cmake Path.pano360 "room-standard-3beds.jpg"
+let pano_room_economic_3beds = cmake Path.pano360 "room-economic-3beds.jpg"
+let pano_room_economic_4beds = cmake Path.pano360 "room-economic-4beds.jpg"

@@ -15,6 +15,7 @@ let () =
 	let module P = P_a_climate in
 	let module P = P_billing in
 	let module P = P_rooms in
+	let module P = P_rooms_tour in
 	let module P = P_new_year in
 	Install_path.create_all ();
 	if Array.length Sys.argv > 1 && Sys.argv.( 1 ) = "gallery" then
