@@ -10,7 +10,12 @@ let create_all () =
 		let dst_full = dst_full_path t.dst in
 		if not (Sys.file_exists src_full) then
 			raise (failwith (Printf.sprintf "Static file '%s' not found" src_full));
-		let _ = Sys.command (Printf.sprintf "cp '%s' '%s' && chmod 644 '%s'" src_full dst_full dst_full) in
+		let _ =
+			if (Sys.is_directory src_full) then
+				Sys.command (Printf.sprintf "rsync -av '%s' '%s' && chmod 755 '%s'" src_full dst_full dst_full)
+			else
+				Sys.command (Printf.sprintf "cp '%s' '%s' && chmod 644 '%s'" src_full dst_full dst_full)
+		in
 		()
 	in
 	List.iter f !files
