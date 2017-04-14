@@ -33,7 +33,6 @@ let attention_new_year = <<
 let attention_empty = << <div/> >>
 
 let center () =
-	let video = Html.Unsafe.data "<iframe class=\"youtube\" width=\"640\" height=\"360\" src=\"https://www.youtube.com/embed/0cb0K28EkEg\" frameborder=\"0\" allowfullscreen></iframe>" in
 	<<
 		<div class="tpl_main_center">
 			<p>
@@ -142,12 +141,6 @@ let center () =
 				</li>
 			</ul>
 
-
-			<div class="float_clean"/>
-
-			<div class="text_video">
-				$video$
-			</div>
 
 			<div class="float_clean"/>
 
