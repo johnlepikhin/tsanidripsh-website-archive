@@ -42,13 +42,13 @@ module Position =
 			| Main
 			| Gallery
 			| Prices
-			| Tours
 			| Information
 			| Feedbacks
 			| Questions
+			| Blog
 			| Contacts
 
-		let all = [ Main; Gallery; Prices; Tours; Information; Feedbacks; Questions; Contacts ]
+		let all = [ Main; Gallery; Prices; Information; Feedbacks; Questions; Blog; Contacts ]
 
 		let to_url t = 
 			let p =
@@ -56,10 +56,10 @@ module Position =
 					| Main -> Page.p_main
 					| Gallery -> Page.p_gallery
 					| Prices -> Page.p_prices
-					| Tours -> Page.p_tours
 					| Information -> Page.p_information
 					| Feedbacks -> Page.p_feedbacks
 					| Questions -> Page.p_questions
+					| Blog -> Page.p_blog
 					| Contacts -> Page.p_contacts
 			in
 			Page.url ~shrink_index:true p
@@ -73,10 +73,10 @@ module Main_menu =
 			| Main -> "Главная"
 			| Gallery -> "Фотографии"
 			| Prices -> "Цены"
-			| Tours -> "Туры"
 			| Information -> "Информация"
 			| Feedbacks -> "Отзывы"
 			| Questions -> "Вопросы"
+			| Blog -> "Блог"
 			| Contacts -> "Контакты"
 
 		let tpl1 position =

@@ -11,7 +11,7 @@ type t = {
 }
 
 let gen_tour_doc title descr preview text =
-	Tpl.tpl_base ~title ~position:Tpl.Position.Tours ~description:descr <<
+	Tpl.tpl_base ~title ~position:Tpl.Position.Main ~description:descr <<
 		<div class="tpl_main_center">
 			<h1>$str:title$</h1>
 			<b>$str:descr$</b>
@@ -63,5 +63,5 @@ include Page.Make (struct
 
 	let path = Page.p_tours
 
-	let doc () = Tpl.tpl_base ~position:Tpl.Position.Tours ~title ~left center
+	let doc () = Tpl.tpl_base ~position:Tpl.Position.Main ~title ~left center
 end)

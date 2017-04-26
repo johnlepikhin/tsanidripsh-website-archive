@@ -58,3 +58,13 @@ let articles_list limit =
 		>>
 	in
 	all ~limit () |> List.rev |> List.map f
+
+let articles_list_titles limit =
+	let module Html = Tyxml.Html in
+	let f a =
+		let page = page a in
+		<<
+			<a href=$str:Page.url page.Page.path$><h2>$str:page.Page.title$</h2></a>
+		>>
+	in
+	all ~limit () |> List.rev |> List.map f

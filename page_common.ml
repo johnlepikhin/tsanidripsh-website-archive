@@ -34,6 +34,8 @@ let p_questions = Purl.make Path.root "questions"
 
 let p_information = Purl.make Path.root "information"
 
+let p_blog = Purl.make Path.root "blog"
+
 let p_gallery_all = Purl.make Path.root "gallery_all"
 
 let p_old_testimonials = Purl.make Path.root "testimonials"
@@ -46,6 +48,7 @@ let p_tours_alps = Purl.make Path.tours "tour_alps"
 let p_old_tours_afon = Purl.make Path.tours "afon"
 
 let a_tsandripsh = Purl.make Path.articles "tsandripsh"
+let a_tsandripsh_temple = Purl.make Path.articles "tsandripsh_temple"
 let a_climate = Purl.make Path.articles "climate"
 
 let p_new_year = Purl.make Path.root "new_year"

@@ -1107,5 +1107,5 @@ let left =
 	>>
 
 
-let tsandripsh = make ~path:Page_common.a_climate ~title:"Климат" ~left center
+let tsandripsh = make ~path:Page_common.a_climate ~title:"Климат Цандрипша" ~left center
 

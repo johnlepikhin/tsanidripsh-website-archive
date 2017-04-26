@@ -40,7 +40,7 @@ let center () =
 			</p>
 			$if Config.is_new_year then attention_new_year else attention_empty$
 
-			$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.we04, Gallery.We))$
+			$Tpl_pano360.text_pano360 ~right:true ~text:"В одном из наших номеров (можно развернуть на весь экран!)" Static.pano_room_standard_2beds$
 
 			<p>
 				Мы рады приветствовать вас на сайте гостевого дома семьи Минаса и Алины Рогонян! Наш дом расположен
