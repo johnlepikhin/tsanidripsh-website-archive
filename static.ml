@@ -78,3 +78,7 @@ let pano_room_economic_4beds = cmake Path.pano360 "room-economic-4beds.jpg"
 let pano_tsandripsh_temple1 = cmake Path.pano360 "tsandripsh-temple1.jpg"
 let pano_tsandripsh_temple2 = cmake Path.pano360 "tsandripsh-temple2.jpg"
 let pano_tsandripsh_temple3 = cmake Path.pano360 "tsandripsh-temple3.jpg"
+
+let pano_tsandripsh_beach1 = cmake Path.pano360 "tsandripsh-beach1.jpg"
+let pano_tsandripsh_beach2 = cmake Path.pano360 "tsandripsh-beach2.jpg"
+let pano_tsandripsh_beach3 = cmake Path.pano360 "tsandripsh-beach3.jpg"
