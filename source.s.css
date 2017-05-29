@@ -839,3 +839,13 @@ a.order_button_text div.order_button_text:hover {
 u.prices:hover {
 	cursor: help;
 }
+
+div.webcam {
+	width: 100%;
+}
+
+div.webcam iframe {
+	width: 350px;
+	height: 300px;
+	display: block;
+}

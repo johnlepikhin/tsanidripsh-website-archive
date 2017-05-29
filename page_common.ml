@@ -51,5 +51,6 @@ let a_tsandripsh = Purl.make Path.articles "tsandripsh"
 let a_tsandripsh_temple = Purl.make Path.articles "tsandripsh_temple"
 let a_tsandripsh_beach_3d = Purl.make Path.articles "tsandripsh_beach_3d"
 let a_climate = Purl.make Path.articles "climate"
+let a_webcams = Purl.make Path.articles "webcams"
 
 let p_new_year = Purl.make Path.root "new_year"
