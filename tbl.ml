@@ -5,13 +5,7 @@ let simple ?(className="") ?head (rows : [< Html_types.tr_content ] Html.elt lis
 	let head = match head with
 		| None -> []
 		| Some lst ->
-			List.map (fun v -> << <th>$str:v$</th> >> ) lst
+			List.map (fun v -> Html.th [v] ) lst
 	in
-	let rows = List.map (fun cells -> << <tr>$list:cells$</tr> >>) rows in
-	<<
-		<table class=$str:className$>
-			<tr>$list:head$</tr>
-			$list:rows$
-		</table>
-	>>
-	
+	let rows = List.map (fun cells -> Html.tr cells) rows in
+	Html.table ~a:[Html.a_class [className]] ~thead:(Html.thead [Html.tr head]) rows

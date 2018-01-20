@@ -24,12 +24,11 @@ let text_img ?right ?(text="") content =
 	let js = Gallery_static.jscall_of_content content in
 	let c_add = match right with | Some true -> " text_img_right" | Some false | None -> "" in
 	let c = "text_img zoomable" ^ c_add in
-	<<
-		<div class=$str:c$ onclick=$js$>
-			$t$
-			$str:text$
-		</div>
-	>>
+	[%html
+		"<div class="[c]" onclick="js">"
+			[t; Html.pcdata text]
+		"</div>"
+	]
 
 let coltitle_img content =
 	let alt = alt_of_content content in
@@ -37,11 +36,11 @@ let coltitle_img content =
 	let t = Html.img ~src:(Purl.to_string img.Gallery.dest_256) ~alt () in
 	let js = Gallery_static.jscall_of_content content in
 	let c = "coltitle_img zoomable" in
-	<<
-		<div class=$str:c$ onclick=$js$>
-			$t$
-		</div>
-	>>
+	[%html
+		"<div class="[c]" onclick="js">"
+			[t]
+		"</div>"
+	]
 
 let textbig_img content =
 	let alt = alt_of_content content in
@@ -49,8 +48,8 @@ let textbig_img content =
 	let t = Html.img ~src:(Purl.to_string img.Gallery.dest_1024) ~alt () in
 	let js = Gallery_static.jscall_of_content content in
 	let c = "textbig_img" in
-	<<
-		<div class=$str:c$ onclick=$js$>
-			$t$
-		</div>
-	>>
+	[%html
+		"<div class="[c]" onclick="js">"
+			[t]
+		"</div>"
+	]

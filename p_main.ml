@@ -6,43 +6,60 @@ let left () =
 		| [] -> []
 		| p :: tl ->
 			match p.Page.contents_name with
-				| Some name -> << <p><a href=$Page.url p.Page.path$>$str:name$</a></p> >> :: loop tl
+				| Some name ->
+					let href = Page.url p.Page.path in
+					let name = Html.pcdata name in
+					[%html "<p><a href="href">"[name]"</a></p>" ] :: loop tl
 				| None -> loop tl
 	in
-	<<
-		<aside class="main">
-			<h2>Содержание</h2>
-			$list:List.sort (fun a b -> compare a.Page.contents_name b.Page.contents_name) !Page.pages |> loop$
-		</aside>
-	>>
+	let list_contents = List.sort (fun a b -> compare a.Page.contents_name b.Page.contents_name) !Page.pages |> loop in
+	[%html
+		"<aside class='main'>
+			<h2>Содержание</h2>"
+			list_contents
+		"</aside>"
+	]
 	
 let articles () =
-	<<
-		<div>
-			<h2>Новое на сайте! Интересные статьи</h2>
-			$list:Article.articles_list 10$
-		</div>
-	>>
+	let list_articles = Article.articles_list 10 in
+	[%html
+		"<div>
+			<h2>Новое на сайте! Интересные статьи</h2>"
+			list_articles
+		"</div>"
+	]
 
-let attention_new_year = <<
-	<div class="attention">
-		<b>Открыто бронирование на <a href=$Page_common.url Page.p_new_year$>новогоднюю ночь!</a></b>
-	</div>
->>
+let attention_new_year =
+	let href = Page_common.url Page.p_new_year in
+	[%html
+	"<div class='attention'>
+		<b>Открыто бронирование на <a href="href">новогоднюю ночь!</a></b>
+	</div>"
+	]
 
-let attention_empty = << <div/> >>
+let attention_empty = Html.div []
 
 let center () =
-	<<
-		<div class="tpl_main_center">
+	let season = Html.pcdata Config.season in
+	let attention = if Config.is_new_year then attention_new_year else attention_empty in
+	let pano360 = Tpl_pano360.text_pano360 ~right:true ~text:"В одном из наших номеров (можно развернуть на весь экран!)" Static.pano_room_standard_2beds in
+	let condition = Tpl_img.coltitle_img (Gallery_static.Tag (Gallery.condition42, Gallery.Condition)) in
+	let href_prices = Page.url Page.p_prices in
+	let tours_img = Tpl_img.coltitle_img (Gallery_static.Tag (Gallery.canyon07, Gallery.Tours)) in
+	let tours_href = Page.url Page.p_tours in
+	let condition2_img = Tpl_img.text_img ~right:true ~text:(Printf.sprintf "Отдых в Абхазии, Цандрипш, частный сектор. %s" Config.season) (Gallery_static.Tag (Gallery.condition09, Gallery.Condition)) in
+	let sea_img = Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.sea26, Gallery.Sea)) in
+	let year = Config.year in
+	let articles_list = articles () in
+	let contacts_href = P_contacts.url in
+	[%html
+		"<div class='tpl_main_center'>
 			<p>
-				<b>$str:Config.season$!</b> Предлагаем <b>жилье в частном секторе Абхазии без посредников</b>!
-			</p>
-			$if Config.is_new_year then attention_new_year else attention_empty$
-
-			$Tpl_pano360.text_pano360 ~right:true ~text:"В одном из наших номеров (можно развернуть на весь экран!)" Static.pano_room_standard_2beds$
-
-			<p>
+				<b>"[season]"!</b> Предлагаем <b>жилье в частном секторе Абхазии без посредников</b>!
+			</p>"
+			[attention;
+			pano360]
+			"<p>
 				Мы рады приветствовать вас на сайте гостевого дома семьи Минаса и Алины Рогонян! Наш дом расположен
 				в курортном поселке Цандрипш республики Абхазия, близ известного пляжа <b>Белые скалы</b>. Поселок находится
 				прямо на берегу Чёрного моря. При этом, море у нас заслуженно считается более чистым, чем в Гагре. Это
@@ -65,33 +82,33 @@ let center () =
 				вопросы по бронированию, трансферу и прочим организационным моментам лучше всего решать по телефону.
 			</p>
 
-			<div class="float_clean"/>
+			<div class='float_clean'></div>
 
-			<div class="main_info">
-				<h2 class="center">Проживание</h2>
-				$Tpl_img.coltitle_img (Gallery_static.Tag (Gallery.condition42, Gallery.Condition))$
-				<p>
-					Мы предлагаем проживание в номерах <a href=$Page.url Page.p_prices$>"стандарт" класса</a>. В каждом номере
+			<div class='main_info'>
+				<h2 class='center'>Проживание</h2>"
+				[condition]
+				"<p>
+					Мы предлагаем проживание в номерах <a href="href_prices">«стандарт» класса</a>. В каждом номере
 					есть кровати, шкафы для одежды, тумбочка для мелких вещей, телевизор, вентилятор. В каждую комнату
 					отдельный вход. Есть общая веранда и кухня, где приятно посидеть компанией вечером.
 				</p>
 			</div>
-			<div class="main_info">
-				<h2 class="center">Экскурсии</h2>
-				$Tpl_img.coltitle_img (Gallery_static.Tag (Gallery.canyon07, Gallery.Tours))$
-				<p>
+			<div class='main_info'>
+				<h2 class='center'>Экскурсии</h2>"
+				[tours_img]
+				"<p>
 					<b>Абхазия</b> — страна огромных гор, чистых ручьев и древней истории. Прикоснитесь к прекрасному вместе с нами!
 				</p>
 				<p>
-					<a href=$Page.url Page.p_tours$>Подробнее</a>
+					<a href="tours_href">Подробнее</a>
 				</p>
 			</div>
 
-			<div class="float_clean"/>
+			<div class='float_clean'></div>
 
-			<h2>Почему лучше обратить внимание на отдых в частном секторе, на Цандрипш?</h2>
-			$Tpl_img.text_img ~right:true ~text:(Printf.sprintf "Отдых в Абхазии, Цандрипш, частный сектор. %s" Config.season) (Gallery_static.Tag (Gallery.condition09, Gallery.Condition))$
-			<ul>
+			<h2>Почему лучше обратить внимание на отдых в частном секторе, на Цандрипш?</h2>"
+			[condition2_img]
+			"<ul>
 				<li>Частный сектор Цандрипша — отличное место для отдыха с детьми. Тишина, сады, природа. Дети увидят много необычных для них животных, жучков, увидят как растут и спеют
 					их любимые фрукты.
 				</li>
@@ -106,11 +123,11 @@ let center () =
 				<li>В Цандрипше есть вся необходимая для туристов инфраструктура. Магазины, сувенирные лавки, экскурсионные бюро, аптеки, много кафе на любой вкус, клубы.</li>
 			</ul>
 
-			<div class="float_clean"/>
+			<div class='float_clean'></div>
 
-			<h2>Почему отдых в Абхазии?</h2>
-			$Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.sea26, Gallery.Sea))$
-			Хотелось бы кратко перечислить, чем отдых в Абхазии ($str:Config.year$-й год актуальность) выгодно отличается от отдыха во многих других регионах:
+			<h2>Почему отдых в Абхазии?</h2>"
+			[sea_img]
+			"Хотелось бы кратко перечислить, чем отдых в Абхазии ("[Html.pcdata year]"-й год актуальность) выгодно отличается от отдыха во многих других регионах:
 			<ul>
 				<li>Значительно ниже цены на проживание, питание, экскурсии, внутренний транспорт.</li>
 
@@ -142,17 +159,15 @@ let center () =
 			</ul>
 
 
-			<div class="float_clean"/>
-
-			$articles ()$
-
-			<div class="float_clean"/>
+			<div class='float_clean'></div>"
+			[articles_list]
+			"<div class='float_clean'></div>
 
 			<p>
-				<b>Абхазия. Цандрипш. Отдых в частном секторе.</b> Вам захочется приехать вновь! <a href=$str:P_contacts.url$>Звоните</a>.
+				<b>Абхазия. Цандрипш. Отдых в частном секторе.</b> Вам захочется приехать вновь! <a href="contacts_href">Звоните</a>.
 			</p>
-		</div>
-	>>
+		</div>"
+	]
 
 include Page.Make (struct
 	let contents_name = None

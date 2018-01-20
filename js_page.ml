@@ -10,7 +10,7 @@ let of_uri uri =
 		Other
 
 let (domain, page) =
-	let url = Js.to_string Dom_html.document##_URL in
+	let url = Js.to_string Dom_html.document##._URL in
 	let module R = Regexp in
 	let regexp = R.regexp "://([^/]+)([^#]*)" in
 	let r = R.string_match regexp url 0 in

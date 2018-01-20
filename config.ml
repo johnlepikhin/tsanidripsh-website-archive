@@ -7,11 +7,11 @@ let gallery_src_path = "/home/eugene/projects/auto_tsandripsh_hotel/gallery"
 
 let install_path = ref "/tmp/tsandripsh"
 
-let year = "2017"
+let year = "2018"
 
-let season = "Лето 2017"
+let season = "Весна-лето 2018"
 
-let prices_relevance = "цены от мая 2017, действуют до конца года"
+let prices_relevance = "цены от января 2018 г, действуют до конца года"
 
 let main_title =
 	let title =

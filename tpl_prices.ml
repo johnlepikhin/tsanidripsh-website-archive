@@ -1,6 +1,11 @@
 module Html = Tyxml.Html
 
 let to_string = function
-	| 0 -> << <u class="prices" title=$Config.prices_relevance$>бесплатно</u> >>
-	| p -> << <u class="prices" title=$Config.prices_relevance$>$str:Printf.sprintf "%i&nbsp;руб." p$</u> >>
+	| 0 ->
+		let rel = Config.prices_relevance in
+		[%html "<u class='prices' title="rel">бесплатно</u>" ]
+	| p ->
+		let rel = Config.prices_relevance in
+		let price = Printf.sprintf "%i&nbsp;руб." p in
+		[%html "<u class='prices' title="rel">"[Html.pcdata price]"</u>" ]
 

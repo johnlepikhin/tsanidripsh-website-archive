@@ -51,11 +51,12 @@ let articles_list limit =
 	let module Html = Tyxml.Html in
 	let f a =
 		let page = page a in
-		<<
-			<div>
-				<a href=$str:Page.url page.Page.path$>$str:page.Page.title$</a>
-			</div>
-		>>
+		let url = Page.url page.Page.path in
+		[%html
+			"<div>
+				<a href="url">"[Html.pcdata page.Page.title]"</a>
+			</div>"
+		]
 	in
 	all ~limit () |> List.rev |> List.map f
 
@@ -63,8 +64,9 @@ let articles_list_titles limit =
 	let module Html = Tyxml.Html in
 	let f a =
 		let page = page a in
-		<<
-			<a href=$str:Page.url page.Page.path$><h2>$str:page.Page.title$</h2></a>
-		>>
+		let url = Page.url page.Page.path in
+		[%html
+			"<a href="url"><h2>"[Html.pcdata page.Page.title]"</h2></a>"
+		]
 	in
 	all ~limit () |> List.rev |> List.map f

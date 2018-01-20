@@ -1,4 +1,4 @@
-<*.ml>: package(tyxml.syntax), package(tyxml), syntax(camlp4o), package(cryptokit)
-<js_*.ml>: package(js_of_ocaml), package(js_of_ocaml.syntax), package(lwt.syntax), syntax(camlp4o), package(str)
-<js_*.byte>: package(js_of_ocaml), package(tyxml), package(str)
-<*.native>: package(tyxml.syntax), package(tyxml), package(unix), package(str), package(cryptokit)
+<*.ml>: package(tyxml.ppx), package(tyxml), package(cryptokit)
+<js_*.ml>: package(js_of_ocaml), package(js_of_ocaml-ppx), package(lwt.ppx), package(str), package(js_of_ocaml-lwt)
+<js_*.byte>: package(js_of_ocaml), package(tyxml), package(str), package(js_of_ocaml-lwt)
+<*.native>: package(tyxml.ppx), package(tyxml), package(unix), package(str), package(cryptokit)

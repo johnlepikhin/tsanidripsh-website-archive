@@ -5,23 +5,20 @@ let lst =
 	let open Gallery in
 	let f p =
 		let img = Html.img ~src:(Purl.to_string p.dest_512) ~alt:(Tpl_img.alt_of_tags p.tags) () in
-		<<
-			<div class="gallery_old_el">
-				$img$
-				$p.description$
-			</div>
-		>>
+		[%html "<div class='gallery_old_el'>"[img; p.description]"</div>"]
 	in
 	List.map f (List.rev !items)
 
-let center = <<
-	<div class="gallery_old_main">
+let center =
+	let href = Page.url Page.p_gallery in
+	[%html
+	"<div class='gallery_old_main'>
 		<p>
-			Если у вас Chrome, Firefox 10+, Internet Explorer 10+, то гораздо удобнее будет воспользоваться <a href=$Page.url Page.p_gallery$>новой галереей</a>.
-		</p>
-		$list:lst$
-	</div>
->>
+			Если у вас Chrome, Firefox 10+, Internet Explorer 10+, то гораздо удобнее будет воспользоваться <a href="href">новой галереей</a>.
+		</p>"
+		lst
+	"</div>"
+]
 
 include Page.Make (struct
 	let title = "Все фотографии одним списком"

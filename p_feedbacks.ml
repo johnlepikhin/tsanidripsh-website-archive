@@ -12,12 +12,12 @@ let center =
 			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 		})();
 	" in
-	<<
-		<div class="tpl_main_center">
-			<div id="disqus_thread"/>
-			<script>$script$</script>
-		</div>
-	>>
+	[%html
+		"<div class='tpl_main_center'>
+			<div id='disqus_thread'></div>
+			<script>"script"</script>
+		</div>"
+	]
 
 include Page.Make (struct
 	let title = "Отзывы"

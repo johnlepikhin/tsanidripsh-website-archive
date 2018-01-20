@@ -1,7 +1,7 @@
 
 module Html = Tyxml.Html
 
-let center = <<
+let center = [%html{|
 	<div class="tpl_main_center">
 		<h2>Номер счета для предоплаты</h2>
 		<p>
@@ -24,7 +24,7 @@ let center = <<
 		</p>
 
 	</div>
->>
+|}]
 
 include Page.Make (struct
 	let title = "Условия бронирования"

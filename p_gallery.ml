@@ -1,18 +1,21 @@
 
 module Html = Tyxml.Html
 
-let center = <<
-	<div class="tpl_main_center">
+let center =
+	let id = Id.to_string Id.div_center_gallery in
+	let href = Page_common.url Page_common.p_gallery_all in
+	[%html
+	"<div class='tpl_main_center'>
 		<p>
 			Кликните на интересующую фотографию, чтобы рассмотреть в подробностях. Фотографии в просмотре можно листать стрелочками на клавиатуре ← →
 		</p>
-		<div id=$str:Id.to_string Id.div_center_gallery$ class="gallery_main">
+		<div id="id" class='gallery_main'>
 		</div>
 		<small>
-			<a href=$Page_common.url Page_common.p_gallery_all$>Для старых браузеров: все фотографии одним списком</a>
+			<a href="href">Для старых браузеров: все фотографии одним списком</a>
 		</small>
-	</div>
->>
+	</div>"
+]
 
 include Page.Make (struct
 	let title = "Фотографии"

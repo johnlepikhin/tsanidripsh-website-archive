@@ -1,15 +1,15 @@
 module Html = Tyxml.Html
 
-let hint = <<
+let hint = [%html{|
 	<b>Это 3D панорама. Вы можете оглянуться, потянув фотографию мышкой. Если вы смотрите наш сайт с телефона, попробуйте потянуть фотографию пальцем или направить телефон в другую сторону.</b>
->>
+|}]
 
 let pano360 ?(width="100%") ?(height="300px") ?(title="") file =
 	let filepath = Static.url file in
 	let hash = Cryptokit.(hash_string (Hash.sha1 ()) filepath |> transform_string (Hexa.encode ())) in
 	let id = "pano360_" ^ hash in
 	Html.Unsafe.data (Printf.sprintf "
-<script src=\"/vrview/build/vrview.min.js\"></script>
+<script src=\"/vrview/vrview/build/vrview.min.js\"></script>
 
 <script>
 	window.addEventListener('load', onVrViewLoad);
@@ -25,11 +25,6 @@ let pano360 ?(width="100%") ?(height="300px") ?(title="") file =
 
 let text_pano360 ?right ?(text="") file =
 	let c_add = match right with | Some true -> " text_img_right" | Some false | None -> "" in
-	let c = "text_img zoomable" ^ c_add in
-	<<
-		<div class=$str:c$>
-			$pano360 file$
-			$str:text$
-		</div>
-	>>
-
+	let c = ["text_img"; "zoomable" ^ c_add] in
+	let content = [pano360 file; Html.pcdata text] in
+	[%html"<div class="c">"content"</div>"]

@@ -1,11 +1,8 @@
 module Html = Tyxml.Html
 
 let center =
-	<<
-		<div class="tpl_main_center">
-			$list:Article.articles_list_titles 1000$
-		</div>
-	>>
+	let titles = Article.articles_list_titles 1000 in
+	[%html "<div class='tpl_main_center'>"titles"</div>"]
 
 include Page.Make (struct
 	let title = "Интересное об Абхазии и Цандрипше"

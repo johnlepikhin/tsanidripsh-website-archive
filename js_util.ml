@@ -5,7 +5,7 @@ module Dom =
 
 		let removeChilds p =
 			let rec loop () =
-				let c = p##firstChild in
+				let c = p##.firstChild in
 					match Js.Opt.to_option c with
 						| None -> ()
 						| Some c -> removeChild p c; loop ()
@@ -14,7 +14,7 @@ module Dom =
 
 
 		let removeElement el =
-			let p = el##parentNode in
+			let p = el##.parentNode in
 			match Js.Opt.to_option p with
 				| None -> ()
 				| Some p -> Dom.removeChild p el
@@ -39,7 +39,7 @@ let alert s =
 	Dom_html.window##alert (s)
 
 let wrap_error f arg =
-	try_lwt
+	try%lwt
 		f arg
 	with
 		| Exit -> Lwt.fail Exit
@@ -64,13 +64,13 @@ let init_body () =
 (* mobile *)
 
 let getWindowWidth () =
-	match Dom_html.window##innerWidth |> Js.Optdef.to_option with
+	match Dom_html.window##.innerWidth |> Js.Optdef.to_option with
 		| None -> 500
 		| Some v -> v
 
 let is_mobile () =
 	let rex = Regexp.regexp "Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile" in
-	match Regexp.string_match rex (Js.to_string Dom_html.window##navigator##userAgent) 0 with
+	match Regexp.string_match rex (Js.to_string Dom_html.window##.navigator##.userAgent) 0 with
 		| None ->
 			getWindowWidth () < 960
 		| Some _ -> true
@@ -89,15 +89,15 @@ let onResize =
 				| Some id -> window##clearTimeout (id)
 		in
 		let id = window##setTimeout
-			((Js.wrap_callback (fun () ->
+			(Js.wrap_callback (fun () ->
 				List.iter (fun e -> e ()) !resizeEvents)
-			),
-			300.)
+			)
+			300.
 		in
 		timeout_id := Some id;
 		Js._true
 
 let () =
 	let window = Dom_html.window in
-	ignore (window##onresize <- Dom.handler onResize);
-	ignore (window##onorientationchange <- Dom.handler onResize);
+	ignore (window##.onresize := Dom.handler onResize);
+	ignore (window##.onorientationchange := Dom.handler onResize);

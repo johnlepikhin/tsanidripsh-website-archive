@@ -11,14 +11,14 @@ type t = {
 }
 
 let gen_tour_doc title descr preview text =
-	Tpl.tpl_base ~title ~position:Tpl.Position.Main ~description:descr <<
-		<div class="tpl_main_center">
-			<h1>$str:title$</h1>
-			<b>$str:descr$</b>
-			$preview$
-			$text$
-		</div>
-	>>
+	Tpl.tpl_base ~title ~position:Tpl.Position.Main ~description:descr [%html
+		"<div class='tpl_main_center'>
+			<h1>"[Html.pcdata title]"</h1>
+			<b>"[Html.pcdata descr]"</b>"
+			[preview;
+			text]
+		"</div>"
+	]
 
 let lst = List.map (fun (url, str_id, title, descr, preview, text) ->
 	let doc () = gen_tour_doc title descr preview text in
@@ -27,34 +27,34 @@ let lst = List.map (fun (url, str_id, title, descr, preview, text) ->
 ) Tours.lst
 
 let left =
-	let lst = List.map (fun t -> << <p><a href=$str:Printf.sprintf "#tour_%s" t.str_id$>$str:t.title$<br/></a></p> >> ) lst in
-	<<
-		<aside class="main">
-			<h1>Оглавление</h1>
-			$list:lst$
-		</aside>
-	>>
+	let lst = List.map (fun t ->
+			let href = Printf.sprintf "#tour_%s" t.str_id in
+			let title = t.title in
+			[%html "<p><a href="href">"[Html.pcdata title]"<br></a></p>" ] ) lst
+	in
+	[%html "<aside class='main'><h1>Оглавление</h1>"lst"</aside>" ]
 
 let center =
 	let lst = List.map (fun t ->
-			<<
-				<div>
-					<h2 id=$str:Printf.sprintf "tour_%s" t.str_id$>$str:t.title$</h2>
-					<b>$str:t.descr$</b>
-					$t.preview$
-					<p>
-						<a href=$Page.url t.page.Page.path$>Читать дальше &gt;&gt;&gt;</a>
+			let tour_href = Printf.sprintf "tour_%s" t.str_id in
+			let title = t.title in
+			let descr = t.descr in
+			let preview = t.preview in
+			let read_href = Page.url t.page.Page.path in
+			[%html
+				"<div>
+					<h2 id="tour_href">"[Html.pcdata title]"</h2>
+					<b>"[Html.pcdata descr]"</b>"
+					[preview]
+					"<p>
+						<a href="read_href">Читать дальше &gt;&gt;&gt;</a>
 					</p>
-					<div class="float_clean"/>
-				</div>
-			>>
+					<div class='float_clean'></div>
+				</div>"
+			]
 		) lst
 	in
-	<<
-		<div class="tpl_main_center">
-			$list:lst$
-		</div>
-	>>
+	[%html "<div class='tpl_main_center'>"lst"</div>" ]
 
 include Page.Make (struct
 	let title = "Туры"
