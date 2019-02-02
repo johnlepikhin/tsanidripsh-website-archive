@@ -259,6 +259,14 @@ body.mobile div.tpl_main_logo_2 {
 	font-size: 1.5em;
 }
 
+div.tpl_main_logo_3 {
+	color: #ffaa00;
+	font-size: 0.7em;
+}
+body.mobile div.tpl_main_logo_3 {
+	font-size: 0.5em;
+}
+
 div.tpl_main_contacts {
 	display:table-cell;
 	float: right;

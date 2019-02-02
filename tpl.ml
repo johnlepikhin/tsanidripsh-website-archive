@@ -224,10 +224,13 @@ let tpl_tpl_base
 						<a href="url_of_main_page">
 							<div class='tpl_main_logo'>
 								<div class='tpl_main_logo_1'>
-									Частный сектор в Абхазии
+									гостевой дом
 								</div>
 								<div class='tpl_main_logo_2'>
-									ЦАНДРИПШ
+									ВАЛЕНТА
+								</div>
+								<div class='tpl_main_logo_3'>
+									частный сектор в Абхазии
 								</div>
 							</div>
 						</a>
