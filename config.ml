@@ -7,11 +7,11 @@ let gallery_src_path = "/home/eugene/projects/auto_tsandripsh_hotel/gallery"
 
 let install_path = ref "/tmp/tsandripsh"
 
-let year = "2018"
+let year = "2019"
 
-let season = "Весна-лето 2018"
+let season = "Весна-лето 2019"
 
-let prices_relevance = "цены от января 2018 г, действуют до конца года"
+let prices_relevance = "цены от января 2019 г, действуют до конца года"
 
 let main_title =
 	let title =
@@ -22,7 +22,7 @@ let main_title =
 	in
 	title ^ ". " ^ season
 
-let keywords = Printf.sprintf "Цандрипш, частный сектор, без посредников, отдых, Абхазия, %s" year
+let keywords = Printf.sprintf "Цандрипш, частный сектор, без посредников, Абхазия, %s" year
 
 let description = Printf.sprintf "Поселок Цандрипш, частный сектор. Отдых Абхазии. %s." year
 
