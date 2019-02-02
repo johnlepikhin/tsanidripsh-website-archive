@@ -1,13 +1,10 @@
 
 let init () =
-	Js_util.init_body ();
-	let open Js_page in
-	Js_anypage.init ();
-	let%lwt () = Js_gallery.check_url () in
-	match page with
-		| Gallery ->
-			Js_gallery.GRows.init ()
-		| Other ->
-			Lwt.return ()
+  Js_util.init_body ();
+  let open Js_page in
+  Js_anypage.init ();
+  let%lwt () = Js_gallery.check_url () in
+  Js_gallery.GRows.init ()
 
-let _ = ignore (init ())
+let _ =
+  ignore (init ())
