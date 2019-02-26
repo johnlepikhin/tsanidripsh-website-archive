@@ -34,8 +34,8 @@ let page_header_move_handler div _ =
 	Lwt.return ()
 
 let rec page_header_move_periodic div =
-	let%lwt () = Lwt_js.sleep 8. in
-	page_header_move div 600 3.;
+	let%lwt () = Lwt_js.sleep 12. in
+	page_header_move div 600 1.5;
 	page_header_move_periodic div
 
 let init_page_header () =
