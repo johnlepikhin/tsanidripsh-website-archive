@@ -4,21 +4,23 @@
   "description": "Embed VR content into your webpage.",
   "main": "index.js",
   "dependencies": {
-    "es6-promise": "^3.0.2",
+    "es6-promise": "^3.3.1",
     "eventemitter3": "^1.2.0",
-    "shaka-player": "^2.0.0",
-    "stats-js": "^1.0.0-alpha1",
+    "polyfills": "^2.1.1",
+    "shaka-player": "^2.4.7",
+    "stats-js": "^1.0.0",
     "three": "^0.84.0",
-    "tween.js": "^16.3.4",
+    "tween.js": "^16.6.0",
+    "uglify-js": "^3.4.9",
     "urijs": "^1.18.2",
-    "webvr-boilerplate": "^0.4.6",
-    "webvr-polyfill": "^0.9.26"
+    "webvr-boilerplate": "^0.4.9",
+    "webvr-polyfill": "^0.9.41"
   },
   "devDependencies": {
-    "browserify": "^13.1.1",
+    "browserify": "^13.3.0",
     "derequire": "^2.0.6",
     "rollup": "^0.37.2",
-    "uglifyjs": "^2.4.10",
+    "uglifyjs": "^2.4.11",
     "watchify": "^3.8.0"
   },
   "scripts": {
