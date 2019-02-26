@@ -62,7 +62,7 @@ let center =
 			<h2>Социальные сети</h2>
 			ВКонтакте: <a onmousedown="action_vk" href='https://vk.com/tsandipshhotel'>наша группа</a>
 			<br/>
-			Одноклассники: <a onmousedown="action_ok" href='http://www.odnoklassniki.ru/profile/340785123423'>Минас Рогонян</a>
+			Одноклассники: <a onmousedown="action_ok" href='https://ok.ru/group53111235739882'>наша группа</a>
 
 			<h2>E-mail</h2>
 			<a onmousedown="action_email" href="mail_href">"[Html.pcdata mail]"</a>
