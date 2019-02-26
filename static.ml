@@ -56,7 +56,7 @@ let arrow_right = cmake Path.root "arrow_right.png"
 
 let htaccess = cmake Path.root ".htaccess"
 
-let vrview = cmake Path.root "vrview"
+let vrview = cmake Path.root ""
 
 let christmas_tree = cmake Path.root "christmas_tree.svg"
 let yacht = cmake Path.root "yacht.svg"
