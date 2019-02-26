@@ -3,12 +3,8 @@ open Js_util
 
 module G = Gallery
 
-let root = ref (Dom_html.createDiv Dom_html.document)
-
-let init_root () =
-  match Dom_html.of_id ~coerce:Dom_html.CoerceTo.div Id.div_center_gallery with
-  | None -> ()
-  | Some el -> root := el
+let get_root () =
+  Dom_html.of_id ~coerce:Dom_html.CoerceTo.div Id.div_center_gallery
 
 let max_width = ref 512.
 
@@ -298,7 +294,7 @@ struct
     imgs = img :: row.imgs;
   }
 
-  let output_row data =
+  let output_row root data =
     let ratio = data.row.width /. !max_width in
     let is_first = ref true in
     let height = ref 0. in
@@ -328,7 +324,7 @@ struct
       img##.width := 0;
       img##.style##.opacity := Js.def (Js.string "0");
       Dom.appendChild div img;
-      Dom.appendChild !root div;
+      Dom.appendChild root div;
       is_first := false;
       let%lwt () = Lwt_js.sleep 0.01 in
       img##.width := (int_of_float width) - 2;
@@ -337,7 +333,7 @@ struct
     in
     Lwt_list.iter_s output_one (List.rev data.row.imgs)
 
-  let add_one_preview data p =
+  let add_one_preview root data p =
     let string_url_orig = Purl.to_string p.Gallery.dest in
     let info = Gallery_info.get string_url_orig in
     match info with
@@ -346,56 +342,54 @@ struct
       Lwt.return { data with list }
     | Some info ->
       let height = 256. in
-
       let width = height *. info.Gallery_info.ratio in
-
       let entry = { id = data.current_id; info; img = p } in
-
       let row = add_to_row data.row entry width in
-
       let data = { data with current_id = data.current_id + 1; row } in
       if row.width > !max_width then
-	let%lwt () = output_row data in
+	let%lwt () = output_row root data in
 	Lwt.return { data with row = empty }
       else
 	Lwt.return data
 
-  let draw () =
-    Dom.removeChilds !root;
-    max_width := float_of_int ((!root)##.offsetWidth - 15);
+  let draw root =
+    Dom.removeChilds root;
+    max_width := float_of_int (root##.offsetWidth - 15);
     let data = { current_id = 0; row = empty; list = !list } in
-    let%lwt data = Lwt_list.fold_left_s add_one_preview data !list in
+    let%lwt data = Lwt_list.fold_left_s (add_one_preview root) data !list in
     list := data.list;
     if data.row.width > 0. then
-      output_row data
+      output_row root data
     else
       Lwt.return ()
 
-  let resize () =
-    draw ()
+  let resize root =
+    draw root
 
-  let rec check_width_periodically old =
-    let get_width () = (!root)##.offsetWidth in
+  let rec check_width_periodically old root =
+    let get_width () = root##.offsetWidth in
     let%lwt () = Lwt_js.sleep 0.5 in
     match old with
     | None ->
-      check_width_periodically (Some (get_width ()))
+      check_width_periodically (Some (get_width ())) root
     | Some old ->
       let w = get_width () in
       let%lwt () =
 	if abs (w-old) > 20 then
-	  resize ()
+	  resize root
 	else
 	  Lwt.return ()
       in
-      check_width_periodically (Some w)
+      check_width_periodically (Some w) root
 
   let init () =
-    init_root ();
-    ignore (check_width_periodically None);
-    let l = List.rev !Gallery.items in
-    list := l;
-    draw ()
+    match get_root () with
+    | None -> Lwt.return ()
+    | Some root ->
+      ignore (check_width_periodically None root);
+      let l = List.rev !Gallery.items in
+      list := l;
+      draw root
 end
 
 let view ?(pos=0) ?photo l =
