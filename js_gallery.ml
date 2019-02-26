@@ -330,7 +330,7 @@ struct
       Dom.appendChild div img;
       Dom.appendChild !root div;
       is_first := false;
-      let%lwt () = Lwt_js.sleep 0.05 in
+      let%lwt () = Lwt_js.sleep 0.01 in
       img##.width := (int_of_float width) - 2;
       img##.style##.opacity := Js.def (Js.string "1");
       Lwt.return ()
