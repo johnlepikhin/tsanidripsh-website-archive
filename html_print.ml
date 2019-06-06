@@ -17,7 +17,7 @@ let has_data s =
 	loop 0
 
 let remove_spaces =
-	let r = Str.regexp "[ \t\r\n]+" in
+	let r = Str.regexp "[ \t]+" in
 	Str.global_replace r " "
 
 let rec node_filter = function
