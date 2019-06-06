@@ -14,6 +14,8 @@ let url ?(shrink_index=false) t =
 
 let p_main = Purl.make Path.root "index"
 
+let p_404 = Purl.make Path.root "404"
+
 let p_gallery = Purl.make Path.root "фотографии-цандрипш-частный-сектор"
 
 let p_prices = Purl.make Path.root "цены-цандрипш-частный-сектор"
@@ -23,6 +25,8 @@ let p_billing = Purl.make Path.root "бронирование"
 let p_tours = Purl.make Path.root "туры-по-абхазии"
 
 let p_rooms = Purl.make Path.root "комнаты-цандрипш-частный-сектор"
+
+let p_old_rooms_tour = Purl.make Path.root "rooms_tour"
 
 let p_rooms_tour = Purl.make Path.root "3d-комнаты-цандрипш-частный-сектор"
 

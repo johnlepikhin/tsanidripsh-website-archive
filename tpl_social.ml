@@ -1,6 +1,6 @@
 
 let buttons =
-"<div class=\"social_buttons\">Понравилось? Поделись! <script type=\"text/javascript\">(function() {
+"<div class=\"social_buttons\">Понравилось? Поделись! <script>(function() {
 	if (window.pluso)if (typeof window.pluso.start == \"function\") return;
 	if (window.ifpluso==undefined) { window.ifpluso = 1;
 	var d = document, s = d.createElement('script'), g = 'getElementsByTagName';

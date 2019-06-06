@@ -4,7 +4,7 @@ let hint = [%html{|
 <b>Это 3D панорама. Вы можете оглянуться, потянув фотографию мышкой. Если вы смотрите наш сайт с телефона, попробуйте потянуть фотографию пальцем или направить телефон в другую сторону.</b>
 |}]
 
-let pano360 ?(width="100%") ?(height="300px") ?(title="") file =
+let pano360 ?(width="100%") ?(height="300px") ?(title="Панорама") file =
   let filepath = Static.url file in
   let hash = Cryptokit.(hash_string (Hash.sha1 ()) filepath |> transform_string (Hexa.encode ())) in
   let id = "pano360_" ^ hash in
@@ -23,9 +23,9 @@ let pano360 ?(width="100%") ?(height="300px") ?(title="") file =
 
 <h2>%s</h2>
 
-<div onclick=\"vr360ViewLoad('%s', '%s')\" id='%s' style='width=100%%'>
-    <b>Здесь 360-панорама. Кликните, чтобы посмотреть её.</b>
-    <img src=\"/vrview/vr360.png\">
+<div onclick=\"vr360ViewLoad('%s', '%s')\" id='%s' style='width: 100%%'>
+    <b>Здесь 360-панорама. Кликните, чтобы оглянуться.</b>
+    <img src=\"/vrview/vr360.png\" alt=\"Кликните, чтобы оглянуться\">
 </div>
 " width height title id filepath id)
 

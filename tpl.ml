@@ -15,7 +15,7 @@ let html ~title ?(keywords=Config.keywords) ?(description=Config.description) bo
 		meta ~a:[a_name "yandex-verification"; a_content "6cb12c4bf700b317"] ();
 		link ~rel:[`Stylesheet] ~href:(Static.url Static.css) ();
 	] in
-	Html.html (Html.head (Html.title (Html.pcdata title)) headers) body
+	Html.html ~a:[Html.a_lang "ru"] (Html.head (Html.title (Html.pcdata title)) headers) body
 
 let tpl_banner image alt page : [> Html_types.div ] Html.elt =
 	let t = Html.img ~src:(Static.url image) ~alt () in
@@ -101,11 +101,11 @@ let yandex_metrika = Html.Unsafe.data (Printf.sprintf "
 	<!-- Yandex.Metrika informer -->
 	<a href='https://metrika.yandex.ru/stat/?id=%s&amp;from=informer'
 	target='_blank' rel='nofollow'><img src='//bs.yandex.ru/informer/%s/1_1_8B97DCFF_6B77BCFF_0_pageviews'
-	style='width:80px; height:15px; border:0;' alt='Яндекс.Метрика' title='Яндекс.Метрика: данные за сегодня (просмотры)' onclick='try{Ya.Metrika.informer({i:this,id:%s,lang:'ru'});return false}catch(e){}'/></a>
+	style='width:80px; height:15px; border:0;' alt='Яндекс.Метрика' title='Яндекс.Метрика: данные за сегодня (просмотры)' onclick='try{Ya.Metrika.informer({i:this,id:%s,lang:\"ru\"});return false}catch(e){}'/></a>
 	<!-- /Yandex.Metrika informer -->
 
 	<!-- Yandex.Metrika counter -->
-	<script type='text/javascript'>
+	<script>
 	(function (d, w, c) {
 		 (w[c] = w[c] || []).push(function() {
 			  try {
@@ -265,5 +265,5 @@ let tpl_base = tpl_tpl_base ~add_class:""
 let tpl_base_newyear = tpl_tpl_base ~add_class:"new_year_main_header"
 
 let tpl_redirect path =
-	let meta = Html.Unsafe.data (Printf.sprintf "<meta http-equiv='refresh' content='0; url=http://%s%s' />" Config.site_domain (Page.url path)) in
+	let meta = Html.Unsafe.data (Printf.sprintf "<meta charset='utf-8'><meta http-equiv='refresh' content='0; url=http://%s%s' />" Config.site_domain (Page.url path)) in
 	Html.html (Html.head (Html.title (Html.pcdata "")) [meta]) (Html.body [])
