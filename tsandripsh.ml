@@ -15,6 +15,7 @@ let () =
 	let module P = P_a_climate in
 	let module P = P_billing in
 	let module P = P_rooms in
+	let module P = P_old_rooms_tour in
 	let module P = P_rooms_tour in
 	let module P = P_blog in
 	let module P = P_a_3d_tsandripsh_temple in
