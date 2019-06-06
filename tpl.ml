@@ -173,6 +173,14 @@ let order_button_text = Html.Unsafe.data "
 	</a>
 "
 
+let www_clean_redirect = Html.Unsafe.data (Printf.sprintf "
+<script>
+if (window.location.hostname.match(/^www/)) {
+	window.location.assign('http://%s' +  window.location.pathname);
+}
+</script>
+" Config.site_domain)
+
 type center =  Html_types.div_content Html.elt
 
 let tpl_tpl_base
@@ -216,7 +224,7 @@ let tpl_tpl_base
 	let mailto = Config.mailto in
 	let mailtourl = "mailto:" ^ mailto in
 	html ~title:full_title ?keywords ?description (Html.body ~a:[Html.a_class ["tpl_main"]; Html.a_id (Id.to_string Id.body)] [%html
-			[initial_mobile;
+			[www_clean_redirect; initial_mobile;
 			banner]
 			"<div class='tpl_main'>
 				<div class="[class_of_header]" id="id_of_header">
