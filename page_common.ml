@@ -63,7 +63,11 @@ let p_rooms_tour =
          Purl.make Path.root "3d-комнаты-цандрипш-частный-сектор"
        ]
 
-let p_contacts = Purl.make Path.root "звонки" |> PageURLs.make
+let p_contacts =
+  Purl.make Path.root "calls"
+  |> PageURLs.make ~historic:[
+         Purl.make Path.root "звонки"
+       ]
 
 let p_feedbacks =
   Purl.make Path.root "feedback"
