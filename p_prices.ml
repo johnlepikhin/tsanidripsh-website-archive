@@ -6,7 +6,7 @@ let tbl_row = List.map (fun p -> Html.td [Tpl_prices.to_string p] )
 let tbl_price ?head = Tbl.simple ~className:"prices" ?head
 
 let tbl_living =
-  let make_class_table (name, sizes, prices) =
+  let make_class_table (p : Prices_make.t) =
     let open Prices_make in
     let make_month p =
       if p.month_start = p.month_end then
@@ -14,15 +14,23 @@ let tbl_living =
       else
 	Printf.sprintf "%s-%s" (Month.to_string p.month_start) (Month.to_string p.month_end)
     in
-    let months = List.map make_month prices |> List.map Html.pcdata in
+    let months = List.map make_month p.prices |> List.map Html.pcdata in
     let rec make_sizes = function
       | [] -> ""
       | last :: [] -> Printf.sprintf "или %i" last
       | hd :: tl -> Printf.sprintf "%i %s" hd (make_sizes tl)
     in
-    let sizes = if List.length sizes = 1 then Printf.sprintf "%i" (List.hd sizes) else make_sizes sizes in
-    let tbl = tbl_price ~head:((Html.pcdata name) :: months) [ [%html "<th> Мест в номере: "[Html.pcdata sizes]"</th>" ] :: (List.map (fun p -> p.price) prices |> tbl_row) ] in
-    [%html "<div> <h3>Номера "[Html.pcdata name]"</h3>"[tbl]" * Цены указаны за человека в сутки.</div>" ]
+    let sizes = if List.length p.persons = 1 then Printf.sprintf "%i" (List.hd p.persons) else make_sizes p.persons in
+    let tbl = tbl_price ~head:((Html.pcdata p.name) :: months) [ [%html "<th> Мест в номере: "[Html.pcdata sizes]"</th>" ] :: (List.map (fun p -> p.price) p.prices |> tbl_row) ] in
+    let footnote = match p.per_person with
+      | true -> "Цены указаны за человека в сутки."
+      | false -> "Цены указаны за весь номер целиком."
+    in
+    let booking_footnote = match p.booking_price with
+      | None -> [%html "<div></div>"]
+      | Some price -> [%html "<div>** Необходимо оплатить бронь в размере "[Tpl_prices.to_string price] "</div>"]
+    in
+    [%html "<div> <h3>Номера "[Html.pcdata p.name]"</h3>"[tbl]" * "[Html.pcdata footnote; booking_footnote]"</div>" ]
   in
   let classes = List.map make_class_table Prices_make.agregated_live in
   Html.div classes
