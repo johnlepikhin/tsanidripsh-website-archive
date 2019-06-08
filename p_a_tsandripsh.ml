@@ -5,7 +5,7 @@ module Html = Tyxml.Html
 let tsandripsh =
 	let img1 = Tpl_img.textbig_img (Gallery_static.Tag (Gallery.condition32, Gallery.Tsandripsh)) in
 	let img2 = Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.tsandripsh07, Gallery.Tsandripsh)) in
-	make ~path:Page_common.a_tsandripsh ~title:"Поселок Цандрипш" [%html
+	make ~urls:Page_common.a_tsandripsh ~title:"Поселок Цандрипш" [%html
 	"<div class='tpl_main_center'>"
 		[img1]
 		"<p>

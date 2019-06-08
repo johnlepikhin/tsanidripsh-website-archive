@@ -127,7 +127,7 @@ include Page.Make (struct
 
 	let contents_name = Some "Информация, которая вам пригодится"
 
-	let path = Page.p_information
+	let urls = Page.p_information
 
 	let doc () = Tpl.tpl_base ~position:Tpl.Position.Information ~title ~left center
 end)

@@ -9,7 +9,7 @@ include Page.Make (struct
 
 	let contents_name = Some "Интересно об Абхазии и Цандрипше"
 
-	let path = Page.p_blog
+	let urls = Page.p_blog
 
 	let doc () = Tpl.tpl_base ~position:Tpl.Position.Blog ~title center
 end)

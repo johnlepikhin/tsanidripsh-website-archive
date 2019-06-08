@@ -7,7 +7,7 @@ module M
 
 		val make:
 			?contents_name:string ->
-			path:Page.path ->
+			urls:PageURLs.t ->
 			title:string ->
 			?left:Html_types.div_content Tpl.Html.elt ->
 			Tpl.center ->
@@ -34,9 +34,9 @@ module M
 					in
 					loop 1 !list
 
-		let make ?contents_name ~path ~title ?left center =
+		let make ?contents_name ~urls ~title ?left center =
 			let doc () = Tpl.tpl_base ~title ~position:Tpl.Position.Information ?left center in
-			let page = Page.anonymous ?contents_name path doc title in
+			let page = Page.anonymous ?contents_name urls doc title in
 			let article = { page } in
 			list := article :: !list;
 			article
@@ -51,7 +51,7 @@ let articles_list limit =
 	let module Html = Tyxml.Html in
 	let f a =
 		let page = page a in
-		let url = Page.url page.Page.path in
+		let url = Page.url page.Page.urls in
 		[%html
 			"<div>
 				<a href="url">"[Html.pcdata page.Page.title]"</a>
@@ -64,7 +64,7 @@ let articles_list_titles limit =
 	let module Html = Tyxml.Html in
 	let f a =
 		let page = page a in
-		let url = Page.url page.Page.path in
+		let url = Page.url page.Page.urls in
 		[%html
 			"<a href="url"><h2>"[Html.pcdata page.Page.title]"</h2></a>"
 		]

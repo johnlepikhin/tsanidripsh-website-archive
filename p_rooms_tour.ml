@@ -35,7 +35,7 @@ include Page.Make (struct
 
 	let contents_name = Some "Экскурсия по номерам в 3D"
 
-	let path = Page.p_rooms_tour
+	let urls = Page.p_rooms_tour
 
 	let doc () = Tpl.tpl_base ~position:Tpl.Position.Prices ~title center
 end)

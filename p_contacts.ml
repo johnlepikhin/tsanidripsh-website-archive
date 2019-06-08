@@ -80,7 +80,7 @@ include Page.Make (struct
 
 	let contents_name = Some "Где мы находимся, контакты, карта"
 
-	let path = Page.p_contacts
+	let urls = Page.p_contacts
 
 	let doc () = Tpl.tpl_base ~position:Tpl.Position.Contacts ~title center
 end)

@@ -24,7 +24,7 @@ include Page.Make (struct
 
 	let contents_name = Some "Почитайте отзывы об отдыхе у нас"
 
-	let path = Page.p_feedbacks
+	let urls = Page.p_feedbacks
 
 	let doc () = Tpl.tpl_base ~position:Tpl.Position.Feedbacks ~title center
 end)

@@ -23,7 +23,7 @@ include Page.Make (struct
 
 	let contents_name = Some "Задать вопрос"
 
-	let path = Page.p_questions
+	let urls = Page.p_questions
 
 	let doc () = Tpl.tpl_base ~position:Tpl.Position.Questions ~title center
 end)

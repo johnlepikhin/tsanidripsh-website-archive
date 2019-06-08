@@ -77,7 +77,7 @@ include Page.Make (struct
 
 	let contents_name = if Config.is_new_year then Some "Встреча Нового Года" else None
 
-	let path = Page.p_new_year
+	let urls = Page.p_new_year
 
 	let doc () = Tpl.tpl_base_newyear ~position:Tpl.Position.Main ~title center
 end)

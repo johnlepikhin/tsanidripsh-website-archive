@@ -18,7 +18,7 @@ let webcam_psou1 = webcam_tpl "Граница с Россией"
 let webcam_psou2 = webcam_tpl "Вид с КПП на границе с Россией в сторону Псоу"
 	"http://91.231.219.146:8080/psou_2/embed.html?dvr=false&token=8bea468d94bc13579cf2954c9ff32ba74404fce2-c0845776dd69459df150a0f319014601-1496073549-1496069949"
 
-let webcams = make ~path:Page_common.a_webcams ~title:"Вебкамеры Абхазии (онлайн)" [%html
+let webcams = make ~urls:Page_common.a_webcams ~title:"Вебкамеры Абхазии (онлайн)" [%html
 	"<div class='tpl_main_center'>"[webcam_psou1; webcam_psou2]"</div>"
 	]
 

@@ -3,7 +3,7 @@ include Page.Make (struct
 
 	let contents_name = None
 
-	let path = Page.p_old_rooms_tour
+	let urls = Page.p_old_rooms_tour
 
 	let doc () = Tpl.tpl_redirect Page.p_rooms_tour
 end)

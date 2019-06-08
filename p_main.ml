@@ -7,7 +7,7 @@ let left () =
 		| p :: tl ->
 			match p.Page.contents_name with
 				| Some name ->
-					let href = Page.url p.Page.path in
+					let href = Page.url p.Page.urls in
 					let name = Html.pcdata name in
 					[%html "<p><a href="href">"[name]"</a></p>" ] :: loop tl
 				| None -> loop tl
@@ -51,7 +51,7 @@ let center () =
 	let sea_img = Tpl_img.text_img ~right:true (Gallery_static.Tag (Gallery.sea26, Gallery.Sea)) in
 	let year = Config.year in
 	let articles_list = articles () in
-	let contacts_href = P_contacts.url in
+	let contacts_href = P_contacts.urls in
 	[%html
 		"<div class='tpl_main_center'>
 			<p>
@@ -174,7 +174,7 @@ include Page.Make (struct
 
 	let title = Config.main_title
 
-	let path = Page.p_main
+	let urls = Page.p_main
 
 	let description = Config.description ^ ". Наш гостевой дом расположен в частном секторе курортного поселка Цандрипш. Мы предоставляем около 20 комфортных номеров вместимостью от 2 мест. До моря 5 минут, рядом
 кафе и магазины"

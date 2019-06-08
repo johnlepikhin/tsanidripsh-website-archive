@@ -40,7 +40,7 @@ let center =
 			let title = t.title in
 			let descr = t.descr in
 			let preview = t.preview in
-			let read_href = Page.url t.page.Page.path in
+			let read_href = Page.url t.page.Page.urls in
 			[%html
 				"<div>
 					<h2 id="tour_href">"[Html.pcdata title]"</h2>
@@ -61,7 +61,7 @@ include Page.Make (struct
 
 	let contents_name = Some "Экскурсии по Абхазии и горам"
 
-	let path = Page.p_tours
+	let urls = Page.p_tours
 
 	let doc () = Tpl.tpl_base ~position:Tpl.Position.Main ~title ~left center
 end)

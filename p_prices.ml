@@ -205,7 +205,7 @@ include Page.Make (struct
 
     let contents_name = Some (Config.season ^ ". Полный прайслист.")
 
-    let path = Page.p_prices
+    let urls = Page.p_prices
 
     let doc () = Tpl.tpl_base ~position:Tpl.Position.Prices ~title ~left center
   end)

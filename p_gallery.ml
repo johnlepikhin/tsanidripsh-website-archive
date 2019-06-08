@@ -22,7 +22,7 @@ include Page.Make (struct
 
 	let contents_name = Some "Все фотографии сайта"
 
-	let path = Page.p_gallery
+	let urls = Page.p_gallery
 
 	let doc () = Tpl.tpl_base ~position:Tpl.Position.Gallery ~title center
 end)
