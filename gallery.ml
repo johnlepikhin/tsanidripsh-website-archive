@@ -252,6 +252,35 @@ let condition42 = make "01_condition42" "jpg" [Condition; ] [%html{|
 	</div>
 |}]
 
+let condition43 = make "01_condition43" "jpg" [Condition; ] [%html{|
+	<div>
+		Панорамный вид из окна отдельного домика.
+	</div>
+|}]
+
+let condition44 = make "01_condition44" "jpg" [Condition; ] [%html{|
+	<div>
+		Отдельный домик. Сдается целиком. Две комнаты и общая гостиная.
+	</div>
+|}]
+
+let condition45 = make "01_condition45" "jpg" [Condition; ] [%html{|
+	<div>
+		Отдельный домик. Гостиная.
+	</div>
+|}]
+
+let condition46 = make "01_condition46" "jpg" [Condition; ] [%html{|
+	<div>
+		Отдельный домик. В одной из спален.
+	</div>
+|}]
+
+let condition47 = make "01_condition47" "jpg" [Condition; ] [%html{|
+	<div>
+		Отдельный домик. Гостиная.
+	</div>
+|}]
 
 let tsandripsh01 = make "05_tsandripsh01" "jpg" [Tsandripsh; ] [%html{|
 	<div>
