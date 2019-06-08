@@ -104,25 +104,29 @@ let p_tours_afon =
   Purl.make Path.tours "novij_afon"
   |> PageURLs.make ~historic:[
          Purl.make Path.tours "тур-в-новый-афон-абхазия";
-         Purl.make Path.tours "new_afon"
+         Purl.make Path.tours "new_afon";
+         Purl.make Path.tours "tour_noviy_afon"
        ]
   
 let p_tours_canyon =
   Purl.make Path.tours "tsandripsh_canyon"
   |> PageURLs.make ~historic:[
-         Purl.make Path.tours "тур-цандрипшский-каньон"
+         Purl.make Path.tours "тур-цандрипшский-каньон";
+         Purl.make Path.tours "tour_tsandripsh_canyon"
        ]
 
 let p_tours_riza =
   Purl.make Path.tours "riza"
   |> PageURLs.make ~historic:[
-         Purl.make Path.tours "тур-на-озеро-рица-абхазия"
+         Purl.make Path.tours "тур-на-озеро-рица-абхазия";
+         Purl.make Path.tours "tour_ozero_riza"
        ]
 
 let p_tours_alps =
   Purl.make Path.tours "alpine_grasslands"
   |> PageURLs.make ~historic:[
-         Purl.make Path.tours "тур-на-альпийские-луга-абхазия"
+         Purl.make Path.tours "тур-на-альпийские-луга-абхазия";
+         Purl.make Path.tours "tour_alps"
        ]
 
 let a_tsandripsh =
