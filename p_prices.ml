@@ -215,7 +215,7 @@ let left =
 
 let center =
   let els = List.map (fun (title, answer, id) ->
-      let href = "#info"^(string_of_int id) in
+      let href = "info"^(string_of_int id) in
       [%html "<div><h2 id="href">"[Html.pcdata title]"</h2>"[answer]"<br/></div>" ]) lst
   in
   [%html "<div class='tpl_main_center'>"els"</div>" ]
