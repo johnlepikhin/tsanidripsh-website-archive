@@ -192,7 +192,8 @@ let tpl_tpl_base
 	?(left : Html_types.div_content Html.elt option)
 	(center : center)
 	: [> Html_types.html ] Html.elt =
-	let full_title = Printf.sprintf "%s — %s, Цандрипш." title Config.main_title in
+	(* let full_title = Printf.sprintf "%s — %s, Цандрипш." title Config.main_title in *)
+	let full_title = title in
 	let main_menu = Main_menu.tpl1 position in
 	let main_menu_bottom = Main_menu.tpl2 position in
 	let banner =
@@ -252,7 +253,6 @@ let tpl_tpl_base
 					[main_menu]
 					"<div class='float_clean'></div>"
 					[left]
-					"<h1>"[Html.pcdata title]"</h1>"
 					[center]
 					"<div class='main_menu_bottom_container'>"
 						[main_menu_bottom]

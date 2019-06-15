@@ -1,7 +1,7 @@
 
 let need_create src dest =
-  let src_info = try Some (Unix.stat src) with Not_found -> None in
-  let dst_info = try Some (Unix.stat dest) with Not_found -> None in
+  let src_info = try Some (Unix.stat src) with _ -> None in
+  let dst_info = try Some (Unix.stat dest) with _ -> None in
   match src_info, dst_info with
   | None, _ -> false
   | _, None -> true

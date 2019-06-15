@@ -282,6 +282,18 @@ let condition47 = make "01_condition47" "jpg" [Condition; ] [%html{|
 	</div>
 |}]
 
+let condition48 = make "01_condition48" "jpg" [Condition; ] [%html{|
+	<div>
+		Отдельный домик. Отдельный санузел.
+	</div>
+|}]
+
+let condition49 = make "01_condition49" "jpg" [Condition; ] [%html{|
+	<div>
+		Отдельный домик. Персональная душевая.
+	</div>
+|}]
+
 let tsandripsh01 = make "05_tsandripsh01" "jpg" [Tsandripsh; ] [%html{|
 	<div>
 		Окраина Цандипша.

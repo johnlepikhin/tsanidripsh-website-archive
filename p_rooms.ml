@@ -30,12 +30,6 @@ let center =
 			[img condition31]
 			"Несколько 4-местных номеров имеют отдельный уютный балкон:"
 			[img condition29]
-            "<h2>Отдельный домик для большой компании</h2>"
-            [img condition43]
-            [img condition44]
-            [img condition45]
-            [img condition46]
-            [img condition47]
 			"Окна номеров выходят либо в сад, либо имеют вид на море:"
 			[img condition01]
 			"<h2>Территория</h2>
@@ -46,6 +40,14 @@ let center =
 			[img condition18]
 			"Предоставляем оборудованную кухню (две газовых плиты, два чайника, две микроволновки, вся необходимая посуда):"
 			[img condition20]
+            "<h1>Отдельный домик для большой компании</h1>"
+            [img condition43]
+            [img condition44]
+            [img condition45]
+            [img condition46]
+            [img condition47]
+            [img condition48]
+            [img condition49]
 		"</div>"
 	]
 
