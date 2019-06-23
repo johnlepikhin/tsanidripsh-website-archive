@@ -129,6 +129,10 @@ let p_tours_alps =
          Purl.make Path.tours "tour_alps"
        ]
 
+let p_tours_sukhum =
+  Purl.make Path.tours "sukhum"
+  |> PageURLs.make ~historic:[]
+
 let a_tsandripsh =
   Purl.make Path.articles "tsandripsh"
   |> PageURLs.make ~historic:[

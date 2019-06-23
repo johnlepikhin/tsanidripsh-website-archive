@@ -41,7 +41,7 @@ module Make (P : PAGE) =
   struct
     include P
 
-    let page = { urls; doc; title = P.title; contents_name }
+    let page = { urls; doc; title; contents_name }
 
     let urls = Page_common.url urls
 
