@@ -55,7 +55,7 @@ let center =
     ) lst
   in
   [%html "<div class='tpl_main_center'>
-          <h1>Заказать экскурсию в Цандрипше</h1>"
+          <h1>Достопримечательности Кавказа</h1>"
       lst
       "
        <div>
